@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="hibernate">
+	<class name="Jeu" table="jeu">
+		<id
+			column="ID_JEU"
+			name="IdJeu"
+			type="java.lang.Long"
+		>
+			<generator class="vm" />
+		</id>
+		<property
+			column="ADRESSE_IMAGE_JEU"
+			length="255"
+			name="AdresseImageJeu"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="CONTEXTE_JEU"
+			length="255"
+			name="ContexteJeu"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="INFO_JEU"
+			length="255"
+			name="InfoJeu"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="REGLE_JEU"
+			length="255"
+			name="RegleJeu"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="LIEN_OFFICIEL"
+			length="128"
+			name="LienOfficiel"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="URL_JEU"
+			length="128"
+			name="UrlJeu"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="POINT_JEU"
+			length="255"
+			name="PointJeu"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="TITRE_JEU"
+			length="128"
+			name="TitreJeu"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="MATERIEL_JEU"
+			length="255"
+			name="MaterielJeu"
+			not-null="false"
+			type="string"
+		 />
+
+		<many-to-one
+			class="TypeJeu"
+			name="IdTypeJeu"
+			not-null="true"
+		>
+			<column name="ID_TYPE_JEU" />
+		</many-to-one>
+		<set inverse="true" name="MoisSet">
+			<key column="ID_JEU" />
+			<one-to-many class="Mois" />
+		</set>
+		<set inverse="true" name="JoueSet">
+			<key column="ID_JEU" />
+			<one-to-many class="Joue" />
+		</set>
+	</class>
+</hibernate-mapping>

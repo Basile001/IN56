@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="hibernate">
+	<class name="Abonnement" table="abonnement">
+		<id
+			column="ID_ABONNEMENT"
+			name="IdAbonnement"
+			type="java.lang.Long"
+		>
+			<generator class="vm" />
+		</id>
+		<property
+			column="PRIX_ABONNEMENT"
+			length="13"
+			name="PrixAbonnement"
+			not-null="true"
+			type="big_decimal"
+		 />
+		<property
+			column="DUREE_ABONNEMENT"
+			length="19"
+			name="DureeAbonnement"
+			not-null="true"
+			type="java.lang.Long"
+		 />
+		<set inverse="true" name="SouscrireSet">
+			<key column="ID_ABONNEMENT" />
+			<one-to-many class="Souscrire" />
+		</set>
+	</class>
+</hibernate-mapping>

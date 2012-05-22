@@ -1,0 +1,232 @@
+/* FOND DE PAGE */
+
+body {
+	background-image:url(img/fond2.png);
+	background-repeat:repeat-x;
+	background-color:#EFF3F6;
+	margin:auto;
+	margin-top:15px;
+	margin-bottom:15px;
+	width:910px;
+}
+
+/* FIN FOND DE PAGE */
+
+/* EN TETE */
+
+#header {
+	background-image:url(img/header2.png);
+	background-repeat:no-repeat;
+	width:910px;
+	height:280px; /* Je devrais mettre 419 au lieu de 459 mais ça galère :) */
+ 	margin:auto;
+}
+
+#header_logo {
+	padding-bottom:0px;
+	/*padding-left:0px;*/
+	padding-right:0px;
+	padding-top:30px;
+	width:374px;
+	height:107px;
+	float : left;
+}
+
+.element_logo {
+	background-image:url(img/logo.png);
+	background-repeat:no-repeat;
+	width:374px;
+	height:107px;
+	padding:25px
+}
+
+
+#header_connect {
+	padding-bottom:0px;
+	/*padding-left:631px;*/
+	padding-right:0px;
+	padding-top:30px;
+	width:280px;
+	height:150px;
+	float : right;
+	
+}
+
+.element_header_connect {
+	background-image:url(img/connect.png);
+	background-repeat:no-repeat;
+	padding:25px;
+	
+}
+
+.element_header_connect input {
+	background-image:url(img/input.png);
+	background-repeat:no-repeat;
+	border:none;
+	height:19px;
+	width:139px;
+	text-align:center;
+	padding:1px;
+}
+
+.element_header_connect_connexion {
+	background-image:url(img/connexion.jpg);
+	background-repeat:no-repeat;
+	width:75px;
+	height:23px;
+}
+
+.element_header_connect input[type=submit] {
+	background-image:url(img/connexion.jpg);
+	background-repeat:no-repeat;
+	width:75px;
+	height:23px;
+}
+
+
+
+.element_header_connect_inscription {
+	background-image:url(img/inscription.jpg);
+	background-repeat:no-repeat;
+	width:75px;
+	height:23px;
+}
+
+/* FIN EN TETE */
+
+/* MENU HORIZONTAL HAUT */
+
+#menuh {
+	background-image:url(img/menuh.png);
+	background-repeat:no-repeat;
+	padding-left:35px;
+	padding-right:35px;
+	width:910px;
+	height:32px;
+	word-spacing:5px;
+	
+	text-align : center;
+}
+
+.element_menuh {
+	padding:8px;
+	color:#FFFFFF;
+}
+
+.element_menuh a {
+	text-decoration:none;
+	color:#FFFFFF;
+}
+
+.element_menuh a:hover {
+	text-decoration:none;
+	color:#CCCCCC;
+}
+
+
+/* FIN MENU HORIZONTAL HAUT */
+
+/* CORPS */
+
+#corps {
+	background-image:url(img/contenu.png);
+	background-repeat:repeat-y;
+	width:910px;
+}
+
+
+/* FIN DU CORPS */
+
+/* MENU VERTICAL DROITE */
+#menuv {
+	float:left;
+	width:200px;
+}
+
+.element_menuv {
+	background-image:url(img/contenu_menuv.png);
+	background-repeat:repeat-y; 
+	
+}
+
+.element_menuv ul {
+	list-style:url(img/puce.png);
+	margin:0px;
+	padding-left:35px;
+	padding-right:20px;
+}
+
+.element_menuv ul li a {
+	display: block;
+	padding: 5px 0px 5px 3px;
+	text-decoration: none;
+	color:#000000;
+}
+
+.element_menuv ul li a:hover, .element_menuv ul li a:focus {
+	background-image:url(img/menuv_hover.png);
+	background-repeat:no-repeat;
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+
+#top_menuv {
+	background-image:url(img/top_menuv.png);
+	background-repeat:no-repeat;
+	width:200px;
+	height:30px;
+}
+
+#bottom_menuv {
+	background-image:url(img/bottom_menuv.png);
+	background-repeat:no-repeat;
+	width:200px;
+	height:30px;
+}
+
+/* FIN MENU VERTICAL DROITE */
+
+/* CONTENU */
+
+#contenu {
+	width:665px;
+	margin-left:200px;
+	padding-bottom:15px;
+	padding-left:15px;
+	padding-right:20px;
+	padding-top:15px;
+}
+
+
+
+/* FIN CONTENU */
+
+/* PIED DE PAGE */
+
+#bottom {
+	background-image:url(img/bottom.png);
+	background-repeat:no-repeat;
+	width:910px;
+	height:150px;
+	
+	color:#CCCCCC;
+	padding-top:40px;
+	padding-left:65px;
+	word-spacing:5px;
+	
+	text-align : center;
+}
+
+#bottom a {
+	color:#999999;
+	text-decoration:none;
+}
+
+/* FIN PIED DE PAGE */
+
+/* AUTRE STYLE */
+
+
+
+

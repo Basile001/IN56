@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="hibernate">
+	<class name="Contenir" table="contenir">
+		<composite-id>
+			<key-many-to-one
+				class="Faq"
+				column="ID_FAQ"
+				name="IdFaq"
+			 />
+			<key-many-to-one
+				class="QuestionReponse"
+				column="ID_QUESTION_REPONSE"
+				name="IdQuestionReponse"
+			 />
+		</composite-id>
+	</class>
+</hibernate-mapping>

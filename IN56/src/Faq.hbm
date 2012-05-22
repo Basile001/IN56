@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+
+<hibernate-mapping package="hibernate">
+	<class name="Faq" table="faq">
+		<id
+			column="ID_FAQ"
+			name="IdFaq"
+			type="java.lang.Long"
+		>
+			<generator class="vm" />
+		</id>
+		<property
+			column="TITRE_FAQ"
+			length="128"
+			name="TitreFaq"
+			not-null="true"
+			type="string"
+		 />
+		<set inverse="true" name="ConsulteSet">
+			<key column="ID_FAQ" />
+			<one-to-many class="Consulte" />
+		</set>
+		<set
+			cascade="all"
+			name="QuestionReponseSet"
+			table="contenir"
+		>
+			<key column="ID_FAQ" />
+			<many-to-many class="QuestionReponse" column="ID_QUESTION_REPONSE" />
+		</set>
+	</class>
+</hibernate-mapping>
