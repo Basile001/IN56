@@ -88,7 +88,7 @@
 	<div id="corps">
 		<div id="contenu">
 			<p><center><h3>Connexion</h3></center></p>
-			<center><form action="Connexion" method="post">
+			<center><form action="ConnexionServlet" method="post">
 				<table>
 					<tr>
 						<td>Login :</td>
