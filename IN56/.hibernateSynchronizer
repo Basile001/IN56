@@ -3,5 +3,5 @@ package=hibernate
 databaseUrl=jdbc:mysql://localhost:3306/in56
 driver=com.mysql.jdbc.Driver
 EnumInclude=
-username=fkozma
 ConfigurationFile=\IN56\src\hibernate.cfg.xml
+username=in56

@@ -1,0 +1,47 @@
+package model;
+
+import model.base.BaseUtilisateur;
+
+/**
+ * This is the object class that relates to the utilisateur table.
+ * Any customizations belong here.
+ */
+public class Utilisateur extends BaseUtilisateur {
+
+/*[CONSTRUCTOR MARKER BEGIN]*/
+	public Utilisateur () {
+		super();
+	}
+
+	/**
+	 * Constructor for primary key
+	 */
+	public Utilisateur (model.UtilisateurPK _id) {
+		super(_id);
+	}
+
+	/**
+	 * Constructor for required fields
+	 */
+	public Utilisateur (
+		model.UtilisateurPK _id,
+		java.lang.String _motdepasse,
+		java.lang.Integer _newsletter,
+		java.lang.String _pays,
+		java.lang.String _prenomUtilisateur,
+		java.lang.String _civilite,
+		java.lang.String _ville,
+		java.lang.String _nomUtilisateur) {
+
+		super (
+			_id,
+			_motdepasse,
+			_newsletter,
+			_pays,
+			_prenomUtilisateur,
+			_civilite,
+			_ville,
+			_nomUtilisateur);
+	}
+/*[CONSTRUCTOR MARKER END]*/
+}

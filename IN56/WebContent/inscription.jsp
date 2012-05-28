@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="hibernate.Utilisateur"%>
+<%@ page import="model.Utilisateur"%>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -102,15 +103,28 @@
 			<div class="element_contenu">
 			<p><center><h3>Inscription</h3></center></p>
 			<p><center>Veulliez remplir le formulaire d'inscription</center></p>
-				<form action="Inscription" method="post">
+			<%
+			ArrayList<String> listErrors;
+			if(request.getAttribute("errors") != null){
+				listErrors = ((ArrayList<String>) request.getAttribute("errors"));
+				for(int i = 0; i < listErrors.size(); i++){
+					out.println(listErrors.get(i) + "</br>");
+				}
+			}
+			 %>
+				<form action="InscriptionServlet" method="post">
 					<table>
 						<tr>
 							<td>E-mail :</td>
-							<td><input type="text" name="email" /> *</td>
+							<td><input type="text" name="email" value="" /> *</td>
 						</tr>
 						<tr>
 							<td>Login :</td>
-							<td><input type="text" name="login" /> *</td>
+							<td><input type="text" name="login" value="" /> *</td>
+						</tr>
+						<tr>
+							<td>Mot de passe :</td>
+							<td><input type="password" name="motdepasse" value="" /> Taille minimum 6 caractères / Taille maximum 32 caractères *</td>
 						</tr>
 						<tr>
 							<td>Civilité :</td>
@@ -121,35 +135,35 @@
 						</tr>
 						<tr>
 							<td>Nom :</td>
-							<td><input type="text" name="nom" /> *</td>
+							<td><input type="text" name="nom" value="" /> *</td>
 						</tr>
 						<tr>
 							<td>Prénom :</td>
-							<td><input type="text" name="prenom" /> *</td>
+							<td><input type="text" name="prenom" value="" /> *</td>
 						</tr>
 						<tr>
 							<td>Téléphone :</td>
-							<td><input type="text" name="telephone" /></td>
+							<td><input type="text" name="telephone" value="" /></td>
 						</tr>
 						<tr>
 							<td>N° Rue :</td>
-							<td><input type="text" name="numero_rue" /></td>
+							<td><input type="text" name="numero_rue" value="" /></td>
 						</tr>
 						<tr>
 							<td>Rue :</td>
-							<td><input type="text" name="rue" /></td>
+							<td><input type="text" name="rue" value="" /></td>
 						</tr>
 						<tr>
 							<td>Code Postal :</td>
-							<td><input type="text" name="codepostal" /></td>
+							<td><input type="text" name="codepostal" value="" /></td>
 						</tr>
 						<tr>
 							<td>Ville :</td>
-							<td><input type="text" name="ville" /> *</td>
+							<td><input type="text" name="ville" value="" /> *</td>
 						</tr>
 						<tr>
 							<td>Pays :</td>
-							<td><input type="text" name="pays" /> *</td>
+							<td><input type="text" name="pays" value="" /> *</td>
 						</tr>
 						<tr>
 							<td></td>

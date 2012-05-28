@@ -13,7 +13,7 @@
     <description></description>
     <display-name>InscriptionServlet</display-name>
     <servlet-name>InscriptionServlet</servlet-name>
-    <servlet-class>servlet.InscriptionServlet</servlet-class>
+    <servlet-class>control.InscriptionServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>InscriptionServlet</servlet-name>
@@ -23,7 +23,7 @@
     <description></description>
     <display-name>ConnexionServlet</display-name>
     <servlet-name>ConnexionServlet</servlet-name>
-    <servlet-class>servlet.ConnexionServlet</servlet-class>
+    <servlet-class>control.ConnexionServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ConnexionServlet</servlet-name>
@@ -31,9 +31,19 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>ProfilServlet</display-name>
+    <servlet-name>ProfilServlet</servlet-name>
+    <servlet-class>control.ProfilServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProfilServlet</servlet-name>
+    <url-pattern>/ProfilServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>DeconnexionServlet</display-name>
     <servlet-name>DeconnexionServlet</servlet-name>
-    <servlet-class>servlet.DeconnexionServlet</servlet-class>
+    <servlet-class>control.DeconnexionServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DeconnexionServlet</servlet-name>
@@ -41,42 +51,12 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>FAQServlet</display-name>
-    <servlet-name>FAQServlet</servlet-name>
-    <servlet-class>servlet.FAQServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>FAQServlet</servlet-name>
-    <url-pattern>/FAQServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>ContactServlet</display-name>
     <servlet-name>ContactServlet</servlet-name>
-    <servlet-class>servlet.ContactServlet</servlet-class>
+    <servlet-class>control.ContactServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ContactServlet</servlet-name>
     <url-pattern>/ContactServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>JeuMoisServlet</display-name>
-    <servlet-name>JeuMoisServlet</servlet-name>
-    <servlet-class>servlet.JeuMoisServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>JeuMoisServlet</servlet-name>
-    <url-pattern>/JeuMoisServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ProfilServlet</display-name>
-    <servlet-name>ProfilServlet</servlet-name>
-    <servlet-class>servlet.ProfilServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ProfilServlet</servlet-name>
-    <url-pattern>/ProfilServlet</url-pattern>
   </servlet-mapping>
 </web-app>

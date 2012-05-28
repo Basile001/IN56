@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC
 	"-//Hibernate/Hibernate Mapping DTD//EN"
-	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
 
-
-<hibernate-mapping package="hibernate">
+<hibernate-mapping package="model">
 	<class name="Utilisateur" table="utilisateur">
 		<composite-id class="UtilisateurPK" name="Id">
 			<key-property
@@ -19,25 +18,32 @@
 			 />
 		</composite-id>
 		<property
+			column="MOTDEPASSE"
+			length="32"
+			name="Motdepasse"
+			not-null="true"
+			type="string"
+		 />
+		<property
 			column="NUMRUE"
 			length="19"
 			name="Numrue"
 			not-null="false"
-			type="java.lang.Long"
+			type="java.lang.Integer"
 		 />
 		<property
 			column="CODEPOSTAL"
 			length="19"
 			name="Codepostal"
 			not-null="false"
-			type="java.lang.Long"
+			type="java.lang.Integer"
 		 />
 		<property
-			column="DROIT"
-			length="10"
-			name="Droit"
-			not-null="false"
-			type="integer"
+			column="NEWSLETTER"
+			length="5"
+			name="Newsletter"
+			not-null="true"
+			type="java.lang.Integer"
 		 />
 		<property
 			column="PAYS"
@@ -47,11 +53,11 @@
 			type="string"
 		 />
 		<property
-			column="VILLE"
-			length="128"
-			name="Ville"
-			not-null="true"
-			type="string"
+			column="DROIT"
+			length="10"
+			name="Droit"
+			not-null="false"
+			type="integer"
 		 />
 		<property
 			column="PRENOM_UTILISATEUR"
@@ -68,9 +74,9 @@
 			type="string"
 		 />
 		<property
-			column="NOM_UTILISATEUR"
-			length="32"
-			name="NomUtilisateur"
+			column="CIVILITE"
+			length="20"
+			name="Civilite"
 			not-null="true"
 			type="string"
 		 />
@@ -79,12 +85,19 @@
 			length="10"
 			name="Telephone"
 			not-null="false"
-			type="integer"
+			type="string"
 		 />
 		<property
-			column="CIVILITE"
-			length="20"
-			name="Civilite"
+			column="VILLE"
+			length="128"
+			name="Ville"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="NOM_UTILISATEUR"
+			length="32"
+			name="NomUtilisateur"
 			not-null="true"
 			type="string"
 		 />

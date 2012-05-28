@@ -1,25 +1,39 @@
 package hibernate;
 
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import net.sf.hibernate.*;
+import net.sf.hibernate.cfg.*;
 
 public class HibernateUtil {
-	private static SessionFactory sessionFactory;
 
-	private static SessionFactory buildSessionFactory() {
+	private static final SessionFactory sessionFactory;
+
+	static {
 		try {
+			// Crée la SessionFactory
 			sessionFactory = new Configuration().configure()
 					.buildSessionFactory();
-			return sessionFactory;
-		} catch (Throwable ex) {
-			System.err.println("Initial SessionFactory creation failed." + ex);
-			throw new ExceptionInInitializerError(ex);
+		} catch (HibernateException ex) {
+			throw new RuntimeException("Problème de configuration : "
+					+ ex.getMessage(), ex);
 		}
 	}
 
-	public static SessionFactory getSessionFactory() {
-		if (sessionFactory == null)
-			buildSessionFactory();
-		return sessionFactory;
+	public static final ThreadLocal session = new ThreadLocal();
+
+	public static Session currentSession() throws HibernateException {
+		Session s = (Session) session.get();
+		// Ouvre une nouvelle Session, si ce Thread n'en a aucune
+		if (s == null) {
+			s = sessionFactory.openSession();
+			session.set(s);
+		}
+		return s;
+	}
+
+	public static void closeSession() throws HibernateException {
+		Session s = (Session) session.get();
+		session.set(null);
+		if (s != null)
+			s.close();
 	}
 }

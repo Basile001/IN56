@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping package="model">
+	<class name="DateAbonnement" table="date_abonnement">
+		<id
+			column="DATE_ABONNEMENT"
+			name="DateAbonnement"
+			type="date"
+		>
+			<generator class="vm" />
+		</id>
+		<set inverse="true" name="SouscrireSet">
+			<key column="DATE_ABONNEMENT" />
+			<one-to-many class="Souscrire" />
+		</set>
+	</class>
+</hibernate-mapping>
