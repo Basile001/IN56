@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="belfair-commons" basedir="." default="makejar">
+	<property name="build.dir" value="build" />
+	<property name="lib.dir" value="lib" />
+	<property name="src.dir" value="src" />
+	<property name="output.dir" value="output" />
+	<path id="classpath.build">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	<target name="init">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${output.dir}" />
+	</target>
+	<target name="compile" depends="init">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" fork="yes" classpathref="classpath.build" includeantruntime="false" />
+	</target>
+	<target name="makejar" depends="compile">
+		<jar destfile="${output.dir}/belfair-commons.jar">
+			<fileset dir="${build.dir}" includes="**/*" />
+			<zipgroupfileset dir="${lib.dir}" includes="**/*.jar" />
+		</jar>
+	</target>
+	<target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${output.dir}"/>
+    </target>
+</project>

@@ -1,0 +1,131 @@
+package dao;
+// Generated 27 mai 2012 16:58:51 by Hibernate Tools 3.4.0.CR1
+
+
+import java.util.List;
+import javax.naming.InitialContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.hibernate.LockMode;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Example;
+
+/**
+ * Home object for domain model class Recevoir.
+ * @see dao.Recevoir
+ * @author Hibernate Tools
+ */
+public class RecevoirHome {
+
+    private static final Log log = LogFactory.getLog(RecevoirHome.class);
+
+    private final SessionFactory sessionFactory = getSessionFactory();
+    
+    protected SessionFactory getSessionFactory() {
+        try {
+            return (SessionFactory) new InitialContext().lookup("SessionFactory");
+        }
+        catch (Exception e) {
+            log.error("Could not locate SessionFactory in JNDI", e);
+            throw new IllegalStateException("Could not locate SessionFactory in JNDI");
+        }
+    }
+    
+    public void persist(Recevoir transientInstance) {
+        log.debug("persisting Recevoir instance");
+        try {
+            sessionFactory.getCurrentSession().persist(transientInstance);
+            log.debug("persist successful");
+        }
+        catch (RuntimeException re) {
+            log.error("persist failed", re);
+            throw re;
+        }
+    }
+    
+    public void attachDirty(Recevoir instance) {
+        log.debug("attaching dirty Recevoir instance");
+        try {
+            sessionFactory.getCurrentSession().saveOrUpdate(instance);
+            log.debug("attach successful");
+        }
+        catch (RuntimeException re) {
+            log.error("attach failed", re);
+            throw re;
+        }
+    }
+    
+    public void attachClean(Recevoir instance) {
+        log.debug("attaching clean Recevoir instance");
+        try {
+            sessionFactory.getCurrentSession().lock(instance, LockMode.NONE);
+            log.debug("attach successful");
+        }
+        catch (RuntimeException re) {
+            log.error("attach failed", re);
+            throw re;
+        }
+    }
+    
+    public void delete(Recevoir persistentInstance) {
+        log.debug("deleting Recevoir instance");
+        try {
+            sessionFactory.getCurrentSession().delete(persistentInstance);
+            log.debug("delete successful");
+        }
+        catch (RuntimeException re) {
+            log.error("delete failed", re);
+            throw re;
+        }
+    }
+    
+    public Recevoir merge(Recevoir detachedInstance) {
+        log.debug("merging Recevoir instance");
+        try {
+            Recevoir result = (Recevoir) sessionFactory.getCurrentSession()
+                    .merge(detachedInstance);
+            log.debug("merge successful");
+            return result;
+        }
+        catch (RuntimeException re) {
+            log.error("merge failed", re);
+            throw re;
+        }
+    }
+    
+    public Recevoir findById( dao.RecevoirId id) {
+        log.debug("getting Recevoir instance with id: " + id);
+        try {
+            Recevoir instance = (Recevoir) sessionFactory.getCurrentSession()
+                    .get("dao.Recevoir", id);
+            if (instance==null) {
+                log.debug("get successful, no instance found");
+            }
+            else {
+                log.debug("get successful, instance found");
+            }
+            return instance;
+        }
+        catch (RuntimeException re) {
+            log.error("get failed", re);
+            throw re;
+        }
+    }
+    
+    public List findByExample(Recevoir instance) {
+        log.debug("finding Recevoir instance by example");
+        try {
+            List results = sessionFactory.getCurrentSession()
+                    .createCriteria("dao.Recevoir")
+                    .add(Example.create(instance))
+            .list();
+            log.debug("find by example successful, result size: " + results.size());
+            return results;
+        }
+        catch (RuntimeException re) {
+            log.error("find by example failed", re);
+            throw re;
+        }
+    } 
+}
+

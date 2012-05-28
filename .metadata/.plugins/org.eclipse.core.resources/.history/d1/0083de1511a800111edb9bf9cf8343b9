@@ -1,0 +1,37 @@
+package dao;
+
+import bean.Utilisateur;
+
+public class UtilisateurDAO implements UtilisateurDAOInterface {
+
+	@Override
+	public Set<Utilisateur> getActorList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Utilisateur getById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Utilisateur create(Utilisateur actor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void update(Utilisateur actor) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Utilisateur actor) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

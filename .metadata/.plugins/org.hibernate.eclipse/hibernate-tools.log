@@ -1,0 +1,2 @@
+2012-05-24 17:59:38,778 0      [           main] ERROR bernate.util.DTDEntityResolver  - Don't use old DTDs, read the Hibernate 3.x Migration Guide!
+2012-05-24 17:59:40,041 1263   [           main] ERROR   org.hibernate.util.XMLHelper  - Error parsing XML: C:\Users\moi\workspace\belfair-commons\src\hibernate.cfg.xml(24) Le contenu du type d'élément "session-factory" est incomplet. Il doit correspondre à "(property*,mapping+,(class-cache|collection-cache|jcs-class-cache|jcs-collection-cache)*)".

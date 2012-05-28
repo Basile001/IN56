@@ -1,0 +1,11 @@
+package dao;
+
+public interface UtilisateurDAOInterface {
+
+	public Set<Utilisateur> getActorList();
+	public Utilisateur getById(Long id);
+	public Utilisateur create(Utilisateur actor);
+	public void update(Utilisateur actor);
+	public void delete(Utilisateur actor);
+	
+}

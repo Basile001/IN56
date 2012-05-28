@@ -1,0 +1,321 @@
+package control;
+
+import hibernate.HibernateUtil;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+import model.Utilisateur;
+import model.UtilisateurPK;
+import model.base._BaseRootDAO;
+import model.dao.UtilisateurDAO;
+import model.dao._RootDAO;
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Query;
+import net.sf.hibernate.Session;
+import net.sf.hibernate.Transaction;
+
+/**
+ * Servlet implementation class InscriptionServlet
+ */
+public class InscriptionServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public InscriptionServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+
+
+		Utilisateur utilisateur = new Utilisateur();
+		UtilisateurDAO utilisateurDAO = new UtilisateurDAO();
+		
+		ArrayList<String> listErrors = new ArrayList<String>();
+		
+		// Variable du formulaire
+		String email = "";
+		String login = "";
+		String motdepasse ="";
+		String civilite = "";	
+		String nom = "";
+		String prenom = "";
+		String telephone = "";
+		String numeroRue = "";
+		String rue = "";
+		String codePostal = "";
+		String ville = "";
+		String pays = "";
+		
+		// Vérification que les champs sont remplis
+		// Vérification de la présence de l'adresse E-mail
+		if(request.getAttribute("email") != null){
+			email = (String) request.getAttribute("email");
+		}else{
+			listErrors.add("L'adresse E-mail est obligatoire");
+		}
+		// Vérification de la présence du login
+		if(request.getAttribute("login") != null){
+			login = (String) request.getAttribute("login");
+		}else{
+			listErrors.add("Le login est obligatoire");
+		}
+		// Vérification de la présence du mot de passe
+		if(request.getAttribute("motdepasse") != null){
+			motdepasse = (String) request.getAttribute("motdepasse");
+		}else{
+			listErrors.add("Le mot de passe est obligatoire");
+		}
+		// Vérification de la présence de la civilite
+		if(request.getAttribute("civilite") != null){
+			civilite = (String) request.getAttribute("civilite");
+		}else{
+			listErrors.add("La civilité est obligatoire");
+		}
+		// Vérification de la présence du nom
+		if(request.getAttribute("nom") != null){
+			nom = (String) request.getAttribute("nom");
+		}else{
+			listErrors.add("Le nom est obligatoire");
+		}
+		// Vérification de la présence du prénom
+		if(request.getAttribute("prenom") != null){
+			prenom = (String) request.getAttribute("prenom");
+		}else{
+			listErrors.add("Le prénom est obligatoire");
+		}
+		// Vérification de la présence de la ville
+		if(request.getAttribute("ville") != null){
+			ville = (String) request.getAttribute("ville");
+		}else{
+			listErrors.add("La ville est obligatoire");
+		}
+		// Vérification de la présence du pays
+		if(request.getAttribute("pays") != null){
+			pays = (String) request.getAttribute("pays");
+		}else{
+			listErrors.add("Le pays est obligatoire");
+		}
+		// Vérification de la taille du mot de passe
+				if(motdepasse.length() < 6){
+					listErrors.add("Le mot de passe est trop court");
+				}
+				if(motdepasse.length() > 32){
+					listErrors.add("Le mot de passe est trop long");
+				}
+				
+		// Vérification de l'existance de l'e-mail et login
+		try {
+			utilisateurDAO.initialize();
+			List<Utilisateur> listUtilisateur = utilisateurDAO.find("FROM Utilisateur U WHERE U." + Utilisateur.PROP_ID +".login=" + login + " OR U." + Utilisateur.PROP_ID + ".email=" + email);
+			System.out.println("Utilisateur : " + listUtilisateur.size());
+			
+		} catch (HibernateException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+		// Vérification des chiffres pour le numero de téléphone
+		
+		// Vérification des chiffres pour le numero_rue
+		
+		// Vérification des chiffres pour le code postal
+		
+		/*utilisateur.setId(new UtilisateurPK(login,email));
+		utilisateur.setCivilite(civilite);
+		utilisateur.setNomUtilisateur(nom);
+		utilisateur.setPrenomUtilisateur(prenom);
+		utilisateur.setTelephone(telephone);
+		utilisateur.setNumrue(Integer.valueOf(numeroRue));
+		utilisateur.setRue(rue);
+		utilisateur.setCodepostal(Integer.valueOf(codePostal));
+		utilisateur.setVille(ville);
+		utilisateur.setPays(pays);
+		utilisateur.setDroit(0);
+		
+		
+		utilisateur.setId(new UtilisateurPK("Giltia","florian.kozma@wanadoo.fr"));
+		utilisateur.setCivilite("Monsieur");
+		utilisateur.setNomUtilisateur("KOZMA");
+		utilisateur.setPrenomUtilisateur("Florian");
+		utilisateur.setMotdepasse("test");
+		utilisateur.setTelephone("0380921322");
+		utilisateur.setNumrue(12);
+		utilisateur.setRue("rue des jonquilles");
+		utilisateur.setCodepostal(21500);
+		utilisateur.setVille("FAIN-LES-MONTBARD");
+		utilisateur.setPays("FRANCE");
+		utilisateur.setDroit(0);
+		utilisateur.setNewsletter(0);
+		
+		
+		
+		try {
+			utilisateurDAO.initialize();
+			utilisateurDAO.save(utilisateur);
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		Utilisateur utilisateur = new Utilisateur();
+		UtilisateurDAO utilisateurDAO = new UtilisateurDAO();
+		
+		ArrayList<String> listErrors = new ArrayList<String>();
+		
+		// Variable du formulaire
+		String email = "";
+		String login = "";
+		String motdepasse ="";
+		String civilite = "";	
+		String nom = "";
+		String prenom = "";
+		String telephone = "";
+		String numeroRue = "";
+		String rue = "";
+		String codePostal = "";
+		String ville = "";
+		String pays = "";
+		
+		// Vérification que les champs sont remplis
+		// Vérification de la présence de l'adresse E-mail
+		if(request.getParameter("email") != null){
+			email = (String) request.getParameter("email");
+		}else{
+			listErrors.add("L'adresse E-mail est obligatoire");
+		}
+		// Vérification de la présence du login
+		if(request.getParameter("login") != null){
+			login = (String) request.getParameter("login");
+		}else{
+			listErrors.add("Le login est obligatoire");
+		}
+		// Vérification de la présence du mot de passe
+		if(request.getParameter("motdepasse") != null){
+			motdepasse = (String) request.getParameter("motdepasse");
+		}else{
+			listErrors.add("Le mot de passe est obligatoire");
+		}
+		// Vérification de la présence de la civilite
+		if(request.getParameter("civilite") != null){
+			civilite = (String) request.getParameter("civilite");
+		}else{
+			listErrors.add("La civilité est obligatoire");
+		}
+		// Vérification de la présence du nom
+		if(request.getParameter("nom") != null){
+			nom = (String) request.getParameter("nom");
+		}else{
+			listErrors.add("Le nom est obligatoire");
+		}
+		// Vérification de la présence du prénom
+		if(request.getParameter("prenom") != null){
+			prenom = (String) request.getParameter("prenom");
+		}else{
+			listErrors.add("Le prénom est obligatoire");
+		}
+		// Vérification de la présence de la ville
+		if(request.getParameter("ville") != null){
+			ville = (String) request.getParameter("ville");
+		}else{
+			listErrors.add("La ville est obligatoire");
+		}
+		// Vérification de la présence du pays
+		if(request.getParameter("pays") != null){
+			pays = (String) request.getParameter("pays");
+		}else{
+			listErrors.add("Le pays est obligatoire");
+		}
+		// Vérification de la taille du mot de passe
+				if(motdepasse.length() < 6){
+					listErrors.add("Le mot de passe est trop court");
+				}
+				if(motdepasse.length() > 32){
+					listErrors.add("Le mot de passe est trop long");
+				}
+				
+		// Vérification de l'existance de l'e-mail et login
+		try {
+			_RootDAO.initialize();
+			Session session = _RootDAO.createSession();
+			Query query = session.createQuery("FROM Utilisateur U WHERE U."+ Utilisateur.PROP_ID + ".Login=" + login);
+			List<Utilisateur> listUtilisateur = query.list();
+			if(listUtilisateur.size() > 0){
+				listErrors.add("Le login est déjà utilisé");
+			}
+			query = session.createQuery("FROM Utilisateur U WHERE U."+ Utilisateur.PROP_ID + ".Email=" + email);
+			listUtilisateur = query.list();
+			if(listUtilisateur.size() > 0){
+				listErrors.add("L'adresse Email est déjà utilisée");
+			}
+		} catch (HibernateException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		// Vérification des chiffres pour le numero de téléphone
+		if(!Pattern.matches("[0-9]{10}", telephone)){
+			listErrors.add("Format du numéro de téléphone incorrect");
+		}
+		// Vérification des chiffres pour le numero_rue
+		if(!Pattern.matches("[0-9]{4}", numeroRue)){
+			listErrors.add("Format du numéro de rue incorrect");
+		}	
+		// Vérification des chiffres pour le code postal
+		if(!Pattern.matches("[0-9]{5}", codePostal)){
+			listErrors.add("Format du code postal incorrect");
+		}	
+		
+		if(listErrors.size() > 0){
+			// Erreur
+		}else{
+			utilisateur.setId(new UtilisateurPK("Giltia","florian.kozma@wanadoo.fr"));
+			utilisateur.setCivilite("Monsieur");
+			utilisateur.setNomUtilisateur("KOZMA");
+			utilisateur.setPrenomUtilisateur("Florian");
+			utilisateur.setMotdepasse("test");
+			utilisateur.setTelephone("0380921322");
+			utilisateur.setNumrue(12);
+			utilisateur.setRue("rue des jonquilles");
+			utilisateur.setCodepostal(21500);
+			utilisateur.setVille("FAIN-LES-MONTBARD");
+			utilisateur.setPays("FRANCE");
+			utilisateur.setDroit(0);
+			utilisateur.setNewsletter(0);
+			try {
+				utilisateurDAO.save(utilisateur);
+			} catch (HibernateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			// rediriger vers une page de validation
+		}
+		
+	}
+
+}

@@ -1,0 +1,5 @@
+package=model
+databaseUrl=jdbc:mysql://localhost:3306/in56
+driver=com.mysql.jdbc.Driver
+username=in56
+ConfigurationFile=\hibernateTool\src\hibernate.cfg.xml

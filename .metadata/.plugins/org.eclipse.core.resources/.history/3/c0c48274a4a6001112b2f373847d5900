@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 mai 2012 22:00:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.TypeJeu" table="type_jeu" catalog="in56">
+        <id name="idTypeJeu" type="long">
+            <column name="ID_TYPE_JEU" />
+            <generator class="assigned" />
+        </id>
+        <property name="libelleTypeJeu" type="string">
+            <column name="LIBELLE_TYPE_JEU" length="128" not-null="true" />
+        </property>
+        <set name="jeus" table="jeu" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_TYPE_JEU" not-null="true" />
+            </key>
+            <one-to-many class="model.Jeu" />
+        </set>
+    </class>
+</hibernate-mapping>

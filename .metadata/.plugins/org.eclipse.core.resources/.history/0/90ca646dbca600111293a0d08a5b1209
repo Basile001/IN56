@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 mai 2012 22:02:37 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.Jeu" table="jeu" catalog="in56">
+        <id name="idJeu" type="long">
+            <column name="ID_JEU" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="typeJeu" class="model.TypeJeu" fetch="select">
+            <column name="ID_TYPE_JEU" not-null="true" />
+        </many-to-one>
+        <property name="titreJeu" type="string">
+            <column name="TITRE_JEU" length="128" not-null="true" />
+        </property>
+        <property name="contexteJeu" type="string">
+            <column name="CONTEXTE_JEU" />
+        </property>
+        <property name="regleJeu" type="string">
+            <column name="REGLE_JEU" />
+        </property>
+        <property name="urlJeu" type="string">
+            <column name="URL_JEU" length="128" not-null="true" />
+        </property>
+        <property name="pointJeu" type="string">
+            <column name="POINT_JEU" />
+        </property>
+        <property name="materielJeu" type="string">
+            <column name="MATERIEL_JEU" />
+        </property>
+        <property name="infoJeu" type="string">
+            <column name="INFO_JEU" />
+        </property>
+        <property name="lienOfficiel" type="string">
+            <column name="LIEN_OFFICIEL" length="128" />
+        </property>
+        <property name="adresseImageJeu" type="string">
+            <column name="ADRESSE_IMAGE_JEU" />
+        </property>
+        <set name="moises" table="mois" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_JEU" not-null="true" />
+            </key>
+            <one-to-many class="model.Mois" />
+        </set>
+        <set name="joues" table="joue" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_JEU" not-null="true" />
+            </key>
+            <one-to-many class="model.Joue" />
+        </set>
+    </class>
+</hibernate-mapping>

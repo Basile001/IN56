@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 mai 2012 16:58:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="bean.Recevoir" table="recevoir" catalog="in56">
+        <composite-id name="id" class="bean.RecevoirPK">
+            <key-property name="email" type="string">
+                <column name="EMAIL" length="128" />
+            </key-property>
+            <key-property name="login" type="string">
+                <column name="LOGIN" length="32" />
+            </key-property>
+            <key-property name="idNews" type="long">
+                <column name="ID_NEWS" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="utilisateur" class="bean.Utilisateur" update="false" insert="false" fetch="select">
+            <column name="EMAIL" length="128" not-null="true" />
+            <column name="LOGIN" length="32" not-null="true" />
+        </many-to-one>
+        <many-to-one name="newsletter" class="bean.Newsletter" update="false" insert="false" fetch="select">
+            <column name="ID_NEWS" not-null="true" />
+        </many-to-one>
+        <property name="dateRecevoir" type="date">
+            <column name="DATE_RECEVOIR" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

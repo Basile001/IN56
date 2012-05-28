@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 mai 2012 22:02:37 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.Mois" table="mois" catalog="in56">
+        <id name="mois" type="date">
+            <column name="MOIS" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="jeu" class="model.Jeu" fetch="select">
+            <column name="ID_JEU" not-null="true" />
+        </many-to-one>
+        <property name="conseilMois" type="string">
+            <column name="CONSEIL_MOIS" />
+        </property>
+    </class>
+</hibernate-mapping>

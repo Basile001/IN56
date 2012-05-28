@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping package="model">
+	<class name="Consulte" table="consulte">
+		<composite-id>
+			<key-many-to-one class="Utilisateur" name="Login">
+				<column name="LOGIN" />
+				<column name="EMAIL" />
+			</key-many-to-one>
+			<key-many-to-one
+				class="Faq"
+				column="ID_FAQ"
+				name="IdFaq"
+			 />
+		</composite-id>
+	</class>
+</hibernate-mapping>

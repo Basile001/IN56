@@ -1,0 +1,56 @@
+package bean;
+
+import java.util.Date;
+
+
+public class Recevoir implements java.io.Serializable {
+
+	private RecevoirPK id;
+	private Utilisateur utilisateur;
+	private Newsletter newsletter;
+	private Date dateRecevoir;
+
+	public Recevoir() {
+	}
+
+	public Recevoir(RecevoirPK id, Utilisateur utilisateur,
+			Newsletter newsletter, Date dateRecevoir) {
+		this.id = id;
+		this.utilisateur = utilisateur;
+		this.newsletter = newsletter;
+		this.dateRecevoir = dateRecevoir;
+	}
+
+	public RecevoirPK getId() {
+		return this.id;
+	}
+
+	public void setId(RecevoirPK id) {
+		this.id = id;
+	}
+
+	public Utilisateur getUtilisateur() {
+		return this.utilisateur;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
+	public Newsletter getNewsletter() {
+		return this.newsletter;
+	}
+
+	public void setNewsletter(Newsletter newsletter) {
+		this.newsletter = newsletter;
+	}
+
+	public Date getDateRecevoir() {
+		return this.dateRecevoir;
+	}
+
+	public void setDateRecevoir(Date dateRecevoir) {
+		this.dateRecevoir = dateRecevoir;
+	}
+
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 mai 2012 22:02:37 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.Souscrire" table="souscrire" catalog="in56">
+        <composite-id name="id" class="model.SouscrireId">
+            <key-property name="email" type="string">
+                <column name="EMAIL" length="128" />
+            </key-property>
+            <key-property name="login" type="string">
+                <column name="LOGIN" length="32" />
+            </key-property>
+            <key-property name="idAbonnement" type="long">
+                <column name="ID_ABONNEMENT" />
+            </key-property>
+            <key-property name="dateAbonnement" type="date">
+                <column name="DATE_ABONNEMENT" length="10" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="utilisateur" class="model.Utilisateur" update="false" insert="false" fetch="select">
+            <column name="EMAIL" length="128" not-null="true" />
+            <column name="LOGIN" length="32" not-null="true" />
+        </many-to-one>
+        <many-to-one name="abonnement" class="model.Abonnement" update="false" insert="false" fetch="select">
+            <column name="ID_ABONNEMENT" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

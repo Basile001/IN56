@@ -1,0 +1,7 @@
+CompositeIdName=Id
+Extension=hbm
+Generator=vm
+KnownVersion=2.3.1
+LastWorkspace=C\:/Users/moi/workspace
+ProxyClassName=${className}Proxy
+eclipse.preferences.version=1

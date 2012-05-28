@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/bd50-gl52-lo54/!svn/ver/21/trunk/belfair-commons/lib
+END
+antlr-2.7.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/bd50-gl52-lo54/!svn/ver/21/trunk/belfair-commons/lib/antlr-2.7.6.jar
+END
+javassist-3.12.0.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/bd50-gl52-lo54/!svn/ver/21/trunk/belfair-commons/lib/javassist-3.12.0.GA.jar
+END
+dom4j-1.6.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/bd50-gl52-lo54/!svn/ver/21/trunk/belfair-commons/lib/dom4j-1.6.1.jar
+END
+commons-collections-3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/bd50-gl52-lo54/!svn/ver/21/trunk/belfair-commons/lib/commons-collections-3.1.jar
+END
+cglib-2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/bd50-gl52-lo54/!svn/ver/21/trunk/belfair-commons/lib/cglib-2.2.jar
+END
+ojdbc6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/bd50-gl52-lo54/!svn/ver/15/trunk/belfair-commons/lib/ojdbc6.jar
+END
+jta-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/bd50-gl52-lo54/!svn/ver/21/trunk/belfair-commons/lib/jta-1.1.jar
+END
+slf4j-api-1.6.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/bd50-gl52-lo54/!svn/ver/21/trunk/belfair-commons/lib/slf4j-api-1.6.1.jar
+END
+hibernate3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/bd50-gl52-lo54/!svn/ver/21/trunk/belfair-commons/lib/hibernate3.jar
+END

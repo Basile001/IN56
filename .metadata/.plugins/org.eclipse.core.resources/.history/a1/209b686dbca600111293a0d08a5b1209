@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 mai 2012 22:02:37 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.Utilisateur" table="utilisateur" catalog="in56">
+        <composite-id name="id" class="model.UtilisateurId">
+            <key-property name="email" type="string">
+                <column name="EMAIL" length="128" />
+            </key-property>
+            <key-property name="login" type="string">
+                <column name="LOGIN" length="32" />
+            </key-property>
+        </composite-id>
+        <property name="nomUtilisateur" type="string">
+            <column name="NOM_UTILISATEUR" length="32" not-null="true" />
+        </property>
+        <property name="prenomUtilisateur" type="string">
+            <column name="PRENOM_UTILISATEUR" length="32" not-null="true" />
+        </property>
+        <property name="civilite" type="string">
+            <column name="CIVILITE" length="20" not-null="true" />
+        </property>
+        <property name="telephone" type="java.lang.Integer">
+            <column name="TELEPHONE" />
+        </property>
+        <property name="numrue" type="java.lang.Long">
+            <column name="NUMRUE" />
+        </property>
+        <property name="rue" type="string">
+            <column name="RUE" length="128" />
+        </property>
+        <property name="codepostal" type="java.lang.Long">
+            <column name="CODEPOSTAL" />
+        </property>
+        <property name="ville" type="string">
+            <column name="VILLE" length="128" not-null="true" />
+        </property>
+        <property name="pays" type="string">
+            <column name="PAYS" length="128" not-null="true" />
+        </property>
+        <property name="droit" type="java.lang.Integer">
+            <column name="DROIT" />
+        </property>
+        <set name="faqs" table="consulte" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="EMAIL" length="128" not-null="true" />
+                <column name="LOGIN" length="32" not-null="true" />
+            </key>
+            <many-to-many entity-name="model.Faq">
+                <column name="ID_FAQ" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="recevoirs" table="recevoir" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMAIL" length="128" not-null="true" />
+                <column name="LOGIN" length="32" not-null="true" />
+            </key>
+            <one-to-many class="model.Recevoir" />
+        </set>
+        <set name="joues" table="joue" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMAIL" length="128" not-null="true" />
+                <column name="LOGIN" length="32" not-null="true" />
+            </key>
+            <one-to-many class="model.Joue" />
+        </set>
+        <set name="souscrires" table="souscrire" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMAIL" length="128" not-null="true" />
+                <column name="LOGIN" length="32" not-null="true" />
+            </key>
+            <one-to-many class="model.Souscrire" />
+        </set>
+    </class>
+</hibernate-mapping>

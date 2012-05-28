@@ -1,0 +1,131 @@
+package dao;
+// Generated 25 mai 2012 22:13:35 by Hibernate Tools 3.4.0.CR1
+
+
+import java.util.List;
+import javax.naming.InitialContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.hibernate.LockMode;
+import org.hibernate.SessionFactory;
+import static org.hibernate.criterion.Example.create;
+
+/**
+ * Home object for domain model class Faq.
+ * @see dao.Faq
+ * @author Hibernate Tools
+ */
+public class FaqHome {
+
+    private static final Log log = LogFactory.getLog(FaqHome.class);
+
+    private final SessionFactory sessionFactory = getSessionFactory();
+    
+    protected SessionFactory getSessionFactory() {
+        try {
+            return (SessionFactory) new InitialContext().lookup("SessionFactory");
+        }
+        catch (Exception e) {
+            log.error("Could not locate SessionFactory in JNDI", e);
+            throw new IllegalStateException("Could not locate SessionFactory in JNDI");
+        }
+    }
+    
+    public void persist(Faq transientInstance) {
+        log.debug("persisting Faq instance");
+        try {
+            sessionFactory.getCurrentSession().persist(transientInstance);
+            log.debug("persist successful");
+        }
+        catch (RuntimeException re) {
+            log.error("persist failed", re);
+            throw re;
+        }
+    }
+    
+    public void attachDirty(Faq instance) {
+        log.debug("attaching dirty Faq instance");
+        try {
+            sessionFactory.getCurrentSession().saveOrUpdate(instance);
+            log.debug("attach successful");
+        }
+        catch (RuntimeException re) {
+            log.error("attach failed", re);
+            throw re;
+        }
+    }
+    
+    public void attachClean(Faq instance) {
+        log.debug("attaching clean Faq instance");
+        try {
+            sessionFactory.getCurrentSession().lock(instance, LockMode.NONE);
+            log.debug("attach successful");
+        }
+        catch (RuntimeException re) {
+            log.error("attach failed", re);
+            throw re;
+        }
+    }
+    
+    public void delete(Faq persistentInstance) {
+        log.debug("deleting Faq instance");
+        try {
+            sessionFactory.getCurrentSession().delete(persistentInstance);
+            log.debug("delete successful");
+        }
+        catch (RuntimeException re) {
+            log.error("delete failed", re);
+            throw re;
+        }
+    }
+    
+    public Faq merge(Faq detachedInstance) {
+        log.debug("merging Faq instance");
+        try {
+            Faq result = (Faq) sessionFactory.getCurrentSession()
+                    .merge(detachedInstance);
+            log.debug("merge successful");
+            return result;
+        }
+        catch (RuntimeException re) {
+            log.error("merge failed", re);
+            throw re;
+        }
+    }
+    
+    public Faq findById( long id) {
+        log.debug("getting Faq instance with id: " + id);
+        try {
+            Faq instance = (Faq) sessionFactory.getCurrentSession()
+                    .get("dao.Faq", id);
+            if (instance==null) {
+                log.debug("get successful, no instance found");
+            }
+            else {
+                log.debug("get successful, instance found");
+            }
+            return instance;
+        }
+        catch (RuntimeException re) {
+            log.error("get failed", re);
+            throw re;
+        }
+    }
+    
+    public List<Faq> findByExample(Faq instance) {
+        log.debug("finding Faq instance by example");
+        try {
+            List<Faq> results = (List<Faq>) sessionFactory.getCurrentSession()
+                    .createCriteria("dao.Faq")
+                    .add( create(instance) )
+            .list();
+            log.debug("find by example successful, result size: " + results.size());
+            return results;
+        }
+        catch (RuntimeException re) {
+            log.error("find by example failed", re);
+            throw re;
+        }
+    } 
+}
+

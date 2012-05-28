@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+externalMigrateFromAuthorizationDatabase/isMigrated=true
+migrateFromAuthorizationDatabase/isMigrated=true
+repositories/50ded8ab32a50011154df6dba0d403e6=50ded8ab32a50011154df6dba0d403e6;http\://dev.champemont.net/svn/bd50-gl52-lo54/;http\://dev.champemont.net/svn/bd50-gl52-lo54/;branches;tags;trunk;true;cddf108a-aadf-41bc-85bc-935d0a860470;http\://dev.champemont.net/svn/bd50-gl52-lo54;;false;;;0
+repositories/80d53a9461a500111686f8d71325226d=80d53a9461a500111686f8d71325226d;http\://dev.champemont.net/svn/bd50-gl52-lo54/trunk/belfair-frontoffice;http\://dev.champemont.net/svn/bd50-gl52-lo54/trunk/belfair-frontoffice;branches;tags;trunk;true;cddf108a-aadf-41bc-85bc-935d0a860470;http\://dev.champemont.net/svn/bd50-gl52-lo54;;false;;;0
+repositories/f06fa13ba8a5001119fe9b5ff302f8b2=f06fa13ba8a5001119fe9b5ff302f8b2;http\://dev.champemont.net/svn/bd50-gl52-lo54/trunk/belfair-commons;http\://dev.champemont.net/svn/bd50-gl52-lo54/trunk/belfair-commons;branches;tags;trunk;true;cddf108a-aadf-41bc-85bc-935d0a860470;http\://dev.champemont.net/svn/bd50-gl52-lo54;;false;;;0

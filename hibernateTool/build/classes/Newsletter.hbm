@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping package="model">
+	<class name="Newsletter" table="newsletter">
+		<id
+			column="ID_NEWS"
+			name="IdNews"
+			type="java.lang.Long"
+		>
+			<generator class="vm" />
+		</id>
+		<property
+			column="CONTENU_NEWS"
+			name="ContenuNews"
+			not-null="true"
+			type="string"
+		 />
+		<set inverse="true" name="RecevoirSet">
+			<key column="ID_NEWS" />
+			<one-to-many class="Recevoir" />
+		</set>
+	</class>
+</hibernate-mapping>

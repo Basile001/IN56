@@ -1,0 +1,149 @@
+package control;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.UtilisateurDAO;
+
+import bean.Utilisateur;
+import bean.UtilisateurPK;
+
+/**
+ * Servlet implementation class InscriptionServlet
+ */
+public class InscriptionServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public InscriptionServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		process(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+	
+private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// DAO et Model
+		
+		
+		//UtilisateurHome utilisateurHome = new UtilisateurHome();
+		//utilisateurHome.persist(transientInstance);
+		UtilisateurDAO utilisateurDAO = new UtilisateurDAO();		
+		Utilisateur utilisateur = new Utilisateur();
+		/*
+		ArrayList<String> listErrors = new ArrayList<String>();
+		
+		// Variable du formulaire
+		String email = "";
+		String login = "";
+		String civilite = "";	
+		String nom = "";
+		String prenom = "";
+		String telephone = "";
+		String numeroRue = "";
+		String rue = "";
+		String codePostal = "";
+		String ville = "";
+		String pays = "";
+		// Vérification que les champs sont remplis
+		// Vérification de la présence de l'adresse E-mail
+		if(request.getAttribute("email") != null){
+			email = (String) request.getAttribute("email");
+		}else{
+			listErrors.add("L'adresse E-mail est obligatoire");
+		}
+		// Vérification de la présence du login
+		if(request.getAttribute("login") != null){
+			login = (String) request.getAttribute("login");
+		}else{
+			listErrors.add("Le login est obligatoire");
+		}
+		// Vérification de la présence de la civilite
+		if(request.getAttribute("civilite") != null){
+			civilite = (String) request.getAttribute("civilite");
+		}else{
+			listErrors.add("La civilité est obligatoire");
+		}
+		// Vérification de la présence du nom
+		if(request.getAttribute("nom") != null){
+			nom = (String) request.getAttribute("nom");
+		}else{
+			listErrors.add("Le nom est obligatoire");
+		}
+		// Vérification de la présence du prénom
+		if(request.getAttribute("prenom") != null){
+			prenom = (String) request.getAttribute("prenom");
+		}else{
+			listErrors.add("Le prénom est obligatoire");
+		}
+		// Vérification de la présence de la ville
+		if(request.getAttribute("ville") != null){
+			ville = (String) request.getAttribute("ville");
+		}else{
+			listErrors.add("La ville est obligatoire");
+		}
+		// Vérification de la présence du pays
+		if(request.getAttribute("pays") != null){
+			pays = (String) request.getAttribute("pays");
+		}else{
+			listErrors.add("Le pays est obligatoire");
+		}
+		
+		// Vérification de l'existance de l'e-mail et login
+	
+		
+		
+		// Vérification des chiffres pour le numero de téléphone
+		
+		// Vérification des chiffres pour le numero_rue
+		
+		// Vérification des chiffres pour le code postal
+		utilisateur.setId(new UtilisateurPK(login,email));
+		utilisateur.setCivilite(civilite);
+		utilisateur.setNomUtilisateur(nom);
+		utilisateur.setPrenomUtilisateur(prenom);
+		utilisateur.setTelephone(Integer.valueOf(telephone));
+		utilisateur.setNumrue(Long.valueOf(numeroRue));
+		utilisateur.setRue(rue);
+		utilisateur.setCodepostal(Long.valueOf(codePostal));
+		utilisateur.setVille(ville);
+		utilisateur.setPays(pays);
+		utilisateur.setDroit(0);
+		*/
+		
+		utilisateur.setId(new UtilisateurPK("Giltia","florian.kozma@wanadoo.fr"));
+		utilisateur.setCivilite("Monsieur");
+		utilisateur.setNomUtilisateur("KOZMA");
+		utilisateur.setPrenomUtilisateur("Florian");
+		utilisateur.setTelephone("0380921322");
+		utilisateur.setNumrue(12);
+		utilisateur.setRue("rue des jonquilles");
+		utilisateur.setCodepostal(21500);
+		utilisateur.setVille("FAIN-LES-MONTBARD");
+		utilisateur.setPays("FRANCE");
+		utilisateur.setDroit(0);
+		utilisateurDAO.create(utilisateur);
+		System.out.println("Utilisateur Ajouté");
+	}
+
+}
