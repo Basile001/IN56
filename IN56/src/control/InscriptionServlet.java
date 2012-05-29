@@ -114,6 +114,12 @@ public class InscriptionServlet extends HttpServlet {
 		}else{
 			listErrors.add("La ville est obligatoire");
 		}
+		// Vérification de la présence de la ville
+		if(request.getParameter("rue") != null){
+			rue = (String) request.getParameter("rue");
+		}else{
+			listErrors.add("La rue est obligatoire");
+		}
 		// Vérification de la présence du pays
 		if(request.getParameter("pays") != null && request.getParameter("pays") != ""){
 			pays = (String) request.getParameter("pays");
