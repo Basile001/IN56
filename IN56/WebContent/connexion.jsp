@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="model.Utilisateur" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -20,7 +21,7 @@
 		if(request.getSession().getAttribute("Utilisateur") == null){ %>
 			<%= "<div id=\"header_connect\">" +
 					"<div class=\"element_header_connect\">" +
-					"<form action=\"connexion\" method=\"post\">" +
+					"<form action=\"ConnexionServlet\" method=\"post\">" +
 						"<table>" +
 							"<tr>" +
 							"<td>Login</td>" +
@@ -42,7 +43,7 @@
 		<%= "<div id=\"header_connect\">" +
 			 "<table>" +
 				"<tr>" +
-					"<td>( <a href=\"profil.jsp\">Profil</a></td><td>|</td><td><a href=\"deconnexion.jsp\">Déconnexion</a> )</td>" +
+					"<td>( <a href=\"profil.jsp\">Profil</a></td><td>|</td><td><a href=\"DeconnexionServlet\">Déconnexion</a> )</td>" +
 				"</tr>" +
 			"</table>" +
 		"</div>" %>
@@ -88,6 +89,15 @@
 	<div id="corps">
 		<div id="contenu">
 			<p><center><h3>Connexion</h3></center></p>
+			<%
+			ArrayList<String> listErrors;
+			if(request.getAttribute("errors") != null){
+				listErrors = ((ArrayList<String>) request.getAttribute("errors"));
+				for(int i = 0; i < listErrors.size(); i++){
+					out.println(listErrors.get(i) + "</br>");
+				}
+			}
+			 %>
 			<center><form action="ConnexionServlet" method="post">
 				<table>
 					<tr>

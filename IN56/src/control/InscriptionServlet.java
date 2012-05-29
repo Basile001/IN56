@@ -54,6 +54,8 @@ public class InscriptionServlet extends HttpServlet {
 		UtilisateurDAO utilisateurDAO = new UtilisateurDAO();
 		
 		ArrayList<String> listErrors = new ArrayList<String>();
+		request.setAttribute("errors", null);
+
 		
 		// Variable du formulaire
 		String email = "";
@@ -77,47 +79,58 @@ public class InscriptionServlet extends HttpServlet {
 			listErrors.add("L'adresse E-mail est obligatoire");
 		}
 		// Vérification de la présence du login
-		if(request.getParameter("login") != null && request.getParameter("email") != "" ){
+		if(request.getParameter("login") != null && request.getParameter("login") != "" ){
 			login = (String) request.getParameter("login");
 		}else{
 			listErrors.add("Le login est obligatoire");
 		}
 		// Vérification de la présence du mot de passe
-		if(request.getParameter("motdepasse") != null && request.getParameter("email") != "" ){
+		if(request.getParameter("motdepasse") != null && request.getParameter("motdepasse") != "" ){
 			motdepasse = (String) request.getParameter("motdepasse");
 		}else{
 			listErrors.add("Le mot de passe est obligatoire");
 		}
 		// Vérification de la présence de la civilite
-		if(request.getParameter("civilite") != null && request.getParameter("email") != ""){
+		if(request.getParameter("civilite") != null && request.getParameter("civilite") != ""){
 			civilite = (String) request.getParameter("civilite");
 		}else{
 			listErrors.add("La civilité est obligatoire");
 		}
 		// Vérification de la présence du nom
-		if(request.getParameter("nom") != null && request.getParameter("email") != ""){
+		if(request.getParameter("nom") != null && request.getParameter("nom") != ""){
 			nom = (String) request.getParameter("nom");
 		}else{
 			listErrors.add("Le nom est obligatoire");
 		}
 		// Vérification de la présence du prénom
-		if(request.getParameter("prenom") != null  && request.getParameter("email") != ""){
+		if(request.getParameter("prenom") != null  && request.getParameter("prenom") != ""){
 			prenom = (String) request.getParameter("prenom");
 		}else{
 			listErrors.add("Le prénom est obligatoire");
 		}
 		// Vérification de la présence de la ville
-		if(request.getParameter("ville") != null && request.getParameter("email") != ""){
+		if(request.getParameter("ville") != null && request.getParameter("ville") != ""){
 			ville = (String) request.getParameter("ville");
 		}else{
 			listErrors.add("La ville est obligatoire");
 		}
 		// Vérification de la présence du pays
-		if(request.getParameter("pays") != null && request.getParameter("email") != ""){
+		if(request.getParameter("pays") != null && request.getParameter("pays") != ""){
 			pays = (String) request.getParameter("pays");
 		}else{
 			listErrors.add("Le pays est obligatoire");
 		}
+		
+		if(request.getParameter("telephone") != null){
+			telephone = (String) request.getParameter("telephone");
+		}
+		if(request.getParameter("numero_rue") !=  null){
+			numeroRue = (String) request.getParameter("numero_rue");
+		}
+		if(request.getParameter("codepostal") != null){
+			codePostal = (String) request.getParameter("codepostal");
+		}
+		
 		// Vérification de la taille du mot de passe
 				if(motdepasse.length() < 6 && motdepasse != ""){
 					listErrors.add("Le mot de passe est trop court");
@@ -148,17 +161,18 @@ public class InscriptionServlet extends HttpServlet {
 		}
 		
 		// Vérification des chiffres pour le numero de téléphone
-		if(Pattern.matches("[0-9]{10}", telephone)){
+		if(!Pattern.matches("[0-9]{10}", telephone)){
 			listErrors.add("Format du numéro de téléphone incorrect");
 		}
 		// Vérification des chiffres pour le numero_rue
-		if(Pattern.matches("[0-9]{4}", numeroRue)){
+		if(!Pattern.matches("[0-9]{1,4}", numeroRue)){
 			listErrors.add("Format du numéro de rue incorrect");
-		}	
+		}
 		// Vérification des chiffres pour le code postal
-		if(Pattern.matches("[0-9]{5}", codePostal)){
+		if(!Pattern.matches("[0-9]{5}", codePostal)){
 			listErrors.add("Format du code postal incorrect");
 		}	
+		
 		
 		if(listErrors.size() > 0){
 			request.setAttribute("errors", listErrors);
@@ -171,7 +185,7 @@ public class InscriptionServlet extends HttpServlet {
 			utilisateur.setNomUtilisateur(nom);
 			utilisateur.setPrenomUtilisateur(prenom);
 			utilisateur.setTelephone(telephone);
-			utilisateur.setNumrue(Integer.valueOf(numeroRue));
+			utilisateur.setNumrue(Integer.parseInt(numeroRue));
 			utilisateur.setRue(rue);
 			utilisateur.setCodepostal(Integer.valueOf(codePostal));
 			utilisateur.setVille(ville);
@@ -184,8 +198,10 @@ public class InscriptionServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			// Mettre le user en session
-			//redirection vers comptevalide.jsp
+			//response.sendRedirect("/comptevalide.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("comptevalide.jsp");
+			dispatcher.forward(request, response);
+
 		}
 		
 	}
