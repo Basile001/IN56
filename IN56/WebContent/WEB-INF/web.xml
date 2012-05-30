@@ -59,4 +59,24 @@
     <servlet-name>ContactServlet</servlet-name>
     <url-pattern>/ContactServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddFAQServlet</display-name>
+    <servlet-name>AddFAQServlet</servlet-name>
+    <servlet-class>control.AddFAQServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddFAQServlet</servlet-name>
+    <url-pattern>/AddFAQServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InscriptionAdministrationServlet</display-name>
+    <servlet-name>InscriptionAdministrationServlet</servlet-name>
+    <servlet-class>control.InscriptionAdministrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InscriptionAdministrationServlet</servlet-name>
+    <url-pattern>/InscriptionAdministrationServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
