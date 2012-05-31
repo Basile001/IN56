@@ -10,9 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Jeu;
+import model.TypeJeu;
 import model.dao.JeuDAO;
+import model.dao.TypeJeuDAO;
 import model.dao._RootDAO;
 import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Session;
 
 /**
  * Servlet implementation class AddJeuServlet
@@ -54,6 +57,7 @@ public class AddJeuServlet extends HttpServlet {
 		String point="";
 		String materiel="";
 		String image="";
+		String type="";
 		
 		if(request.getParameter("titre") != null && request.getParameter("titre") != "" ){
 			titre = (String) request.getParameter("titre");
@@ -100,11 +104,18 @@ public class AddJeuServlet extends HttpServlet {
 		}else{
 			listErrors.add("l'image est obligatoire");
 		}
+		if(request.getParameter("type") != null && request.getParameter("type") != "" ){
+			type = (String) request.getParameter("type");
+		}else{
+			listErrors.add("type est obligatoire");
+		}
+		
 		if(listErrors.size() > 0){
 			request.setAttribute("errors", listErrors);
 			RequestDispatcher dis = request.getRequestDispatcher("listejeux.jsp");
 			dis.forward(request, response);
-		}else{
+		}
+		else{
 			jeu.setTitreJeu(titre);
 			jeu.setContexteJeu(contexte);
 			jeu.setRegleJeu(regle);
@@ -114,16 +125,28 @@ public class AddJeuServlet extends HttpServlet {
 			jeu.setPointJeu(point);
 			jeu.setMaterielJeu(materiel);
 			jeu.setAdresseImageJeu(image);
+			
+			try {
+				_RootDAO.initialize();
+				TypeJeuDAO typeJeuDAO = new TypeJeuDAO();
+				Session session = _RootDAO.createSession();
+				TypeJeu typejeu = typeJeuDAO.load(Long.parseLong(type));
+				jeu.setIdTypeJeu(typejeu);
+			} catch (HibernateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+			
+			try {
+				jeuDAO.save(jeu);
+			} catch (HibernateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher("listejeux.jsp");
+			dispatcher.forward(request, response);		
 		}
-		try {
-			_RootDAO.initialize();
-			jeuDAO.save(jeu);
-		} catch (HibernateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		RequestDispatcher dispatcher = request.getRequestDispatcher("listejeux.jsp");
-		dispatcher.forward(request, response);		
+		
 	}
 
 }
