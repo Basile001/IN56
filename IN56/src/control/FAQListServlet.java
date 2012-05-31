@@ -1,9 +1,7 @@
 package control;
 
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Faq;
 import model.QuestionReponse;
 import model.dao._RootDAO;
 import net.sf.hibernate.HibernateException;
@@ -19,15 +16,15 @@ import net.sf.hibernate.Query;
 import net.sf.hibernate.Session;
 
 /**
- * Servlet implementation class FaqServlet
+ * Servlet implementation class FAQListServlet
  */
-public class FAQServlet extends HttpServlet {
+public class FAQListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FAQServlet() {
+    public FAQListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,13 +38,8 @@ public class FAQServlet extends HttpServlet {
 			Session session = _RootDAO.createSession();
 			Query query = session.createQuery("SELECT q FROM QuestionReponse q");
 			List<QuestionReponse> faq = query.list();
-			
-			/*
-			Set<QuestionReponse> faqSet = new HashSet(faqList);
-			Faq faq = new Faq();
-			faq.setQuestionReponseSet(faqSet);*/
 			request.setAttribute("FAQ", faq);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("faq.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("listefaq.jsp");
 			dispatcher.forward(request, response);
 			
 		} catch (HibernateException e) {
@@ -60,6 +52,7 @@ public class FAQServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
 	}
+
 }

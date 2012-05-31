@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="73" version="2.0">
+<workbench progressCount="74" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1086" x="72" y="149">
 <fastViewData fastViewLocation="1024"/>
@@ -35,7 +35,7 @@
 <coolItem id="org.eclipse.wst.html.core.htmlsource.source" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jst.pagedesigner.PageDesignerEditor" itemType="typeToolBarContribution" x="276" y="22"/>
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jst.jsp.core.jspsource.source" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jst.jsp.core.jspsource.source" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -50,38 +50,29 @@
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
-<part id="5"/>
-<part id="6"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InscriptionServlet.java" partName="InscriptionServlet.java" path="C:/Users/moi/workspace/IN56/src/control/InscriptionServlet.java" title="InscriptionServlet.java" tooltip="IN56/src/control/InscriptionServlet.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InscriptionServlet.java" partName="InscriptionServlet.java" path="C:/Users/moi/workspace/IN56/src/control/InscriptionServlet.java" title="InscriptionServlet.java" tooltip="IN56/src/control/InscriptionServlet.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/control/InscriptionServlet.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1771" selectionTopPixel="380"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="349" selectionTopPixel="1215"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UtilisateurPK.java" partName="UtilisateurPK.java" path="C:/Users/moi/workspace/IN56/src/model/UtilisateurPK.java" title="UtilisateurPK.java" tooltip="IN56/src/model/UtilisateurPK.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/model/UtilisateurPK.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="accueiladministration.jsp" partName="accueiladministration.jsp" path="C:/Users/moi/workspace/IN56/WebContent/accueiladministration.jsp" title="accueiladministration.jsp" tooltip="IN56/WebContent/accueiladministration.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/WebContent/accueiladministration.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="410"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseUtilisateurPK.java" partName="BaseUtilisateurPK.java" path="C:/Users/moi/workspace/IN56/src/model/base/BaseUtilisateurPK.java" title="BaseUtilisateurPK.java" tooltip="IN56/src/model/base/BaseUtilisateurPK.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/model/base/BaseUtilisateurPK.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="803" selectionTopPixel="0"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="listefaq.jsp" partName="listefaq.jsp" path="C:/Users/moi/workspace/IN56/WebContent/listefaq.jsp" title="listefaq.jsp" tooltip="IN56/WebContent/listefaq.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/WebContent/listefaq.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2540" selectionTopPixel="630"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseUtilisateur.java" partName="BaseUtilisateur.java" path="C:/Users/moi/workspace/IN56/src/model/base/BaseUtilisateur.java" title="BaseUtilisateur.java" tooltip="IN56/src/model/base/BaseUtilisateur.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/model/base/BaseUtilisateur.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2726" selectionTopPixel="240"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddFAQServlet.java" partName="AddFAQServlet.java" path="C:/Users/moi/workspace/IN56/src/control/AddFAQServlet.java" title="AddFAQServlet.java" tooltip="IN56/src/control/AddFAQServlet.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/control/AddFAQServlet.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1830" selectionTopPixel="530"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="_BaseRootDAO.java" partName="_BaseRootDAO.java" path="C:/Users/moi/workspace/IN56/src/model/base/_BaseRootDAO.java" title="_BaseRootDAO.java" tooltip="IN56/src/model/base/_BaseRootDAO.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/model/base/_BaseRootDAO.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="inscription.jsp" partName="inscription.jsp" path="C:/Users/moi/workspace/IN56/WebContent/inscription.jsp" title="inscription.jsp" tooltip="IN56/WebContent/inscription.jsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/WebContent/inscription.jsp"/>
-</editor>
-<editor id="com.hudson.hibernatesynchronizer.editor.HibernateEditor" name="Utilisateur.hbm" partName="Utilisateur.hbm" path="C:/Users/moi/workspace/IN56/src/Utilisateur.hbm" title="Utilisateur.hbm" tooltip="IN56/src/Utilisateur.hbm" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/Utilisateur.hbm"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="570" selectionTopPixel="45"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FaqServlet.java" partName="FaqServlet.java" path="C:/Users/moi/workspace/IN56/src/control/FaqServlet.java" title="FaqServlet.java" tooltip="IN56/src/control/FaqServlet.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/control/FaqServlet.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="80"/>
 </editor>
 </editors>
 <views>
@@ -182,7 +173,7 @@
 <viewState CommonNavigator.LINKING_ENABLED="0"/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="org.eclipse.jst.j2ee.J2EEPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jst.j2ee.J2EEPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jst.j2ee.internal.perspective.J2EEPerspective" id="org.eclipse.jst.j2ee.J2EEPerspective" label="Java EE"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -750,144 +741,39 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/control/InscriptionServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/model/UtilisateurPK.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/model/base/BaseUtilisateurPK.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/model/base/BaseUtilisateur.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.hudson.hibernatesynchronizer.editor.HibernateEditor" path="/IN56/src/Utilisateur.hbm"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/WEB-INF/comptevalide.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/IN56/WebContent/inscription.jsp"/>
 <editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=IN56/C:\/Users\/moi\/workspace\/IN56\/WebContent\/WEB-INF\/lib\/hibernate2.jar&lt;net.sf.hibernate.loader(Loader.class"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/IN56/WebContent/inscription.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/model/UtilisateurPK.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/model/base/BaseUtilisateurPK.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/model/base/BaseUtilisateur.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/model/base/_BaseRootDAO.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.hudson.hibernatesynchronizer.editor.HibernateEditor" path="/IN56/src/Utilisateur.hbm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/IN56/WebContent/inscription.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/control/ConnexionServlet.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/control/ProfilServlet.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/control/DeconnexionServlet.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/control/ContactServlet.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.hudson.hibernatesynchronizer.editor.HibernateEditor" path="/IN56/src/Utilisateur.hbm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/accueiladministration.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/listefaq.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/control/AddFAQServlet.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/control/FaqServlet.java"/>
 </editors>
-<item historyLabel="UtilisateurPK.java" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="BaseUtilisateurPK.java" index="2">
-<position info="not_deleted" x="803" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="8357" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position/>
-</item>
-<item historyLabel="BaseUtilisateurPK.java" index="2">
-<position info="not_deleted" x="803" y="0"/>
-</item>
-<item historyLabel="UtilisateurPK.java" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position/>
-</item>
-<item historyLabel="BaseUtilisateur.java" index="3">
-<position info="not_deleted" x="2726" y="0"/>
-</item>
-<item historyLabel="Utilisateur.hbm" index="4">
-<position info="not_deleted" x="570" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="8489" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="8631" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="8878" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="8870" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="9086" y="9"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="9523" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="10312" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="10076" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="10312" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="5597" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="5636" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="5626" y="1"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="5521" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="4408" y="0"/>
-</item>
-<item historyLabel="comptevalide.jsp" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position/>
-</item>
-<item historyLabel="comptevalide.jsp" index="5">
-<position/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="9833" y="0"/>
-</item>
-<item historyLabel="InscriptionServlet.java" index="0">
-<position info="not_deleted" x="1258" y="0"/>
-</item>
-<item historyLabel="inscription.jsp" index="6"/>
 <item historyLabel="InscriptionServlet.java" index="0">
 <position info="not_deleted" x="5488" y="12"/>
 </item>
-<item historyLabel="inscription.jsp" index="6"/>
+<item historyLabel="inscription.jsp" index="1"/>
 <item historyLabel="InscriptionServlet.java" index="0">
 <position info="not_deleted" x="4104" y="0"/>
 </item>
-<item historyLabel="Loader.class" index="7">
+<item historyLabel="Loader.class" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="InscriptionServlet.java" index="0">
 <position info="not_deleted" x="5115" y="0"/>
 </item>
-<item historyLabel="inscription.jsp" index="6"/>
+<item historyLabel="inscription.jsp" index="1"/>
 <item historyLabel="InscriptionServlet.java" index="0">
 <position info="not_deleted" x="5115" y="0"/>
 </item>
@@ -897,9 +783,118 @@
 <item historyLabel="InscriptionServlet.java" index="0">
 <position info="not_deleted" x="5912" y="53"/>
 </item>
-<item historyLabel="inscription.jsp" index="8"/>
-<item active="true" historyLabel="InscriptionServlet.java" index="0">
+<item historyLabel="inscription.jsp" index="3"/>
+<item historyLabel="InscriptionServlet.java" index="0">
 <position info="not_deleted" x="5027" y="0"/>
+</item>
+<item historyLabel="UtilisateurPK.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="2284" y="0"/>
+</item>
+<item historyLabel="BaseUtilisateurPK.java" index="5">
+<position info="not_deleted" x="803" y="0"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="2284" y="0"/>
+</item>
+<item historyLabel="BaseUtilisateur.java" index="6">
+<position info="not_deleted" x="2726" y="0"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="2284" y="0"/>
+</item>
+<item historyLabel="_BaseRootDAO.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="2284" y="0"/>
+</item>
+<item historyLabel="Utilisateur.hbm" index="8">
+<position info="not_deleted" x="570" y="0"/>
+</item>
+<item historyLabel="inscription.jsp" index="9"/>
+<item historyLabel="Utilisateur.hbm" index="8">
+<position info="not_deleted" x="570" y="0"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="6780" y="0"/>
+</item>
+<item historyLabel="Utilisateur.hbm" index="8">
+<position info="not_deleted" x="570" y="0"/>
+</item>
+<item historyLabel="inscription.jsp" index="9"/>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="6780" y="0"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="4537" y="0"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="5037" y="34"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="2157" y="0"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="6714" y="0"/>
+</item>
+<item historyLabel="ConnexionServlet.java" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="inscription.jsp" index="9"/>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="6765" y="0"/>
+</item>
+<item historyLabel="ProfilServlet.java" index="11">
+<position info="not_deleted" x="1407" y="0"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="6765" y="0"/>
+</item>
+<item historyLabel="DeconnexionServlet.java" index="12">
+<position info="not_deleted" x="843" y="0"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="6765" y="0"/>
+</item>
+<item historyLabel="ContactServlet.java" index="13">
+<position info="not_deleted" x="819" y="0"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="5623" y="0"/>
+</item>
+<item historyLabel="ContactServlet.java" index="13">
+<position info="not_deleted" x="1126" y="0"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="5623" y="0"/>
+</item>
+<item historyLabel="Utilisateur.hbm" index="14"/>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="4371" y="0"/>
+</item>
+<item historyLabel="InscriptionServlet.java" index="0">
+<position info="not_deleted" x="349" y="0"/>
+</item>
+<item historyLabel="accueiladministration.jsp" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="listefaq.jsp" index="16">
+<position info="not_deleted" x="1189" y="0"/>
+</item>
+<item historyLabel="AddFAQServlet.java" index="17">
+<position info="not_deleted" x="2172" y="0"/>
+</item>
+<item historyLabel="listefaq.jsp" index="16">
+<position info="not_deleted" x="2540" y="0"/>
+</item>
+<item historyLabel="AddFAQServlet.java" index="17">
+<position info="not_deleted" x="1830" y="0"/>
+</item>
+<item active="true" historyLabel="FaqServlet.java" index="18">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -919,6 +914,30 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FaqServlet.java" tooltip="IN56/src/control/FaqServlet.java">
+<persistable path="/IN56/src/control/FaqServlet.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddFAQServlet.java" tooltip="IN56/src/control/AddFAQServlet.java">
+<persistable path="/IN56/src/control/AddFAQServlet.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="listefaq.jsp" tooltip="IN56/WebContent/listefaq.jsp">
+<persistable path="/IN56/WebContent/listefaq.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="accueiladministration.jsp" tooltip="IN56/WebContent/accueiladministration.jsp">
+<persistable path="/IN56/WebContent/accueiladministration.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ContactServlet.java" tooltip="IN56/src/control/ContactServlet.java">
+<persistable path="/IN56/src/control/ContactServlet.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DeconnexionServlet.java" tooltip="IN56/src/control/DeconnexionServlet.java">
+<persistable path="/IN56/src/control/DeconnexionServlet.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ProfilServlet.java" tooltip="IN56/src/control/ProfilServlet.java">
+<persistable path="/IN56/src/control/ProfilServlet.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConnexionServlet.java" tooltip="IN56/src/control/ConnexionServlet.java">
+<persistable path="/IN56/src/control/ConnexionServlet.java"/>
+</file>
 <file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Loader.class" tooltip="net.sf.hibernate.loader.Loader">
 <persistable org.eclipse.jdt.ui.ClassFileIdentifier="=IN56/C:\/Users\/moi\/workspace\/IN56\/WebContent\/WEB-INF\/lib\/hibernate2.jar&lt;net.sf.hibernate.loader(Loader.class"/>
 </file>
@@ -939,30 +958,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseUtilisateurDAO.java" tooltip="IN56/src/model/base/BaseUtilisateurDAO.java">
 <persistable path="/IN56/src/model/base/BaseUtilisateurDAO.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseUtilisateurPK.java" tooltip="IN56/src/model/base/BaseUtilisateurPK.java">
-<persistable path="/IN56/src/model/base/BaseUtilisateurPK.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UtilisateurPK.java" tooltip="IN56/src/model/UtilisateurPK.java">
-<persistable path="/IN56/src/model/UtilisateurPK.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InscriptionServlet.java" tooltip="IN56/src/control/InscriptionServlet.java">
-<persistable path="/IN56/src/control/InscriptionServlet.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="HttpServlet.class" tooltip="javax.servlet.http.HttpServlet">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=hibernateTool/C:\/Utilitaires\/apache-tomcat-6.0.35\/lib\/servlet-api.jar&lt;javax.servlet.http(HttpServlet.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseUtilisateurDAO.java" tooltip="hibernateTool/src/model/base/BaseUtilisateurDAO.java">
-<persistable path="/hibernateTool/src/model/base/BaseUtilisateurDAO.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseNewsletter.java" tooltip="hibernateTool/src/model/base/BaseNewsletter.java">
-<persistable path="/hibernateTool/src/model/base/BaseNewsletter.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InscriptionServlet.java" tooltip="testHibernate/src/control/InscriptionServlet.java">
-<persistable path="/testHibernate/src/control/InscriptionServlet.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseUtilisateur.java" tooltip="hibernateTool/src/model/base/BaseUtilisateur.java">
-<persistable path="/hibernateTool/src/model/base/BaseUtilisateur.java"/>
 </file>
 </mruList>
 </workbench>

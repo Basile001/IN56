@@ -60,7 +60,7 @@
 				}
 			%>
 			<a href="jeumois.jsp">Jeu du mois</a> | <a href="jeux.jsp">Jeux</a> |
-			<a href="faq.jsp">FAQ</a> | <a href="contact.jsp">Contact</a> |
+			<a href="FAQServlet">FAQ</a> | <a href="contact.jsp">Contact</a> |
 			<%
 				if (request.getSession().getAttribute("Utilisateur") != null) {
 					out.println("<a href=\"profil.jsp\">Profil</a> | <a href=\"DeconnexionServlet\">Déconnexion</a>");
@@ -84,7 +84,7 @@
 				%>
 				<li><a href="jeumois.jsp">Jeu du Mois</a></li>
 				<li><a href="jeux.jsp">Jeux</a></li>
-				<li><a href="faq.jsp">FAQ</a></li>
+				<li><a href="FAQServlet">FAQ</a></li>
 				<li><a href="contact.jsp">Contact</a></li>
 				<%
 					if (request.getSession().getAttribute("Utilisateur") != null) {

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/svn/bd50-gl52-lo54/!svn/ver/21/trunk/belfair-commons
+/svn/bd50-gl52-lo54/!svn/ver/24/trunk/belfair-commons
 END
 build.xml
 K 25
@@ -13,11 +13,11 @@ END
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/svn/bd50-gl52-lo54/!svn/ver/14/trunk/belfair-commons/.project
+/svn/bd50-gl52-lo54/!svn/ver/22/trunk/belfair-commons/.project
 END
 .classpath
 K 25
 svn:wc:ra_dav:version-url
 V 64
-/svn/bd50-gl52-lo54/!svn/ver/14/trunk/belfair-commons/.classpath
+/svn/bd50-gl52-lo54/!svn/ver/22/trunk/belfair-commons/.classpath
 END

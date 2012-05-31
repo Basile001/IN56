@@ -20,7 +20,7 @@
 		%>
 		<%="<div id=\"header_connect\">"
 						+ "<div class=\"element_header_connect\">"
-						+ "<form action=\"connexion\" method=\"post\">"
+						+ "<form action=\"ConnexionServlet\" method=\"post\">"
 						+ "<table>"
 						+ "<tr>"
 						+ "<td>Login</td>"
@@ -41,7 +41,7 @@
 		<%="<div id=\"header_connect\">"
 						+ "<table>"
 						+ "<tr>"
-						+ "<td>( <a href=\"profil.jsp\">Profil</a></td><td>|</td><td><a href=\"deconnexion.jsp\">Déconnexion</a> )</td>"
+						+ "<td>( <a href=\"profil.jsp\">Profil</a></td><td>|</td><td><a href=\"DeconnexionServlet\">Déconnexion</a> )</td>"
 						+ "</tr>" + "</table>" + "</div>"%>
 		<%
 			}
@@ -62,7 +62,7 @@
 			<a href="faq.jsp">FAQ</a> | <a href="contact.jsp">Contact</a> |
 			<%
 				if (request.getSession().getAttribute("Utilisateur") != null) {
-					out.println("<a href=\"profil.jsp\">Profil</a> | <a href=\"deconnexion.jsp\">Déconnexion</a>");
+					out.println("<a href=\"profil.jsp\">Profil</a> | <a href=\"DeconnexionServlet\">Déconnexion</a>");
 				}
 			%>
 		</div>
@@ -87,7 +87,7 @@
 				<li><a href="contact.jsp">Contact</a></li>
 				<%
 					if (request.getSession().getAttribute("Utilisateur") != null) {
-						out.println("<li><a href=\"profil.jsp\">Profil</a></li><li><a href=\"deconnexion.jsp\">Déconnexion</a></li>");
+						out.println("<li><a href=\"profil.jsp\">Profil</a></li><li><a href=\"DeconnexionServlet\">Déconnexion</a></li>");
 					}
 				%>
 			</ul>
@@ -96,19 +96,23 @@
 
 	</div>
 
+	<%
+		HttpSession sessionLogin = request.getSession();
+		Utilisateur utilisateur = ((Utilisateur)sessionLogin.getAttribute("Utilisateur"));
+	%>
 
 	<div id="corps">
 		<div id="contenu">
 			<div class="element_contenu">
-				<form action="Inscription" method="post">
+				<form action="ProfilServlet" method="post">
 					<table>
 						<tr>
 							<td>E-mail :</td>
-							<td><input type="text" name="email" /> *</td>
+							<td><input type="text" name="email" value="<%= utilisateur.getId().getEmail()  %>" /> *</td>
 						</tr>
 						<tr>
 							<td>Login :</td>
-							<td><input type="text" name="login" /> *</td>
+							<td><input type="text" name="login" value="<%= utilisateur.getId().getLogin()  %>" /> *</td>
 						</tr>
 						<tr>
 							<td>Civilité :</td>
@@ -119,39 +123,39 @@
 						</tr>
 						<tr>
 							<td>Nom :</td>
-							<td><input type="text" name="nom" /> *</td>
+							<td><input type="text" name="nom" value="<%= utilisateur.getNomUtilisateur()  %>"/> *</td>
 						</tr>
 						<tr>
 							<td>Prénom :</td>
-							<td><input type="text" name="prenom" /> *</td>
+							<td><input type="text" name="prenom" value="<%= utilisateur.getPrenomUtilisateur()  %>"/> *</td>
 						</tr>
 						<tr>
 							<td>Téléphone :</td>
-							<td><input type="text" name="telephone" /></td>
+							<td><input type="text" name="telephone" value="<%= utilisateur.getTelephone()  %>"/></td>
 						</tr>
 						<tr>
 							<td>N° Rue :</td>
-							<td><input type="text" name="numero_rue" /></td>
+							<td><input type="text" name="numero_rue" value="<%= utilisateur.getNumrue()  %>"/></td>
 						</tr>
 						<tr>
 							<td>Rue :</td>
-							<td><input type="text" name="rue" /></td>
+							<td><input type="text" name="rue" value="<%= utilisateur.getRue()  %>" /></td>
 						</tr>
 						<tr>
 							<td>Code Postal :</td>
-							<td><input type="text" name="codepostal" /></td>
+							<td><input type="text" name="codepostal" value="<%= utilisateur.getCodepostal()  %>" /></td>
 						</tr>
 						<tr>
 							<td>Ville :</td>
-							<td><input type="text" name="ville" /> *</td>
+							<td><input type="text" name="ville" value="<%= utilisateur.getVille()  %>" /> *</td>
 						</tr>
 						<tr>
 							<td>Pays :</td>
-							<td><input type="text" name="pays" /> *</td>
+							<td><input type="text" name="pays" value="<%= utilisateur.getPays()  %>" /> *</td>
 						</tr>
 						<tr>
 							<td>Abonnement :</td>
-							<td><input type="text" name="abonnement" /> *</td>
+							<td><input type="text" name="abonnement"  /> *</td>
 						</tr>
 						<tr>
 							<td></td>
@@ -172,7 +176,7 @@
 		<%
 			if (request.getSession().getAttribute("Utilisateur") != null) {
 				// Récupération de l'utilisateur
-				Utilisateur utilisateur = (Utilisateur) request.getSession()
+				utilisateur = (Utilisateur) request.getSession()
 						.getAttribute("Utilisateur");
 				if (utilisateur.getDroit() == 2) {
 					out.println("<p><a href=\"administration.jsp\">Administration</a></p>");

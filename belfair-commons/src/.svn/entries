@@ -1,14 +1,14 @@
 10
 
 dir
-21
+36
 http://dev.champemont.net/svn/bd50-gl52-lo54/trunk/belfair-commons/src
 http://dev.champemont.net/svn/bd50-gl52-lo54
 
 
 
-2012-05-24T13:42:56.971633Z
-14
+2012-05-24T22:16:46.049640Z
+22
 jean
 
 
@@ -25,4 +25,7 @@ svn:special svn:externals svn:needs-lock
 
 
 cddf108a-aadf-41bc-85bc-935d0a860470
+
+fr
+dir
 

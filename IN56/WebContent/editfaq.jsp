@@ -2,13 +2,15 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="model.Utilisateur"%>
 <%@ page import="model.QuestionReponse"%>
+<%@ page import="model.dao.QuestionReponseDAO"%>
+<%@ page import="net.sf.hibernate.HibernateException"%>
 <%@ page import="java.util.ArrayList" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>AbonGame - Administration - Liste des FAQ</title>
+<title>AbonGame - Administration - Edition d'une FAQ</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -22,13 +24,13 @@
 						+ "<tr>"
 						+ "<td>( <a href=\"accueil.jsp\">Accueil</a></td><td>|</td><td><a href=\"DeconnexionServlet\">Déconnexion</a> )</td>"
 						+ "</tr>" + "</table>" + "</div>"%>
-		
+
 	</div>
 	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
 	<div id="menuh">
 		<div class="element_menuh">
 			<a href="accueiladministration.jsp">Accueil Administration</a> |<a href="listeutilisateur.jsp">Liste des utilisateur</a> | <a href="listejeux.jsp">Liste des jeux</a> | <a href="typejeu.jsp">Liste type de jeu</a>
-			| <a href="listejeumois.jsp">Liste des jeux du mois</a> | <a href="FAQListServlet">Liste des FAQ</a> | <a href="newsletters.jsp">Newsletters</a> | <a href="accueil.jsp">Retour au site</a> |
+			| <a href="listejeumois.jsp">Liste des jeux du mois</a> | <a href="listefaq.jsp">Liste des FAQ</a> | <a href="newsletters.jsp">Newsletters</a> | <a href="accueil.jsp">Retour au site</a> |
 			<a href="DeconnexionServlet">Déconnexion</a>
 		</div>
 	</div>
@@ -42,7 +44,7 @@
 				<li><a href="listejeumois.jsp">Liste des jeux du mois</a></li>
 				<li><a href="listejeux.jsp">Liste des Jeux</a></li>
 				<li><a href="typejeu.jsp">Liste type de jeu</a></li>
-				<li><a href="FAQListServlet">Liste des FAQ</a></li>
+				<li><a href="listefaq.jsp">Liste des FAQ</a></li>
 				<li><a href="newsletters.jsp">Newsletters</a></li>
 				<li><a href="accueil.jsp">Retour au site</a></li>
 				<li><a href="DeconnexionServlet">Déconnexion</a></li>
@@ -53,36 +55,19 @@
 	<div id="corps">
 		<div id="contenu">
 			<div class="element_contenu">
-				<p>Liste des FAQ</p>
-					<% ArrayList<QuestionReponse> FAQ= null;
-					if(request.getAttribute("FAQ") != null ) FAQ = (ArrayList<QuestionReponse>) request.getAttribute("FAQ");
-					if(FAQ != null && FAQ.size() > 0){
-						for(QuestionReponse questionReponse : FAQ){
-							out.println("<table border=\"1\">");
-								out.println("<tr>");
-									out.println("<td bgcolor=\"darkgray\">");
-									out.println(questionReponse.getQuestion());
-									out.println("</td>");
-								out.println("</tr>");
-								out.println("<tr>");
-									out.println("<td bgcolor=\"darkseagreen\">");
-										out.println(questionReponse.getReponse());
-									out.println("</td>");
-								out.println("</tr>");
-								out.println("<tr>");
-									out.println("<td>");
-										out.println("<a href=\"editfaq.jsp?id="+ questionReponse.getIdQuestionReponse() + "\">Modifier</a> ");
-										out.println(" <a href=\"FAQRemoveServlet?id=" + questionReponse.getIdQuestionReponse() +"\">Supprimer</a>");
-									out.println("</td>");
-							out.println("</tr>");
-							out.println("</table>");
-						}
-					}else{
-						out.println("<p>Aucune FAQ</p>");
-					}
-					%>
-				<p>Ajout d'une FAQ</p>
+				</form>
+				<p>Edition d'une FAQ</p>
 				<%
+				QuestionReponse questionReponse = null;
+				
+				long ID = Long.parseLong(request.getParameter("id"));
+				try {
+					questionReponse = QuestionReponseDAO.getInstance().load(ID);
+				} catch (HibernateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 				
 				ArrayList<String> listErrors;
 				if( request.getAttribute("errors") != null ){
@@ -93,17 +78,29 @@
 				}
 				
 				%>
-				<form method="post" action="AddFAQServlet">
+				<form method="get" action="FAQEditServlet">
 					<table>
 					<tr>
-						<td>Question : </td><td><textarea name="question" cols="60" rows="3" ><% if(request.getAttribute("question") != null) out.print((String) request.getAttribute("question")); %></textarea></td>
+						<td>Question : </td><td><textarea name="question" cols="60" rows="3" >
+						<% if(request.getAttribute("question") != null){ 
+								out.print((String) request.getAttribute("question"));
+							}else{
+								out.println(questionReponse.getQuestion());
+							} %></textarea></td>
 					</tr>
 					<tr>
-						<td>Réponse : </td><td><textarea name="reponse" cols="60" rows="3" ><% if(request.getAttribute("reponse") != null) out.print((String) request.getAttribute("reponse")); %></textarea></td>
+						<td>Réponse : </td><td><textarea name="reponse" cols="60" rows="3" ></textarea>
+						<% if(request.getAttribute("reponse") != null){
+								out.print((String) request.getAttribute("reponse"));
+							}else{
+								out.println(questionReponse.getReponse());
+							}
+							%></textarea></td>
 					</tr>
 					<tr>
 						<td></td><td><input type="submit" name="Envoyer" value="Enregistrer" /></rd>
 					</tr>
+					<input type="hidden" name="id" value="<%= Long.valueOf(ID) %>" />
 					</table>
 				</form>
 			</div>

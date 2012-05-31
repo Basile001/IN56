@@ -19,7 +19,7 @@
 		if(request.getSession().getAttribute("Utilisateur") == null){ %>
 			<%= "<div id=\"header_connect\">" +
 					"<div class=\"element_header_connect\">" +
-					"<form action=\"connexion\" method=\"post\">" +
+					"<form action=\"ConnexionServlet\" method=\"post\">" +
 						"<table>" +
 							"<tr>" +
 							"<td>Login</td>" +
@@ -41,7 +41,7 @@
 		<%= "<div id=\"header_connect\">" +
 			 "<table>" +
 				"<tr>" +
-					"<td>( <a href=\"profil.jsp\">Profil</a></td><td>|</td><td><a href=\"deconnexion.jsp\">Déconnexion</a> )</td>" +
+					"<td>( <a href=\"profil.jsp\">Profil</a></td><td>|</td><td><a href=\"DeconnexionServlet\">Déconnexion</a> )</td>" +
 				"</tr>" +
 			"</table>" +
 		"</div>" %>
@@ -54,9 +54,9 @@
 			<% 	if(request.getSession().getAttribute("Utilisateur") == null){
 					out.println("<a href=\"connexion.jsp\">Connexion</a> |");
 			 } %>	
-			 <a href="jeumois.jsp">Jeu du mois</a> | <a href="jeux.jsp">Jeux</a> | <a href="faq.jsp">FAQ</a> | <a href="contact.jsp">Contact</a> |
+			 <a href="jeumois.jsp">Jeu du mois</a> | <a href="jeux.jsp">Jeux</a> | <a href="FAQServlet">FAQ</a> | <a href="contact.jsp">Contact</a> |
 			 <% if(request.getSession().getAttribute("Utilisateur") != null){
-				out.println("<a href=\"profil.jsp\">Profil</a> | <a href=\"deconnexion.jsp\">Déconnexion</a>");
+				out.println("<a href=\"profil.jsp\">Profil</a> | <a href=\"DeconnexionServlet\">Déconnexion</a>");
 			 } %>
 		</div>
 	</div>
@@ -72,10 +72,10 @@
 			 } %>
 				<li><a href="jeumois.jsp">Jeu du Mois</a></li>
 				<li><a href="jeux.jsp">Jeux</a></li>
-				<li><a href="faq.jsp">FAQ</a></li>
+				<li><a href="FAQServlet">FAQ</a></li>
 				<li><a href="contact.jsp">Contact</a></li>
 			<% 	if(request.getSession().getAttribute("Utilisateur") != null){
-				out.println("<li><a href=\"profil.jsp\">Profil</a></li><li><a href=\"deconnexion.jsp\">Déconnexion</a></li>");
+				out.println("<li><a href=\"profil.jsp\">Profil</a></li><li><a href=\"DeconnexionServlet\">Déconnexion</a></li>");
 			 } %>
 			</ul>
 		</div>
@@ -86,7 +86,7 @@
 	<div id="corps">
 		<div id="contenu">
 			<p>Vous pouvez contacter les créateurs de AbonGame à l'aide du formulaire suivant :</p>
-			<form action="contact" method="post">
+			<form action="ContactServlet" method="post">
 				<table>
 					<tr>
 						<td><center><h3>Message</h3></center></td>

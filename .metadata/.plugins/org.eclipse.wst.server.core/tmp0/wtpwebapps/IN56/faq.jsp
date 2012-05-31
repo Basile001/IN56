@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="model.Utilisateur" %>
+<%@ page import="model.QuestionReponse" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.Faq" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -19,7 +23,7 @@
 		if(request.getSession().getAttribute("Utilisateur") == null){ %>
 			<%= "<div id=\"header_connect\">" +
 					"<div class=\"element_header_connect\">" +
-					"<form action=\"connexion\" method=\"post\">" +
+					"<form action=\"ConnexionServlet\" method=\"post\">" +
 						"<table>" +
 							"<tr>" +
 							"<td>Login</td>" +
@@ -41,7 +45,7 @@
 		<%= "<div id=\"header_connect\">" +
 			 "<table>" +
 				"<tr>" +
-					"<td>( <a href=\"profil.jsp\">Profil</a></td><td>|</td><td><a href=\"deconnexion.jsp\">Déconnexion</a> )</td>" +
+					"<td>( <a href=\"profil.jsp\">Profil</a></td><td>|</td><td><a href=\"DeconnexionServlet\">Déconnexion</a> )</td>" +
 				"</tr>" +
 			"</table>" +
 		"</div>" %>
@@ -55,9 +59,9 @@
 			<% 	if(request.getSession().getAttribute("Utilisateur") == null){
 					out.println("<a href=\"connexion.jsp\">Connexion</a> |");
 			 } %>	
-			 <a href="jeumois.jsp">Jeu du mois</a> | <a href="jeux.jsp">Jeux</a> | <a href="faq.jsp">FAQ</a> | <a href="contact.jsp">Contact</a> |
+			 <a href="jeumois.jsp">Jeu du mois</a> | <a href="jeux.jsp">Jeux</a> | <a href="FAQServlet">FAQ</a> | <a href="contact.jsp">Contact</a> |
 			 <% if(request.getSession().getAttribute("Utilisateur") != null){
-				out.println("<a href=\"profil.jsp\">Profil</a> | <a href=\"deconnexion.jsp\">Déconnexion</a>");
+				out.println("<a href=\"profil.jsp\">Profil</a> | <a href=\"DeconnexionServlet\">Déconnexion</a>");
 			 } %>
 		</div>
 	</div>
@@ -75,10 +79,10 @@
 			 	} %>
 				<li><a href="jeumois.jsp">Jeu du Mois</a></li>
 				<li><a href="jeux.jsp">Jeux</a></li>
-				<li><a href="faq.jsp">FAQ</a></li>
+				<li><a href="FAQServlet">FAQ</a></li>
 				<li><a href="contact.jsp">Contact</a></li>
 			<% 	if(request.getSession().getAttribute("Utilisateur") != null){
-				out.println("<li><a href=\"profil.jsp\">Profil</a></li><li><a href=\"deconnexion.jsp\">Déconnexion</a></li>");
+				out.println("<li><a href=\"profil.jsp\">Profil</a></li><li><a href=\"DeconnexionServlet\">Déconnexion</a></li>");
 			 } %>
 			</ul>
 		</div>
@@ -88,12 +92,27 @@
 
 	<div id="corps">
 		<div id="contenu">
-
-			<p>En Construction</p>
-
-			<p>Prochainement</p>
-
-
+				<% ArrayList<QuestionReponse> FAQ;
+				if(request.getAttribute("FAQ") != null){
+					FAQ = (ArrayList<QuestionReponse>) request.getAttribute("FAQ");
+					for(QuestionReponse questionReponse : FAQ){
+						out.println("<table border=\"1\">");
+							out.println("<tr>");
+								out.println("<td bgcolor=\"darkgray\">");
+								out.println(questionReponse.getQuestion());
+								out.println("</td>");
+							out.println("</tr>");
+							out.println("<tr>");
+								out.println("<td bgcolor=\"darkseagreen\">");
+									out.println(questionReponse.getReponse());
+								out.println("</td>");
+							out.println("</tr>");
+						out.println("</table>");
+					}
+				}else{
+					out.println("<p>Aucune FAQ</p>");
+				}
+			%>
 		</div>
 	</div>
 	<div id="bottom">

@@ -119,4 +119,55 @@
     <servlet-name>AddTypeJeu</servlet-name>
     <url-pattern>/AddTypeJeu</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FAQServlet</display-name>
+    <servlet-name>FAQServlet</servlet-name>
+    <servlet-class>control.FAQServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FAQServlet</servlet-name>
+    <url-pattern>/FAQServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FAQListServlet</display-name>
+    <servlet-name>FAQListServlet</servlet-name>
+    <servlet-class>control.FAQListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FAQListServlet</servlet-name>
+    <url-pattern>/FAQListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LaunchHibernate</display-name>
+    <servlet-name>LaunchHibernate</servlet-name>
+    <servlet-class>control.LaunchHibernate</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LaunchHibernate</servlet-name>
+    <url-pattern>/LaunchHibernate</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FAQRemoveServlet</display-name>
+    <servlet-name>FAQRemoveServlet</servlet-name>
+    <servlet-class>control.FAQRemoveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FAQRemoveServlet</servlet-name>
+    <url-pattern>/FAQRemoveServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FAQEditServlet</display-name>
+    <servlet-name>FAQEditServlet</servlet-name>
+    <servlet-class>control.FAQEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FAQEditServlet</servlet-name>
+    <url-pattern>/FAQEditServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

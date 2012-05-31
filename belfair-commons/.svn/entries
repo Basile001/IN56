@@ -1,14 +1,14 @@
 10
 
 dir
-21
+36
 http://dev.champemont.net/svn/bd50-gl52-lo54/trunk/belfair-commons
 http://dev.champemont.net/svn/bd50-gl52-lo54
 
 
 
-2012-05-24T20:15:53.664197Z
-21
+2012-05-25T19:17:38.236546Z
+24
 jean
 has-props
 
@@ -32,10 +32,10 @@ file
 
 
 
-2012-05-24T20:38:36.526000Z
-52066c574fbd09ed317a73ebe8ef2d0b
-2012-05-24T13:42:56.971633Z
-14
+2012-05-28T21:54:03.578000Z
+6c28fc3d58f5f52502501201fef8d4e6
+2012-05-24T22:16:46.049640Z
+22
 jean
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-301
+865
 
 .project
 file
@@ -66,10 +66,10 @@ file
 
 
 
-2012-05-24T20:38:36.549000Z
-a04e661350f7c204cbd55d5063ef946c
-2012-05-24T13:42:56.971633Z
-14
+2012-05-28T21:54:03.669000Z
+63eaadf7644f700a6a98a5e6f234098b
+2012-05-24T22:16:46.049640Z
+22
 jean
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-391
+797
 
 build.xml
 file
@@ -127,6 +127,9 @@ has-props
 
 
 1032
+
+config
+dir
 
 lib
 dir

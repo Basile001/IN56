@@ -1,14 +1,14 @@
 10
 
 dir
-21
+36
 http://dev.champemont.net/svn/bd50-gl52-lo54/trunk/belfair-commons/lib
 http://dev.champemont.net/svn/bd50-gl52-lo54
 
 
 
-2012-05-24T20:15:53.664197Z
-21
+2012-05-25T19:17:38.236546Z
+24
 jean
 
 
@@ -59,6 +59,40 @@ has-props
 
 
 443432
+
+asm-4.0.jar
+file
+
+
+
+
+2012-05-28T21:54:03.810000Z
+e83139801145f852bee35d9d698d1646
+2012-05-25T19:17:38.236546Z
+24
+jean
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+46018
 
 cglib-2.2.jar
 file

@@ -74,7 +74,7 @@ public final class accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t");
       out.print( "<div id=\"header_connect\">" +
 					"<div class=\"element_header_connect\">" +
-					"<form action=\"connexion\" method=\"post\">" +
+					"<form action=\"ConnexionServlet\" method=\"post\">" +
 						"<table>" +
 							"<tr>" +
 							"<td>Login</td>" +
@@ -100,7 +100,7 @@ public final class accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.print( "<div id=\"header_connect\">" +
 			 "<table>" +
 				"<tr>" +
-					"<td>( <a href=\"profil.jsp\">Profil</a></td><td>|</td><td><a href=\"deconnexion.jsp\">Déconnexion</a> )</td>" +
+					"<td>( <a href=\"profil.jsp\">Profil</a></td><td>|</td><td><a href=\"DeconnexionServlet\">Déconnexion</a> )</td>" +
 				"</tr>" +
 			"</table>" +
 		"</div>" );
@@ -119,10 +119,10 @@ public final class accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
 					out.println("<a href=\"connexion.jsp\">Connexion</a> |");
 			 } 
       out.write("\t\r\n");
-      out.write("\t\t\t <a href=\"jeumois.jsp\">Jeu du mois</a> | <a href=\"jeux.jsp\">Jeux</a> | <a href=\"faq.jsp\">FAQ</a> | <a href=\"contact.jsp\">Contact</a> |\r\n");
+      out.write("\t\t\t <a href=\"jeumois.jsp\">Jeu du mois</a> | <a href=\"jeux.jsp\">Jeux</a> | <a href=\"FAQServlet\">FAQ</a> | <a href=\"contact.jsp\">Contact</a> |\r\n");
       out.write("\t\t\t ");
  if(request.getSession().getAttribute("Utilisateur") != null){
-				out.println("<a href=\"profil.jsp\">Profil</a> | <a href=\"deconnexion.jsp\">Déconnexion</a>");
+				out.println("<a href=\"profil.jsp\">Profil</a> | <a href=\"DeconnexionServlet\">Déconnexion</a>");
 			 } 
       out.write("\r\n");
       out.write("\t\t</div>\r\n");
@@ -143,11 +143,11 @@ public final class accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\t\t\t\t<li><a href=\"jeumois.jsp\">Jeu du Mois</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"jeux.jsp\">Jeux</a></li>\r\n");
-      out.write("\t\t\t\t<li><a href=\"faq.jsp\">FAQ</a></li>\r\n");
+      out.write("\t\t\t\t<li><a href=\"FAQServlet\">FAQ</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"contact.jsp\">Contact</a></li>\r\n");
       out.write("\t\t\t");
  	if(request.getSession().getAttribute("Utilisateur") != null){
-				out.println("<li><a href=\"profil.jsp\">Profil</a></li><li><a href=\"deconnexion.jsp\">Déconnexion</a></li>");
+				out.println("<li><a href=\"profil.jsp\">Profil</a></li><li><a href=\"DeconnexionServlet\">Déconnexion</a></li>");
 			 } 
       out.write("\r\n");
       out.write("\t\t\t</ul>\r\n");
@@ -159,9 +159,10 @@ public final class accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<div id=\"corps\">\r\n");
       out.write("\t\t<div id=\"contenu\">\r\n");
       out.write("\r\n");
-      out.write("\t\t\t<p>En Construction</p>\r\n");
+      out.write("\t\t\t<p>Bienvenue chez AbonGame</p>\r\n");
       out.write("\r\n");
-      out.write("\t\t\t<p>Prochainement</p>\r\n");
+      out.write("\t\t\t<p>Ce site vous propose de découvrir et jouer à des jeux.\r\n");
+      out.write("\t\t\tIls vous suffit de vous inscrire pour profiter des offres.</p>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("\t\t</div>\r\n");

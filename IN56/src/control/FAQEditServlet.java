@@ -9,21 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.hibernate.HibernateException;
+
 import model.QuestionReponse;
 import model.dao.QuestionReponseDAO;
 import model.dao._RootDAO;
-import net.sf.hibernate.HibernateException;
 
 /**
- * Servlet implementation class AddFAQServlet
+ * Servlet implementation class FAQEditServlet
  */
-public class AddFAQServlet extends HttpServlet {
+public class FAQEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddFAQServlet() {
+    public FAQEditServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,28 +33,21 @@ public class AddFAQServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-
-		QuestionReponse questionReponse = new QuestionReponse();
+		
+		System.out.println("edition");
+		
 		QuestionReponseDAO questionReponseDAO = new QuestionReponseDAO();
+		QuestionReponse questionReponse = null;
+		long ID = Long.parseLong(request.getParameter("id"));
+		try {
+			questionReponse = QuestionReponseDAO.getInstance().load(ID);
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		ArrayList<String> listErrors = new ArrayList<String>();
 		request.setAttribute("errors", null);
-		
-		try {
-			_RootDAO.initialize();
-		} catch (HibernateException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
 		
 		// Variable du formulaire
 		String question = "";
@@ -67,7 +61,7 @@ public class AddFAQServlet extends HttpServlet {
 				question = (String) request.getParameter("question");
 			}
 		}else{
-			listErrors.add("la question est obligatoire");
+			listErrors.add("La question est obligatoire");
 		}
 		// Vérification de la présence du login
 		if(request.getParameter("reponse") != null && request.getParameter("reponse") != "" ){
@@ -78,7 +72,7 @@ public class AddFAQServlet extends HttpServlet {
 				reponse = (String) request.getParameter("reponse");
 			}
 		}else{
-			listErrors.add("la reponse est obligatoire");
+			listErrors.add("La reponse est obligatoire");
 		}
 		
 
@@ -86,20 +80,28 @@ public class AddFAQServlet extends HttpServlet {
 			request.setAttribute("errors", listErrors);
 			request.setAttribute("question", question);
 			request.setAttribute("reponse", reponse);
-			RequestDispatcher dis = request.getRequestDispatcher("listefaq.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("FAQListServlet");
 			dis.forward(request, response);
 		}
 		else{
-			questionReponse.setQuestion(question);
-			questionReponse.setReponse(reponse);
 			try {
-				questionReponseDAO.save(questionReponse);
+				questionReponse.setQuestion(question);
+				questionReponse.setReponse(reponse);
+				questionReponseDAO.update(questionReponse);
 			} catch (HibernateException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			response.sendRedirect(response.encodeRedirectURL("FAQListServlet"));
 		}
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 	}
 
 }
