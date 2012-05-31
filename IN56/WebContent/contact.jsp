@@ -86,7 +86,7 @@
 	<div id="corps">
 		<div id="contenu">
 			<p>Vous pouvez contacter les créateurs de AbonGame à l'aide du formulaire suivant :</p>
-			<form action="contact" method="post">
+			<form action="ContactServlet" method="post">
 				<table>
 					<tr>
 						<td><center><h3>Message</h3></center></td>

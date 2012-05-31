@@ -61,11 +61,10 @@
 				
 					</table>
 				</form>
-				<p>Ajout d'une FAQ</p>
-				<form method="post" action="AddFAQServlet">
+				<p>Ajout un type de jeu</p>
+				<form method="post" action="AddTypeJeu">
 					<table>
-						<td>Question : </td><td><textarea name="question" cols="60" rows="3" ></textarea></td>
-						<td>Réponse : </td><td><textarea name="reponse" cols="60" rows="3" ></textarea></td>
+						<td>Libellé : </td><td><textarea name="libelle"></textarea></td>
 						<td></td><td><input type="submit" name="Envoyer" value="Enregistrer" /></rd>
 					</table>
 				</form>

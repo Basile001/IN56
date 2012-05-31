@@ -37,9 +37,9 @@
 			<ul>
 				<li><a href="accueiladministration.jsp">accueiladministration</a></li>
 				<li><a href="listeutilisateur.jsp">Liste des utilisateur</a></li>
-				<li><a href="listejeux.jsp">Liste des jeux</a></li>
 				<li><a href="listejeumois.jsp">Liste des jeux du mois</a></li>
 				<li><a href="listejeux.jsp">Liste des Jeux</a></li>
+				<li><a href="typejeu.jsp">Liste type de jeu</a></li>
 				<li><a href="listefaq.jsp">Liste des FAQ</a></li>
 				<li><a href="newsletters.jsp">Newsletters</a></li>
 				<li><a href="accueil.jsp">Retour au site</a></li>
@@ -120,8 +120,8 @@
 						</tr>
 						<tr>
 							<td>Droit :</td>
-							<td><input type="radio" name="droit" value="Limite" />
-								<input type="radio" name="droit" value="Administrateur" />*</td>
+							<td>limité <input type="radio" name="droit" value="Limite" />
+								admin <input type="radio" name="droit" value="Administrateur" />*</td>
 						</tr>
 						<tr>
 							<td></td>

@@ -1,9 +1,7 @@
 package control;
 
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,23 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Faq;
-import model.QuestionReponse;
+import model.Jeu;
 import model.dao._RootDAO;
 import net.sf.hibernate.HibernateException;
 import net.sf.hibernate.Query;
 import net.sf.hibernate.Session;
 
 /**
- * Servlet implementation class FaqServlet
+ * Servlet implementation class JeuxServlet
  */
-public class FaqServlet extends HttpServlet {
+public class JeuxServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FaqServlet() {
+    public JeuxServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,17 +43,15 @@ public class FaqServlet extends HttpServlet {
 		try {
 			_RootDAO.initialize();
 			Session session = _RootDAO.createSession();
-			Query query = session.createQuery("SELECT q FROM QuestionReponse q");
-			List<QuestionReponse> faqList = query.list();
-			Set<QuestionReponse> faqSet = new HashSet(faqList);
-			Faq faq = new Faq();
-			faq.setQuestionReponseSet(faqSet);
-			request.setAttribute("FaqList", faq);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("faq.jsp");
+			Query query = session.createQuery("SELECT j FROM Jeu j");
+			List<Jeu> jeuList = query.list();
+			request.setAttribute("jeuList", jeuList);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("jeu.jsp");
 			dispatcher.forward(request, response);
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
 	}
+
 }

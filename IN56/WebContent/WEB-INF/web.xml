@@ -79,4 +79,44 @@
     <servlet-name>InscriptionAdministrationServlet</servlet-name>
     <url-pattern>/InscriptionAdministrationServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>JeuxServlet</display-name>
+    <servlet-name>JeuxServlet</servlet-name>
+    <servlet-class>control.JeuxServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JeuxServlet</servlet-name>
+    <url-pattern>/JeuxServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>JeuDuMoisServlet</display-name>
+    <servlet-name>JeuDuMoisServlet</servlet-name>
+    <servlet-class>control.JeuDuMoisServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JeuDuMoisServlet</servlet-name>
+    <url-pattern>/JeuDuMoisServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddJeuServlet</display-name>
+    <servlet-name>AddJeuServlet</servlet-name>
+    <servlet-class>control.AddJeuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddJeuServlet</servlet-name>
+    <url-pattern>/AddJeuServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddTypeJeu</display-name>
+    <servlet-name>AddTypeJeu</servlet-name>
+    <servlet-class>control.AddTypeJeu</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddTypeJeu</servlet-name>
+    <url-pattern>/AddTypeJeu</url-pattern>
+  </servlet-mapping>
 </web-app>

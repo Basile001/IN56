@@ -24,7 +24,7 @@
 	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
 	<div id="menuh">
 		<div class="element_menuh">
-			<a href="accueiladministration.jsp">Accueil Administration</a> |<a href="listeutilisateur.jsp">Liste des utilisateur</a> | <a href="listejeux.jsp">Liste des jeux</a>
+			<a href="accueiladministration.jsp">Accueil Administration</a> |<a href="listeutilisateur.jsp">Liste des utilisateur</a> | <a href="listejeux.jsp">Liste des jeux</a> | <a href="typejeu.jsp">Liste type de jeu</a>
 			| <a href="listejeumois.jsp">Liste des jeux du mois</a> | <a href="listefaq.jsp">Liste des FAQ</a> | <a href="newsletters.jsp">Newsletters</a> | <a href="accueil.jsp">Retour au site</a> |
 			<a href="DeconnexionServlet">Déconnexion</a>
 		</div>
@@ -36,9 +36,9 @@
 			<ul>
 				<li><a href="accueiladministration.jsp">accueiladministration</a></li>
 				<li><a href="listeutilisateur.jsp">Liste des utilisateur</a></li>
-				<li><a href="listejeux.jsp">Liste des jeux</a></li>
 				<li><a href="listejeumois.jsp">Liste des jeux du mois</a></li>
 				<li><a href="listejeux.jsp">Liste des Jeux</a></li>
+				<li><a href="typejeu.jsp">Liste type de jeu</a></li>
 				<li><a href="listefaq.jsp">Liste des FAQ</a></li>
 				<li><a href="newsletters.jsp">Newsletters</a></li>
 				<li><a href="accueil.jsp">Retour au site</a></li>

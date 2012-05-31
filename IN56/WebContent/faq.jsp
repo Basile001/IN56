@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="model.Utilisateur" %>
+<%@ page import="model.QuestionReponse" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.Faq" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -86,11 +90,15 @@
 
 	</div>
 
+	<%
+		Faq faq = (Faq)request.getAttribute("FaqList");
+	%>
+
 	<div id="corps">
 		<div id="contenu">
 
 			<p>En Construction</p>
-
+			
 			<p>Prochainement</p>
 
 

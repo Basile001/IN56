@@ -9,14 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.hibernate.HibernateException;
-import net.sf.hibernate.Query;
-import net.sf.hibernate.Session;
-
 import model.QuestionReponse;
-import model.Utilisateur;
 import model.dao.QuestionReponseDAO;
 import model.dao._RootDAO;
+import net.sf.hibernate.HibernateException;
 
 /**
  * Servlet implementation class AddFAQServlet
@@ -50,6 +46,14 @@ public class AddFAQServlet extends HttpServlet {
 		
 		ArrayList<String> listErrors = new ArrayList<String>();
 		request.setAttribute("errors", null);
+		
+		try {
+			_RootDAO.initialize();
+		} catch (HibernateException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
 		
 		// Variable du formulaire
 		String question = "";
