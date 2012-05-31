@@ -34,15 +34,19 @@
 <fullyQualifiedTypeName name="hibernate.HibernateUtil"/>
 <fullyQualifiedTypeName name="net.sf.hibernate.Transaction"/>
 <fullyQualifiedTypeName name="net.sf.hibernate.Session"/>
-<fullyQualifiedTypeName name="model.Utilisateur"/>
 <fullyQualifiedTypeName name="model.base._BaseRootDAO"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="control.InscriptionServlet"/>
-<fullyQualifiedTypeName name="model.UtilisateurPK"/>
-<fullyQualifiedTypeName name="model.dao.UtilisateurDAO"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="net.sf.hibernate.Query"/>
 <fullyQualifiedTypeName name="model.dao._RootDAO"/>
 <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="model.dao.QuestionReponseDAO"/>
+<fullyQualifiedTypeName name="model.QuestionReponse"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="model.TypeJeu"/>
+<fullyQualifiedTypeName name="model.dao.TypeJeuDAO"/>
+<fullyQualifiedTypeName name="model.Utilisateur"/>
+<fullyQualifiedTypeName name="model.dao.UtilisateurDAO"/>
+<fullyQualifiedTypeName name="model.UtilisateurPK"/>
 </qualifiedTypeNameHistroy>

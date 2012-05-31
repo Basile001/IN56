@@ -13,7 +13,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>AbonGame - Administration - Accueil Administration</title>
+<title>AbonGame - Administration - Liste des Jeux</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -27,7 +27,7 @@
 					+ "<tr>"
 					+ "<td>( <a href=\"accueil.jsp\">Accueil</a></td><td>|</td><td><a href=\"DeconnexionServlet\">Déconnexion</a> )</td>"
 					+ "</tr>" + "</table>" + "</div>"%>
-		%>
+
 	</div>
 	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
 	<div id="menuh">
@@ -60,84 +60,88 @@
 		<div id="bottom_menuv"></div>
 	</div>
 
-	<%
-	try {
-		_RootDAO.initialize();
-		Session session1 = _RootDAO.createSession();
-		Query query = session1.createQuery("SELECT t FROM TypeJeu t");
-		List<TypeJeu> typeJeu = query.list();
-		request.setAttribute("type", typeJeu);
-	}
-	catch (HibernateException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}	
-	%>
 
-	// Affichage des jeux + Ajout en jeu du mois + Modifier + Supprimer
-	<p>Ajout d'un jeu</p>
-	<form method="post" action="AddJeuServlet">
-		<table>
-			<tr>
-				<td>Titre :</td>
-				<td><input type="text" name="titre" value="" /> *</td>
-			</tr>
-			<tr>
-				<td>Contexte :</td>
-				<td><input type="text" name="contexte" value="" /> *</td>
-			</tr>
-			<tr>
-				<td>Règle :</td>
-				<td><input type="text" name="regle" value="" />*</td>
-			</tr>
-			<tr>
-				<td>Lien officiel :</td>
-				<td><input type="text" name="lien" value="" /> *</td>
-			</tr>
-			<tr>
-				<td>Information :</td>
-				<td><input type="text" name="info" value="" /> *</td>
-			</tr>
-			<tr>
-				<td>URL :</td>
-				<td><input type="text" name="url" value="" />*</td>
-			</tr>
-			<tr>
-				<td>Point :</td>
-				<td><input type="text" name="point" value="" />*</td>
-			</tr>
-			<tr>
-				<td>Materiel :</td>
-				<td><input type="text" name="materiel" value="" />*</td>
-			</tr>
-			<tr>
-				<td>Adresse image jeu :</td>
-				<td><input type="text" name="image" value="" />*</td>
-			</tr>
-			<tr>
-				<td>type de jeu :</td>
-				<td><select name="type">
-					<%for (TypeJeu type : (ArrayList<TypeJeu>)request.getAttribute("type"))
-					{ 
-						out.print("<option type value=\""+type.getIdTypeJeu() +"\">"+type.getLibelleTypeJeu() +"</option>");
-					} %>
-
-				</select>
-				</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" name="addJeu" value="Envoyer" /></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>* Champs obligatoires</td>
-			</tr>
-		</table>
-	</form>
 	<div id="corps">
 		<div id="contenu">
 			<div class="element_contenu"></div>
+
+			// Champs de recherche
+			
+			// Pagination avec suppression
+
+			// Affichage des jeux + Ajout en jeu du mois + Modifier + Supprimer
+			<p>Ajout d'un jeu</p>
+			<form method="post" action="AddJeuServlet">
+				<table>
+					<tr>
+						<td>Titre :</td>
+						<td><input type="text" name="titre" value="" />*</td>
+					</tr>
+					<tr>
+						<td>Contexte :</td>
+						<td><input type="text" name="contexte" value="" />*</td>
+					</tr>
+					<tr>
+						<td>Règle :</td>
+						<td><input type="text" name="regle" value="" />*</td>
+					</tr>
+					<tr>
+						<td>Lien officiel :</td>
+						<td><input type="text" name="lien" value="" />*</td>
+					</tr>
+					<tr>
+						<td>Information :</td>
+						<td><input type="text" name="info" value="" />*</td>
+					</tr>
+					<tr>
+						<td>URL :</td>
+						<td><input type="text" name="url" value="" />*</td>
+					</tr>
+					<tr>
+						<td>Point :</td>
+						<td><input type="text" name="point" value="" />*</td>
+					</tr>
+					<tr>
+						<td>Materiel :</td>
+						<td><input type="text" name="materiel" value="" />*</td>
+					</tr>
+					<tr>
+						<td>Adresse image jeu :</td>
+						<td><input type="text" name="image" value="" />*</td>
+					</tr>
+					<tr>
+						<td>Type de jeu :</td>
+						<td><select name="type">
+								<%
+									List<TypeJeu> listTypeJeu = null;
+									try {
+									_RootDAO.initialize();
+									Session session1 = _RootDAO.createSession();
+									Query query = session1.createQuery("SELECT t FROM TypeJeu t");
+									listTypeJeu = query.list();
+									for (TypeJeu typeJeu : listTypeJeu) {
+										out.print("<option type value=\"" + typeJeu.getIdTypeJeu() + "\">"
+												+ typeJeu.getLibelleTypeJeu() + "</option>");
+									}
+								} catch (HibernateException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+									
+								%>
+						</select></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="submit" name="addJeu" value="Envoyer" /></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>* Champs obligatoires</td>
+					</tr>
+				</table>
+			</form>
 		</div>
 	</div>
 	<div id="bottom">

@@ -183,7 +183,7 @@ public class InscriptionAdministrationServlet extends HttpServlet {
 		
 		if(listErrors.size() > 0){
 			request.setAttribute("errors", listErrors);
-			RequestDispatcher dis = request.getRequestDispatcher("inscription.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("UtilisateurListServlet");
 			dis.forward(request, response);
 		}else{
 			utilisateur.setId(new UtilisateurPK(login,email));
@@ -210,8 +210,8 @@ public class InscriptionAdministrationServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//response.sendRedirect("/comptevalide.jsp");
-			RequestDispatcher dispatcher = request.getRequestDispatcher("comptevalide.jsp");
+			request.setAttribute("valide", "Compte créé !");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("UtilisateurListServlet");
 			dispatcher.forward(request, response);
 
 		}	}

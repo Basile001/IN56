@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="model.Utilisateur"%>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -19,7 +20,6 @@
 						+ "<tr>"
 						+ "<td>( <a href=\"accueil.jsp\">Accueil</a></td><td>|</td><td><a href=\"DeconnexionServlet\">Déconnexion</a> )</td>"
 						+ "</tr>" + "</table>" + "</div>"%>
-		%>
 	</div>
 	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
 	<div id="menuh">
@@ -47,23 +47,33 @@
 		</div>
 		<div id="bottom_menuv"></div>
 	</div>
-
-	
 	<div id="corps">
 		<div id="contenu">
 			<div class="element_contenu">
 			<form action="NewslettersServlet" method="post">
-				<table>
-					<tr>
-						<td><center><h3>Newsletters</h3></center></td>
-					</tr>
+				<center><h2>Newsletters</h2></center>
+				<center><p>Veuillez entrer la newsletters à envoyer.</p></center>
+				<%
+					ArrayList<String> listErrors;
+					if( request.getAttribute("errors") != null ){
+						listErrors = (ArrayList<String>) request.getAttribute("errors");
+						for(int i = 0; i < listErrors.size(); i++){
+							out.println(listErrors.get(i) + "</br>");
+						}
+					}
+					
+					if(request.getAttribute("valide") != null){
+						out.println((String) request.getAttribute("valide"));
+					}
+				%>
+				<center><table>
 					<tr>
 						<td><textarea name="message" cols="60" rows="10" ></textarea></td>
 					</tr>
 					<tr>
 						<td><center><input type="submit" value="Envoyer"/></center></td>
 					</tr>
-				</table>
+				</table></center>
 			</form>
 			</div>
 		</div>

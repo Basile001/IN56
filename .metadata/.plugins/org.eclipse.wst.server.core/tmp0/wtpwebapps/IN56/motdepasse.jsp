@@ -89,7 +89,7 @@
 	<div id="corps">
 		<div id="contenu">
 				<p>Saississez votre adresse E-mail pour recevoir de nouveau identifiant.</p>
-				<form action="motdepasse" method="post">
+				<form action="PWDSendServlet" method="post">
 					<table>
 						<tr>
 							<td><input type="text" name="email" /></td><td><input type="submit" value="Envoyer" /></td>

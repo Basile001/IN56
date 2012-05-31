@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="model.Utilisateur"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="model.TypeJeu"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -19,7 +21,6 @@
 						+ "<tr>"
 						+ "<td>( <a href=\"accueil.jsp\">Accueil</a></td><td>|</td><td><a href=\"DeconnexionServlet\">Déconnexion</a> )</td>"
 						+ "</tr>" + "</table>" + "</div>"%>
-		%>
 	</div>
 	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
 	<div id="menuh">
@@ -38,7 +39,7 @@
 				<li><a href="listeutilisateur.jsp">Liste des utilisateur</a></li>
 				<li><a href="listejeumois.jsp">Liste des jeux du mois</a></li>
 				<li><a href="listejeux.jsp">Liste des Jeux</a></li>
-				<li><a href="typejeu.jsp">Liste type de jeu</a></li>
+				<li><a href="TypeJeuListServlet">Liste type de jeu</a></li>
 				<li><a href="listefaq.jsp">Liste des FAQ</a></li>
 				<li><a href="newsletters.jsp">Newsletters</a></li>
 				<li><a href="accueil.jsp">Retour au site</a></li>
@@ -48,25 +49,59 @@
 		<div id="bottom_menuv"></div>
 	</div>
 
-	// Créer un formulaire de la liste des utilisateur
 	
 	<div id="corps">
 		<div id="contenu">
 			<div class="element_contenu">
-				<p>Liste des FAQ</p>
-				<form>
-					<table>
-					// Question / Réponse  + Bouton Modification + Bouton Suppression
-				
-				
-					</table>
-				</form>
-				<p>Ajout un type de jeu</p>
+				<p><center><h2>Liste des types de jeu</h2></center></p>
+				<% ArrayList<TypeJeu> listTypeJeu;
+					if(request.getAttribute("listTypeJeu") != null){
+						listTypeJeu = (ArrayList<TypeJeu>) request.getAttribute("listTypeJeu");
+						out.println("<center><table border=\"1\">");
+						out.println("<tr>");
+							out.println("<th>");
+								out.println("Libellé");
+							out.println("</th>");
+							out.println("<th>");
+								out.println("Action");
+							out.println("</th>");
+						out.println("</tr>");
+						for(TypeJeu typeJeu : listTypeJeu){
+								out.println("<tr>");
+									out.println("<td>");
+										out.println(typeJeu.getLibelleTypeJeu());
+									out.println("</td>");
+									out.println("<td>");
+										out.println("<a href=\"edittypejeu.jsp?id="+ typeJeu.getIdTypeJeu()+ "\">Modifier</a> | ");
+										out.println("<a href=\"TypeJeuRemoveServlet?id=" + typeJeu.getIdTypeJeu() +"\">Supprimer</a>");
+									out.println("</td>");
+								out.println("</tr>");	
+					}
+						out.println("</table></center>");
+				}else{
+					out.println("<center><p>Aucun type de jeu</p><center>");
+				}
+			%>
+				<center><p>Ajouter un type de jeu</p></center>
+				<%
+					ArrayList<String> listErrors;
+					if( request.getAttribute("errors") != null ){
+						listErrors = (ArrayList<String>) request.getAttribute("errors");
+						for(int i = 0; i < listErrors.size(); i++){
+							out.println(listErrors.get(i) + "</br>");
+						}
+					}
+					
+				%>
 				<form method="post" action="AddTypeJeu">
-					<table>
-						<td>Libellé : </td><td><textarea name="libelle"></textarea></td>
-						<td></td><td><input type="submit" name="Envoyer" value="Enregistrer" /></rd>
-					</table>
+					<center><table>
+						<tr>
+							<td>Libellé : </td><td><input type="text" name="libelle" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><center><input type="submit" name="Envoyer" value="Enregistrer" /></center></td>
+						</tr>
+					</table></center>
 				</form>
 			</div>
 		</div>

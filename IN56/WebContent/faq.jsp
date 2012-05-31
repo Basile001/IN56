@@ -97,14 +97,24 @@
 				if(request.getAttribute("FAQ") != null){
 					FAQ = (ArrayList<QuestionReponse>) request.getAttribute("FAQ");
 					for(QuestionReponse questionReponse : FAQ){
-						out.println("<table border=\"1\">");
+						out.println("<table>");
 						out.println("<tr>");
-						out.println("<td bgcolor=\"darkgray\"><textarea name=\"reponse\" cols=\"60\" rows=\"1\" readonly=\"\">");
+							out.println("<td>");
+								out.println("Question");
+							out.println("</td>");
+						out.println("</tr>");
+						out.println("<tr>");
+						out.println("<td><textarea name=\"reponse\" cols=\"70\" rows=\"3\" readonly=\"\">");
 						out.println(questionReponse.getQuestion());
 						out.println("</textarea></td>");
 					out.println("</tr>");
 					out.println("<tr>");
-						out.println("<td bgcolor=\"darkseagreen\"><textarea name=\"question\" cols=\"60\" rows=\"1\" readonly=\"\">");
+					out.println("<td>");
+						out.println("Réponse");
+					out.println("</td>");
+					out.println("</tr>");
+					out.println("<tr>");
+						out.println("<td><textarea name=\"question\" cols=\"70\" rows=\"3\" readonly=\"\">");
 							out.println(questionReponse.getReponse());
 						out.println("</textarea></td>");
 					out.println("</tr>");

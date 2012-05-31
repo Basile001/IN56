@@ -53,19 +53,30 @@
 	<div id="corps">
 		<div id="contenu">
 			<div class="element_contenu">
-				<p>Liste des FAQ</p>
+				<center><p><h2>Liste des FAQ</h2></p></center>
 					<% ArrayList<QuestionReponse> FAQ= null;
 					if(request.getAttribute("FAQ") != null ) FAQ = (ArrayList<QuestionReponse>) request.getAttribute("FAQ");
 					if(FAQ != null && FAQ.size() > 0){
+						out.println("<center><table border=\"1\"");
 						for(QuestionReponse questionReponse : FAQ){
-							out.println("<table border=\"1\">");
+							
 								out.println("<tr>");
-									out.println("<td bgcolor=\"darkgray\"><textarea name=\"reponse\" cols=\"60\" rows=\"3\" readonly=\"\">");
+									out.println("<th>");
+										out.println("Question");
+									out.println("</th>");
+								out.println("</tr>");
+								out.println("<tr>");
+									out.println("<td><textarea name=\"reponse\" cols=\"60\" rows=\"3\" readonly=\"\">");
 									out.println(questionReponse.getQuestion());
 									out.println("</textarea></td>");
 								out.println("</tr>");
 								out.println("<tr>");
-									out.println("<td bgcolor=\"darkseagreen\"><textarea name=\"question\" cols=\"60\" rows=\"3\" readonly=\"\">");
+									out.println("<th>");
+										out.println("Réponse");
+									out.println("</th>");
+								out.println("</tr>");
+								out.println("<tr>");
+									out.println("<td><textarea name=\"question\" cols=\"60\" rows=\"3\" readonly=\"\">");
 										out.println(questionReponse.getReponse());
 									out.println("</textarea></td>");
 								out.println("</tr>");
@@ -75,13 +86,14 @@
 										out.println(" <a href=\"FAQRemoveServlet?id=" + questionReponse.getIdQuestionReponse() +"\">Supprimer</a>");
 									out.println("</td>");
 							out.println("</tr>");
-							out.println("</table>");
+							
 						}
+						out.println("</table></center>");
 					}else{
 						out.println("<p>Aucune FAQ</p>");
 					}
 					%>
-				<p>Ajout d'une FAQ</p>
+				<center><p>Ajouter une FAQ</p></center>
 				<%
 				
 				ArrayList<String> listErrors;

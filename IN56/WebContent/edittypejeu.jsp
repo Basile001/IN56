@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="model.Utilisateur"%>
-<%@ page import="model.QuestionReponse"%>
-<%@ page import="model.dao.QuestionReponseDAO"%>
+<%@ page import="model.TypeJeu"%>
+<%@ page import="model.dao.TypeJeuDAO"%>
 <%@ page import="net.sf.hibernate.HibernateException"%>
 <%@ page import="java.util.ArrayList" %>
 
@@ -10,7 +10,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>AbonGame - Administration - Edition d'une FAQ</title>
+<title>AbonGame - Administration - Edition d'un Type de Jeu </title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -56,14 +56,13 @@
 		<div id="contenu">
 			<div class="element_contenu">
 				</form>
-				<center><h2>Editer une FAQ</h2></center>
+				<center><h2>Editer un Type de Jeu</h2></center>
 				<%
-				QuestionReponse questionReponse = null;
+				TypeJeu typeJeu= null;
 				
 				long ID = Long.parseLong(request.getParameter("id"));
 				try {
-					questionReponse = QuestionReponseDAO.getInstance().load(ID);
-					
+					typeJeu = TypeJeuDAO.getInstance().load(ID);
 				} catch (HibernateException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -79,34 +78,20 @@
 				}
 				
 				%>
-				<form method="get" action="FAQEditServlet">
+				<form method="get" action="TypeJeuEditServlet">
 					<center><table>
 					<tr>
-						<th>Question</th>
-					</tr>
-					<tr>
-						<td><textarea name="question" cols="60" rows="3" ><% if(request.getAttribute("question") != null && ((String) request.getAttribute("question")) != ""){ 
-								out.print((String) request.getAttribute("question"));
+						<td>Libellé : </td><td><input type="text" name="libelle" value="<% if(request.getAttribute("libelle") != null && ((String) request.getAttribute("libelle")) != ""){ 
+								out.print((String) request.getAttribute("libelle"));
 							}else{
-								out.println(questionReponse.getQuestion());
-							} %></textarea></td>
-					</tr>
-					<tr>
-						<th>Réponse</th>
-					</tr>
-					<tr>
-						<td><textarea name="reponse" cols="60" rows="3" ><% if(request.getAttribute("reponse") != null && ((String) request.getAttribute("reponse")) != ""){
-								out.print((String) request.getAttribute("reponse"));
-							}else{
-								out.println(questionReponse.getReponse());
-							}
-							%></textarea></td>
+								out.println(typeJeu.getLibelleTypeJeu());
+							} %>"/></td>
 					</tr>
 					<tr>
 						<td colspan="2"><center><input type="submit" name="Envoyer" value="Enregistrer" /></center></td>
 					</tr>
 					<input type="hidden" name="id" value="<%= Long.valueOf(ID) %>" />
-					</table></center>
+					</table></center>					
 				</form>
 			</div>
 		</div>

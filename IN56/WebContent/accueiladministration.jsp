@@ -19,7 +19,7 @@
 						+ "<tr>"
 						+ "<td>( <a href=\"accueil.jsp\">Accueil</a></td><td>|</td><td><a href=\"DeconnexionServlet\">Déconnexion</a> )</td>"
 						+ "</tr>" + "</table>" + "</div>"%>
-		%>
+		
 	</div>
 	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
 	<div id="menuh">
@@ -34,7 +34,7 @@
 		<div id="top_menuv"></div>
 		<div class="element_menuv">
 			<ul>
-				<li><a href="accueiladministration.jsp">accueiladministration</a></li>
+				<li><a href="accueiladministration.jsp">Accueil Administration</a></li>
 				<li><a href="listeutilisateur.jsp">Liste des utilisateur</a></li>
 				<li><a href="listejeumois.jsp">Liste des jeux du mois</a></li>
 				<li><a href="listejeux.jsp">Liste des Jeux</a></li>
@@ -48,12 +48,12 @@
 		<div id="bottom_menuv"></div>
 	</div>
 
-	<p>Bienvenue dans l'administration d'AbonGame</p>
-	<p>Vous trouverez toutes les fonctionnalités nécessaire à l'administration d'AbonGame</p>
+	
 	<div id="corps">
 		<div id="contenu">
 			<div class="element_contenu">
-
+				<p>Bienvenue dans l'administration d'AbonGame</p>
+				<p>Vous trouverez toutes les fonctionnalités nécessaire à l'administration d'AbonGame</p>
 			</div>
 		</div>
 	</div>
