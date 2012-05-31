@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="model.Utilisateur"%>
+<%@ page import="model.Jeu"%>
+<%@ page import="model.dao._RootDAO"%>
+<%@ page import="net.sf.hibernate.HibernateException"%>
+<%@ page import="net.sf.hibernate.Query"%>
+<%@ page import="net.sf.hibernate.Session"%>
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -15,18 +22,22 @@
 			<div class="element_logo"></div>
 		</div>
 		<%="<div id=\"header_connect\">"
-						+ "<table>"
-						+ "<tr>"
-						+ "<td>( <a href=\"accueil.jsp\">Accueil</a></td><td>|</td><td><a href=\"DeconnexionServlet\">Déconnexion</a> )</td>"
-						+ "</tr>" + "</table>" + "</div>"%>
+					+ "<table>"
+					+ "<tr>"
+					+ "<td>( <a href=\"accueil.jsp\">Accueil</a></td><td>|</td><td><a href=\"DeconnexionServlet\">Déconnexion</a> )</td>"
+					+ "</tr>" + "</table>" + "</div>"%>
 		%>
 	</div>
 	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
 	<div id="menuh">
 		<div class="element_menuh">
-			<a href="accueiladministration.jsp">Accueil Administration</a> |<a href="listeutilisateur.jsp">Liste des utilisateur</a> | <a href="listejeux.jsp">Liste des jeux</a> | <a href="typejeu.jsp">Liste type de jeu</a>
-			| <a href="listejeumois.jsp">Liste des jeux du mois</a> | <a href="listefaq.jsp">Liste des FAQ</a> | <a href="newsletters.jsp">Newsletters</a> | <a href="accueil.jsp">Retour au site</a> |
-			<a href="DeconnexionServlet">Déconnexion</a>
+			<a href="accueiladministration.jsp">Accueil Administration</a> |<a
+				href="listeutilisateur.jsp">Liste des utilisateur</a> | <a
+				href="listejeux.jsp">Liste des jeux</a> | <a href="typejeu.jsp">Liste
+				type de jeu</a> | <a href="listejeumois.jsp">Liste des jeux du mois</a>
+			| <a href="listefaq.jsp">Liste des FAQ</a> | <a
+				href="newsletters.jsp">Newsletters</a> | <a href="accueil.jsp">Retour
+				au site</a> | <a href="DeconnexionServlet">Déconnexion</a>
 		</div>
 	</div>
 	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
@@ -48,20 +59,62 @@
 		<div id="bottom_menuv"></div>
 	</div>
 
-	// Liste des Jeux du Mois + Bouton Modifier + Supprimer
-	
-	
-		<form>
-	<div id="corps">
-		<div id="contenu">
-			<div class="element_contenu">
+	<%
+		try {
+			_RootDAO.initialize();
+			Session session1 = _RootDAO.createSession();
+			Query query = session1.createQuery("SELECT j FROM Jeu j");
+			List<Jeu> jeu = query.list();
+			request.setAttribute("jeux", jeu);
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	%>
 
+
+	<form>
+		<div id="corps">
+			<div id="contenu">
+				<div class="element_contenu">
+					<form method="post" action="AddJeuMoisServlet">
+						<table>
+							<tr>
+								<td>Conseil</td>
+								<td><input type="text" name="conseil" value="" />*</td>
+							</tr>
+							<tr>
+								<td>Mois</td>
+								<td><input type="text" name="mois" value="" />* dd-mm-yyyy</td>
+							</tr>
+							<tr>
+								<td>Jeu du mois :</td>
+								<td><select name="jeu">
+										<%
+											for (Jeu jeu : (ArrayList<Jeu>) request.getAttribute("jeux")) {
+												out.print("<option type value=\"" + jeu.getIdJeu() + "\">"
+														+ jeu.getTitreJeu() + "</option>");
+											}
+										%>
+
+								</select></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><input type="submit" name="addJeuMois" value="Envoyer" /></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>* Champs obligatoires</td>
+							</tr>
+						</table>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div id="bottom">
-		<p>Copyright 2012 | AbonGame</p>
-	</div>
+		<div id="bottom">
+			<p>Copyright 2012 | AbonGame</p>
+		</div>
 </body>
 </html>
 
