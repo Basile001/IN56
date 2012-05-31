@@ -183,6 +183,10 @@ public final class inscription_jsp extends org.apache.jasper.runtime.HttpJspBase
 					out.println(listErrors.get(i) + "</br>");
 				}
 			}
+			
+			if(request.getAttribute("valide") != null){
+				out.println((String)request.getAttribute("valide"));
+			}
 			 
       out.write("\r\n");
       out.write("\t\t\t\t<form action=\"InscriptionServlet\" method=\"post\">\r\n");

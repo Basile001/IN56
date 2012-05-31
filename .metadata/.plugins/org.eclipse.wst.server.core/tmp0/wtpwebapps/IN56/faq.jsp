@@ -92,18 +92,19 @@
 
 	<div id="corps">
 		<div id="contenu">
+		<p><center><h2>Liste des FAQs</h2></center></p>
 				<% ArrayList<QuestionReponse> FAQ;
 				if(request.getAttribute("FAQ") != null){
 					FAQ = (ArrayList<QuestionReponse>) request.getAttribute("FAQ");
 					for(QuestionReponse questionReponse : FAQ){
 						out.println("<table border=\"1\">");
 						out.println("<tr>");
-						out.println("<td bgcolor=\"darkgray\"><textarea name=\"reponse\" cols=\"60\" rows=\"3\" readonly=\"\">");
+						out.println("<td bgcolor=\"darkgray\"><textarea name=\"reponse\" cols=\"60\" rows=\"1\" readonly=\"\">");
 						out.println(questionReponse.getQuestion());
 						out.println("</textarea></td>");
 					out.println("</tr>");
 					out.println("<tr>");
-						out.println("<td bgcolor=\"darkseagreen\"><textarea name=\"question\" cols=\"60\" rows=\"3\" readonly=\"\">");
+						out.println("<td bgcolor=\"darkseagreen\"><textarea name=\"question\" cols=\"60\" rows=\"1\" readonly=\"\">");
 							out.println(questionReponse.getReponse());
 						out.println("</textarea></td>");
 					out.println("</tr>");

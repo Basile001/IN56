@@ -48,8 +48,11 @@
 		<div id="bottom_menuv"></div>
 	</div>
 
-	// Créer un formulaire de la liste des utilisateur
-	<form action="NewslettersServlet" method="post">
+	
+	<div id="corps">
+		<div id="contenu">
+			<div class="element_contenu">
+			<form action="NewslettersServlet" method="post">
 				<table>
 					<tr>
 						<td><center><h3>Newsletters</h3></center></td>
@@ -62,10 +65,6 @@
 					</tr>
 				</table>
 			</form>
-	<div id="corps">
-		<div id="contenu">
-			<div class="element_contenu">
-
 			</div>
 		</div>
 	</div>

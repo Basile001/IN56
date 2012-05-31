@@ -204,8 +204,8 @@ public class InscriptionServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//response.sendRedirect("/comptevalide.jsp");
-			RequestDispatcher dispatcher = request.getRequestDispatcher("comptevalide.jsp");
+			request.setAttribute("valide", "Compte créé !");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("inscription.jsp");
 			dispatcher.forward(request, response);
 
 		}

@@ -111,6 +111,10 @@
 					out.println(listErrors.get(i) + "</br>");
 				}
 			}
+			
+			if(request.getAttribute("valide") != null){
+				out.println((String)request.getAttribute("valide"));
+			}
 			 %>
 				<form action="InscriptionServlet" method="post">
 					<table>

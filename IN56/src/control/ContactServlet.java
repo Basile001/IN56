@@ -47,15 +47,21 @@ public class ContactServlet extends HttpServlet {
 		if(request.getParameter("message") != null && request.getParameter("message") != "" ){
 			message = (String) request.getParameter("message");
 		}else{
-			listErrors.add("la question est obligatoire");
+			listErrors.add("Le message est obligatoire");
 		}
 		
 		if(listErrors.size() > 0){
 			request.setAttribute("errors", listErrors);
 			RequestDispatcher dis = request.getRequestDispatcher("contact.jsp");
 			dis.forward(request, response);
+
+		}else{
+			request.setAttribute("valide", "Message Envoyé !");
+			// Envoi du message par une fonction
+			RequestDispatcher dis = request.getRequestDispatcher("contact.jsp");
+			dis.forward(request, response);
 		}
-		//je fais quoi du messages après?
+		
 		
 	}
 }

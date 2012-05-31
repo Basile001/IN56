@@ -88,7 +88,7 @@
 
 	<div id="corps">
 		<div id="contenu">
-			<p><center><h3>Connexion</h3></center></p>
+			<p><center><h2>Connexion</h2></center></p>
 			<%
 			ArrayList<String> listErrors;
 			if(request.getAttribute("errors") != null){

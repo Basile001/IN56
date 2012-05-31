@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="model.Utilisateur" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -86,10 +87,25 @@
 	<div id="corps">
 		<div id="contenu">
 			<p>Vous pouvez contacter les créateurs de AbonGame à l'aide du formulaire suivant :</p>
+			
+			<%  
+				ArrayList<String> listErrors;
+				if( request.getAttribute("errors") != null ){
+					listErrors = (ArrayList<String>) request.getAttribute("errors");
+					for(int i = 0; i < listErrors.size(); i++){
+						out.println(listErrors.get(i) + "</br>");
+					}
+				}
+				
+				if(request.getAttribute("valide") != null){
+					out.println(request.getAttribute("valide"));
+				}
+			%>
+			
 			<form action="ContactServlet" method="post">
 				<table>
 					<tr>
-						<td><center><h3>Message</h3></center></td>
+						<td><center><h2>Message</h2></center></td>
 					</tr>
 					<tr>
 						<td><textarea name="message" cols="60" rows="10" ></textarea></td>
