@@ -97,16 +97,16 @@
 					FAQ = (ArrayList<QuestionReponse>) request.getAttribute("FAQ");
 					for(QuestionReponse questionReponse : FAQ){
 						out.println("<table border=\"1\">");
-							out.println("<tr>");
-								out.println("<td bgcolor=\"darkgray\">");
-								out.println(questionReponse.getQuestion());
-								out.println("</td>");
-							out.println("</tr>");
-							out.println("<tr>");
-								out.println("<td bgcolor=\"darkseagreen\">");
-									out.println(questionReponse.getReponse());
-								out.println("</td>");
-							out.println("</tr>");
+						out.println("<tr>");
+						out.println("<td bgcolor=\"darkgray\"><textarea name=\"reponse\" cols=\"60\" rows=\"3\" readonly=\"\">");
+						out.println(questionReponse.getQuestion());
+						out.println("</textarea></td>");
+					out.println("</tr>");
+					out.println("<tr>");
+						out.println("<td bgcolor=\"darkseagreen\"><textarea name=\"question\" cols=\"60\" rows=\"3\" readonly=\"\">");
+							out.println(questionReponse.getReponse());
+						out.println("</textarea></td>");
+					out.println("</tr>");
 						out.println("</table>");
 					}
 				}else{

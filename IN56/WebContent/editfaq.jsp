@@ -63,6 +63,7 @@
 				long ID = Long.parseLong(request.getParameter("id"));
 				try {
 					questionReponse = QuestionReponseDAO.getInstance().load(ID);
+					
 				} catch (HibernateException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -81,16 +82,14 @@
 				<form method="get" action="FAQEditServlet">
 					<table>
 					<tr>
-						<td>Question : </td><td><textarea name="question" cols="60" rows="3" >
-						<% if(request.getAttribute("question") != null){ 
+						<td>Question : </td><td><textarea name="question" cols="60" rows="3" ><% if(request.getAttribute("question") != null && ((String) request.getAttribute("question")) != ""){ 
 								out.print((String) request.getAttribute("question"));
 							}else{
 								out.println(questionReponse.getQuestion());
 							} %></textarea></td>
 					</tr>
 					<tr>
-						<td>Réponse : </td><td><textarea name="reponse" cols="60" rows="3" ></textarea>
-						<% if(request.getAttribute("reponse") != null){
+						<td>Réponse : </td><td><textarea name="reponse" cols="60" rows="3" ><% if(request.getAttribute("reponse") != null && ((String) request.getAttribute("reponse")) != ""){
 								out.print((String) request.getAttribute("reponse"));
 							}else{
 								out.println(questionReponse.getReponse());

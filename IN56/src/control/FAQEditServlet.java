@@ -13,7 +13,6 @@ import net.sf.hibernate.HibernateException;
 
 import model.QuestionReponse;
 import model.dao.QuestionReponseDAO;
-import model.dao._RootDAO;
 
 /**
  * Servlet implementation class FAQEditServlet
@@ -34,7 +33,6 @@ public class FAQEditServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("edition");
 		
 		QuestionReponseDAO questionReponseDAO = new QuestionReponseDAO();
 		QuestionReponse questionReponse = null;
@@ -53,23 +51,24 @@ public class FAQEditServlet extends HttpServlet {
 		String question = "";
 		String reponse = "";
 		
-		if(request.getParameter("question") != null && request.getParameter("question") != "" ){
+		
+		if(request.getParameter("question") != null && request.getParameter("question").replaceAll("[\r\n]+", "") != "" ){
 			// Vérification de la taille de la question
 			if(((String)request.getParameter("question")).length() > 255){
 				listErrors.add("La question dépasse les 255 caractères");
 			}else{
-				question = (String) request.getParameter("question");
+				question =  ((String) request.getParameter("question")).replaceAll("[\r\n]+", "");
 			}
 		}else{
 			listErrors.add("La question est obligatoire");
 		}
 		// Vérification de la présence du login
-		if(request.getParameter("reponse") != null && request.getParameter("reponse") != "" ){
+		if(request.getParameter("reponse") != null && request.getParameter("reponse").replaceAll("[\r\n]+", "") != "" ){
 			// Vérification de la taille de la réponse
 			if(((String)request.getParameter("reponse")).length() > 255){
 				listErrors.add("La réponse dépasse les 255 caractères");
 			}else{
-				reponse = (String) request.getParameter("reponse");
+				reponse = ((String) request.getParameter("reponse")).replaceAll("[\r\n]+", "");
 			}
 		}else{
 			listErrors.add("La reponse est obligatoire");
@@ -80,7 +79,7 @@ public class FAQEditServlet extends HttpServlet {
 			request.setAttribute("errors", listErrors);
 			request.setAttribute("question", question);
 			request.setAttribute("reponse", reponse);
-			RequestDispatcher dis = request.getRequestDispatcher("FAQListServlet");
+			RequestDispatcher dis = request.getRequestDispatcher("editfaq.jsp");
 			dis.forward(request, response);
 		}
 		else{
