@@ -250,4 +250,14 @@
     <servlet-name>UtilisateurRemoveServlet</servlet-name>
     <url-pattern>/UtilisateurRemoveServlet</url-pattern>
   </servlet-mapping>
+   <servlet>
+   <description></description>
+    <display-name>AddJeuMoisServlet</display-name>
+    <servlet-name>AddJeuMoisServlet</servlet-name>
+    <servlet-class>control.AddJeuMoisServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddJeuMoisServlet</servlet-name>
+    <url-pattern>/AddJeuMoisServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

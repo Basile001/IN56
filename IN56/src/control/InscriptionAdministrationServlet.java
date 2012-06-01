@@ -215,5 +215,4 @@ public class InscriptionAdministrationServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 
 		}	}
-
 }
