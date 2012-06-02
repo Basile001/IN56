@@ -24,36 +24,35 @@
 						+ "</tr>" + "</table>" + "</div>"%>
 		
 	</div>
-	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
-	<div id="menuh">
+<div id="menuh">
 		<div class="element_menuh">
-			<a href="accueiladministration.jsp">Accueil Administration</a> |<a href="listeutilisateur.jsp">Liste des utilisateur</a> | <a href="listejeux.jsp">Liste des jeux</a> | <a href="typejeu.jsp">Liste type de jeu</a>
-			| <a href="listejeumois.jsp">Liste des jeux du mois</a> | <a href="FAQListServlet">Liste des FAQ</a> | <a href="newsletters.jsp">Newsletters</a> | <a href="accueil.jsp">Retour au site</a> |
+			<a href="accueiladministration.jsp">Administration</a> | <a href="UtilisateurListServlet">Utilisateurs</a> | <a href="JeuListServlet">Jeux</a> | <a href="TypeJeuListServlet">Type de jeu</a>
+			| <a href="listejeumois.jsp">Jeux du mois</a> | <a href="FAQListServlet">FAQs</a> | <a href="newsletters.jsp">Newsletters</a> | <a href="accueil.jsp">Retour au site</a> |
 			<a href="DeconnexionServlet">Déconnexion</a>
 		</div>
 	</div>
-	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
 	<div id="menuv">
 		<div id="top_menuv"></div>
 		<div class="element_menuv">
 			<ul>
-				<li><a href="accueiladministration.jsp">Accueil Administration</a></li>
-				<li><a href="listeutilisateur.jsp">Liste des utilisateur</a></li>
-				<li><a href="listejeumois.jsp">Liste des jeux du mois</a></li>
-				<li><a href="listejeux.jsp">Liste des Jeux</a></li>
-				<li><a href="typejeu.jsp">Liste type de jeu</a></li>
-				<li><a href="FAQListServlet">Liste des FAQ</a></li>
+			<li><a href="accueiladministration.jsp">Administration</a></li>
+				<li><a href="UtilisateurListServlet">Utilisateurs</a></li>
+				<li><a href="listejeumois.jsp">Jeux du mois</a></li>
+				<li><a href="JeuListServlet">Jeux</a></li>
+				<li><a href="TypeJeuListServlet">Type de jeu</a></li>
+				<li><a href="FAQListServlet">FAQs</a></li>
 				<li><a href="newsletters.jsp">Newsletters</a></li>
 				<li><a href="accueil.jsp">Retour au site</a></li>
 				<li><a href="DeconnexionServlet">Déconnexion</a></li>
 			</ul>
 		</div>
+		
 		<div id="bottom_menuv"></div>
 	</div>
 	<div id="corps">
 		<div id="contenu">
 			<div class="element_contenu">
-				<center><p><h2>Liste des FAQ</h2></p></center>
+				<center><p><h2>Liste des FAQ</h2></p>
 					<% ArrayList<QuestionReponse> FAQ= null;
 					if(request.getAttribute("FAQ") != null ) FAQ = (ArrayList<QuestionReponse>) request.getAttribute("FAQ");
 					if(FAQ != null && FAQ.size() > 0){
@@ -61,29 +60,31 @@
 						for(QuestionReponse questionReponse : FAQ){
 							
 								out.println("<tr>");
-									out.println("<th>");
+									out.println("<th colspan=\"2\">");
 										out.println("Question");
 									out.println("</th>");
 								out.println("</tr>");
 								out.println("<tr>");
-									out.println("<td><textarea name=\"reponse\" cols=\"60\" rows=\"3\" readonly=\"\">");
+									out.println("<td colspan=\"2\"><textarea name=\"reponse\" cols=\"60\" rows=\"3\" readonly=\"\">");
 									out.println(questionReponse.getQuestion());
 									out.println("</textarea></td>");
 								out.println("</tr>");
 								out.println("<tr>");
-									out.println("<th>");
+									out.println("<th colspan=\"2\">");
 										out.println("Réponse");
 									out.println("</th>");
 								out.println("</tr>");
 								out.println("<tr>");
-									out.println("<td><textarea name=\"question\" cols=\"60\" rows=\"3\" readonly=\"\">");
+									out.println("<td colspan=\"2\"><textarea name=\"question\" cols=\"60\" rows=\"3\" readonly=\"\">");
 										out.println(questionReponse.getReponse());
 									out.println("</textarea></td>");
 								out.println("</tr>");
 								out.println("<tr>");
 									out.println("<td>");
-										out.println("<a href=\"editfaq.jsp?id="+ questionReponse.getIdQuestionReponse() + "\">Modifier</a> ");
-										out.println(" <a href=\"FAQRemoveServlet?id=" + questionReponse.getIdQuestionReponse() +"\">Supprimer</a>");
+										out.println("<center><a href=\"editfaq.jsp?id="+ questionReponse.getIdQuestionReponse() + "\">Modifier</a></center>");
+									out.println("</td>");
+									out.println("<td>");
+										out.println("<center><a href=\"FAQRemoveServlet?id=" + questionReponse.getIdQuestionReponse() +"\">Supprimer</a></center>");
 									out.println("</td>");
 							out.println("</tr>");
 							
@@ -93,7 +94,7 @@
 						out.println("<p>Aucune FAQ</p>");
 					}
 					%>
-				<center><p>Ajouter une FAQ</p></center>
+				<h2>Ajouter une FAQ</h2>
 				<%
 				
 				ArrayList<String> listErrors;
@@ -108,16 +109,22 @@
 				<form method="post" action="AddFAQServlet">
 					<table>
 					<tr>
-						<td>Question : </td><td><textarea name="question" cols="60" rows="3" ><% if(request.getAttribute("question") != null) out.print((String) request.getAttribute("question")); %></textarea></td>
+						<th>Question</th>
 					</tr>
 					<tr>
-						<td>Réponse : </td><td><textarea name="reponse" cols="60" rows="3" ><% if(request.getAttribute("reponse") != null) out.print((String) request.getAttribute("reponse")); %></textarea></td>
+						<td><textarea name="question" cols="60" rows="3" ><% if(request.getAttribute("question") != null) out.print((String) request.getAttribute("question")); %></textarea></td>
 					</tr>
 					<tr>
-						<td></td><td><input type="submit" name="Envoyer" value="Enregistrer" /></rd>
+						<th>Réponse</th>
+					</tr>
+					<tr>
+						<td><textarea name="reponse" cols="60" rows="3" ><% if(request.getAttribute("reponse") != null) out.print((String) request.getAttribute("reponse")); %></textarea></td>
+					</tr>
+					<tr>
+						<td colspan="2"><center><input type="submit" name="Envoyer" value="Enregistrer" /></center></td>
 					</tr>
 					</table>
-				</form>
+				</form></center>
 			</div>
 		</div>
 	</div>

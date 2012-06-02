@@ -1,32 +1,25 @@
 package control;
 
 import java.io.IOException;
-import java.util.List;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Jeu;
-import model.Utilisateur;
 import model.dao.JeuDAO;
-import model.dao._RootDAO;
+import model.dao.TypeJeuDAO;
 import net.sf.hibernate.HibernateException;
-import net.sf.hibernate.Query;
-import net.sf.hibernate.Session;
 
 /**
- * Servlet implementation class JeuxList
+ * Servlet implementation class JeuRemoveServlet
  */
-public class JeuxList extends HttpServlet {
+public class JeuRemoveServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JeuxList() {
+    public JeuRemoveServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,17 +28,15 @@ public class JeuxList extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		long ID = Long.parseLong(request.getParameter("id"));
+		// Récupération et suppression de questionReponse + flush
 		try {
-			_RootDAO.initialize();
-			Session session = _RootDAO.createSession();
-			List<Jeu> listJeu = JeuDAO.getInstance().findAll();
-			request.setAttribute("listJeu", listJeu);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("listejeux.jsp");
-			dispatcher.forward(request, response);
+			JeuDAO.getInstance().delete(ID);
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}
+		response.sendRedirect(response.encodeRedirectURL("JeuListServlet"));
 	}
 
 	/**

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.TypeJeu;
+import model.dao.TypeJeuDAO;
 import model.dao._RootDAO;
 import net.sf.hibernate.HibernateException;
 import net.sf.hibernate.Query;
@@ -34,12 +35,9 @@ public class TypeJeuListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			_RootDAO.initialize();
-			Session session = _RootDAO.createSession();
-			Query query = session.createQuery("SELECT q FROM TypeJeu q");
-			List<TypeJeu> listTypeJeu = query.list();
+			List<TypeJeu> listTypeJeu = TypeJeuDAO.getInstance().findAll();
 			request.setAttribute("listTypeJeu", listTypeJeu);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("typejeu.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("listetypejeu.jsp");
 			dispatcher.forward(request, response);
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block

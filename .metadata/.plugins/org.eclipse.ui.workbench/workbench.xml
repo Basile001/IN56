@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="73" version="2.0">
+<workbench progressCount="76" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1086" x="72" y="149">
 <fastViewData fastViewLocation="1024"/>
@@ -18,7 +18,7 @@
 <coolItem id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.ws.explorer.explorer" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
@@ -51,53 +51,33 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
-<part id="6"/>
-<part id="7"/>
-<part id="8"/>
-<part id="9"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddFAQServlet.java" partName="AddFAQServlet.java" path="C:/Users/moi/workspace/IN56/src/control/AddFAQServlet.java" title="AddFAQServlet.java" tooltip="IN56/src/control/AddFAQServlet.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/control/AddFAQServlet.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="68" selectionOffset="3141" selectionTopPixel="830"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JeuxList.java" partName="JeuxList.java" path="C:/Users/moi/workspace/IN56/src/control/JeuxList.java" title="JeuxList.java" tooltip="IN56/src/control/JeuxList.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/control/JeuxList.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="414" selectionOffset="1041" selectionTopPixel="80"/>
 </editor>
-<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="listejeux.jsp" partName="listejeux.jsp" path="C:/Users/moi/workspace/IN56/WebContent/listejeux.jsp" title="listejeux.jsp" tooltip="IN56/WebContent/listejeux.jsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/WebContent/listejeux.jsp"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4234" selectionTopPixel="1350"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddJeuServlet.java" partName="AddJeuServlet.java" path="C:/Users/moi/workspace/IN56/src/control/AddJeuServlet.java" title="AddJeuServlet.java" tooltip="IN56/src/control/AddJeuServlet.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/control/AddJeuServlet.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="1305"/>
-</editor>
-<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="accueiladministration.jsp" partName="accueiladministration.jsp" path="C:/Users/moi/workspace/IN56/WebContent/accueiladministration.jsp" title="accueiladministration.jsp" tooltip="IN56/WebContent/accueiladministration.jsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/WebContent/accueiladministration.jsp"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1468" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JeuListServlet.java" partName="JeuListServlet.java" path="C:/Users/moi/workspace/IN56/src/control/JeuListServlet.java" title="JeuListServlet.java" tooltip="IN56/src/control/JeuListServlet.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/control/JeuListServlet.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2250" selectionTopPixel="365"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UtilisateurListServlet.java" partName="UtilisateurListServlet.java" path="C:/Users/moi/workspace/IN56/src/control/UtilisateurListServlet.java" title="UtilisateurListServlet.java" tooltip="IN56/src/control/UtilisateurListServlet.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/control/UtilisateurListServlet.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1417" selectionTopPixel="95"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1226" selectionTopPixel="155"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FAQListServlet.java" partName="FAQListServlet.java" path="C:/Users/moi/workspace/IN56/src/control/FAQListServlet.java" title="FAQListServlet.java" tooltip="IN56/src/control/FAQListServlet.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/control/FAQListServlet.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="473" selectionOffset="1018" selectionTopPixel="0"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="newsletters.jsp" partName="newsletters.jsp" path="C:/Users/moi/workspace/IN56/WebContent/newsletters.jsp" title="newsletters.jsp" tooltip="IN56/WebContent/newsletters.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/WebContent/newsletters.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2060" selectionTopPixel="90"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UtilisateurRemoveServlet.java" partName="UtilisateurRemoveServlet.java" path="C:/Users/moi/workspace/IN56/src/control/UtilisateurRemoveServlet.java" title="UtilisateurRemoveServlet.java" tooltip="IN56/src/control/UtilisateurRemoveServlet.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/control/UtilisateurRemoveServlet.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1788" selectionTopPixel="185"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="listefaq.jsp" partName="listefaq.jsp" path="C:/Users/moi/workspace/IN56/WebContent/listefaq.jsp" title="listefaq.jsp" tooltip="IN56/WebContent/listefaq.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/WebContent/listefaq.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="1154" selectionOffset="960" selectionTopPixel="345"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TypeJeuRemoveServlet.java" partName="TypeJeuRemoveServlet.java" path="C:/Users/moi/workspace/IN56/src/control/TypeJeuRemoveServlet.java" title="TypeJeuRemoveServlet.java" tooltip="IN56/src/control/TypeJeuRemoveServlet.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/control/TypeJeuRemoveServlet.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="345" selectionOffset="920" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InscriptionServlet.java" partName="InscriptionServlet.java" path="C:/Users/moi/workspace/IN56/src/control/InscriptionServlet.java" title="InscriptionServlet.java" tooltip="IN56/src/control/InscriptionServlet.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/control/InscriptionServlet.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="175" selectionOffset="7313" selectionTopPixel="2330"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InscriptionAdministrationServlet.java" partName="InscriptionAdministrationServlet.java" path="C:/Users/moi/workspace/IN56/src/control/InscriptionAdministrationServlet.java" title="InscriptionAdministrationServlet.java" tooltip="IN56/src/control/InscriptionAdministrationServlet.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/src/control/InscriptionAdministrationServlet.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6909" selectionTopPixel="2465"/>
+<editor activePart="true" focus="true" id="org.eclipse.jst.jsp.core.jspsource.source" name="editfaq.jsp" partName="editfaq.jsp" path="C:/Users/moi/workspace/IN56/WebContent/editfaq.jsp" title="editfaq.jsp" tooltip="IN56/WebContent/editfaq.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/IN56/WebContent/editfaq.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2224" selectionTopPixel="270"/>
 </editor>
 </editors>
 <views>
@@ -198,7 +178,7 @@
 <viewState CommonNavigator.LINKING_ENABLED="0"/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jst.j2ee.J2EEPerspective">
+<perspectives activePart="org.eclipse.jst.jsp.core.jspsource.source" activePerspective="org.eclipse.jst.j2ee.J2EEPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jst.j2ee.internal.perspective.J2EEPerspective" id="org.eclipse.jst.j2ee.J2EEPerspective" label="Java EE"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -765,164 +745,170 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/listeutilisateur.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/control/UtilisateurRemoveServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/control/InscriptionServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/control/JeuxServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/control/InscriptionAdministrationServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/IN56/WebContent/inscription.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/typejeu.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/control/JeuListServlet.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/editjeu.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/listejeux.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/accueiladministration.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/listefaq.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/newsletters.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/listejeumois.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/listeutilisateur.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/motdepasse.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/typejeu.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/newsletters.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.css.core.csssource.source" path="/IN56/WebContent/style.css"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/listetypejeu.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/IN56/src/control/TypeJeuListServlet.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/editfaq.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/IN56/WebContent/edittypejeu.jsp"/>
 </editors>
-<item historyLabel="JeuxServlet.java" index="3">
+<item historyLabel="listeutilisateur.jsp" index="6">
+<position/>
+</item>
+<item historyLabel="JeuListServlet.java" index="0">
+<position info="not_deleted" x="2250" y="0"/>
+</item>
+<item historyLabel="motdepasse.jsp" index="7">
+<position info="not_deleted" x="1040" y="0"/>
+</item>
+<item historyLabel="JeuListServlet.java" index="0">
+<position info="not_deleted" x="2250" y="0"/>
+</item>
+<item historyLabel="typejeu.jsp" index="8">
+<position info="not_deleted" x="2223" y="0"/>
+</item>
+<item historyLabel="newsletters.jsp" index="9">
+<position info="not_deleted" x="1149" y="0"/>
+</item>
+<item historyLabel="typejeu.jsp" index="8">
+<position info="not_deleted" x="2167" y="0"/>
+</item>
+<item historyLabel="style.css" index="10">
+<position info="not_deleted" x="1916" y="0"/>
+</item>
+<item historyLabel="typejeu.jsp" index="8">
+<position info="not_deleted" x="2167" y="0"/>
+</item>
+<item historyLabel="accueiladministration.jsp" index="3">
+<position/>
+</item>
+<item historyLabel="typejeu.jsp" index="8">
+<position info="not_deleted" x="2167" y="0"/>
+</item>
+<item historyLabel="listeutilisateur.jsp" index="6">
+<position/>
+</item>
+<item historyLabel="typejeu.jsp" index="8">
+<position info="not_deleted" x="2167" y="0"/>
+</item>
+<item historyLabel="accueiladministration.jsp" index="3">
+<position/>
+</item>
+<item historyLabel="typejeu.jsp" index="8">
+<position info="not_deleted" x="1975" y="0"/>
+</item>
+<item historyLabel="accueiladministration.jsp" index="3">
+<position info="not_deleted" x="1651" y="0"/>
+</item>
+<item historyLabel="listeutilisateur.jsp" index="6">
+<position/>
+</item>
+<item historyLabel="accueiladministration.jsp" index="3">
+<position info="not_deleted" x="1651" y="0"/>
+</item>
+<item historyLabel="typejeu.jsp" index="8">
+<position info="not_deleted" x="1975" y="0"/>
+</item>
+<item historyLabel="listeutilisateur.jsp" index="6">
+<position/>
+</item>
+<item historyLabel="typejeu.jsp" index="8">
+<position info="not_deleted" x="1975" y="0"/>
+</item>
+<item historyLabel="listejeumois.jsp" index="5">
+<position info="not_deleted" x="1283" y="0"/>
+</item>
+<item historyLabel="typejeu.jsp" index="8">
+<position info="not_deleted" x="1975" y="0"/>
+</item>
+<item historyLabel="listejeux.jsp" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="UtilisateurRemoveServlet.java" index="1">
+<item historyLabel="listejeux.jsp" index="2">
 <position/>
 </item>
-<item historyLabel="UtilisateurRemoveServlet.java" index="1">
+<item historyLabel="listetypejeu.jsp" index="11">
 <position/>
 </item>
-<item historyLabel="listeutilisateur.jsp" index="0">
+<item historyLabel="TypeJeuListServlet.java" index="12">
+<position info="not_deleted" x="1057" y="0"/>
+</item>
+<item historyLabel="listejeux.jsp" index="2">
+<position info="not_deleted" x="2361" y="0"/>
+</item>
+<item historyLabel="listetypejeu.jsp" index="11">
 <position/>
 </item>
-<item historyLabel="UtilisateurRemoveServlet.java" index="1">
+<item historyLabel="listejeux.jsp" index="2">
+<position info="not_deleted" x="1851" y="510"/>
+</item>
+<item historyLabel="listetypejeu.jsp" index="11">
 <position/>
 </item>
-<item historyLabel="UtilisateurRemoveServlet.java" index="1">
+<item historyLabel="listejeux.jsp" index="2">
+<position info="not_deleted" x="1851" y="510"/>
+</item>
+<item historyLabel="JeuListServlet.java" index="0">
+<position info="not_deleted" x="2250" y="0"/>
+</item>
+<item historyLabel="listefaq.jsp" index="4">
+<position info="not_deleted" x="1538" y="510"/>
+</item>
+<item historyLabel="JeuListServlet.java" index="0">
+<position info="not_deleted" x="2250" y="0"/>
+</item>
+<item historyLabel="editjeu.jsp" index="1">
 <position/>
 </item>
-<item historyLabel="listeutilisateur.jsp" index="0">
-<position/>
+<item historyLabel="JeuListServlet.java" index="0">
+<position info="not_deleted" x="2250" y="0"/>
 </item>
-<item historyLabel="UtilisateurRemoveServlet.java" index="1">
-<position/>
+<item historyLabel="listeutilisateur.jsp" index="6">
+<position info="not_deleted" x="5192" y="0"/>
 </item>
-<item historyLabel="UtilisateurRemoveServlet.java" index="1">
-<position info="not_deleted" x="1422" y="1"/>
+<item historyLabel="JeuListServlet.java" index="0">
+<position info="not_deleted" x="2250" y="0"/>
 </item>
-<item historyLabel="UtilisateurRemoveServlet.java" index="1">
-<position info="not_deleted" x="1788" y="0"/>
+<item historyLabel="listetypejeu.jsp" index="11">
+<position info="not_deleted" x="1596" y="510"/>
 </item>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="6756" y="0"/>
+<item historyLabel="JeuListServlet.java" index="0">
+<position info="not_deleted" x="2250" y="0"/>
 </item>
-<item historyLabel="InscriptionServlet.java" index="2">
-<position info="not_deleted" x="7313" y="175"/>
+<item historyLabel="newsletters.jsp" index="9">
+<position info="not_deleted" x="2060" y="0"/>
 </item>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7799" y="0"/>
-</item>
-<item historyLabel="inscription.jsp" index="5"/>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7799" y="0"/>
-</item>
-<item historyLabel="listeutilisateur.jsp" index="0">
-<position/>
-</item>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7799" y="0"/>
-</item>
-<item historyLabel="inscription.jsp" index="5"/>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7799" y="0"/>
-</item>
-<item historyLabel="listeutilisateur.jsp" index="0">
-<position info="not_deleted" x="1125" y="0"/>
-</item>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7799" y="0"/>
-</item>
-<item historyLabel="listeutilisateur.jsp" index="0">
-<position info="not_deleted" x="1125" y="0"/>
-</item>
-<item historyLabel="UtilisateurRemoveServlet.java" index="1">
-<position info="not_deleted" x="1788" y="0"/>
-</item>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7463" y="0"/>
-</item>
-<item historyLabel="typejeu.jsp" index="6">
-<position/>
-</item>
-<item historyLabel="listefaq.jsp" index="7">
-<position/>
-</item>
-<item historyLabel="typejeu.jsp" index="6">
-<position/>
-</item>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7463" y="0"/>
-</item>
-<item historyLabel="newsletters.jsp" index="8">
-<position/>
-</item>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7463" y="0"/>
-</item>
-<item historyLabel="motdepasse.jsp" index="9">
-<position info="not_deleted" x="3409" y="0"/>
-</item>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7463" y="0"/>
-</item>
-<item historyLabel="listeutilisateur.jsp" index="0">
-<position info="not_deleted" x="4964" y="0"/>
-</item>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7463" y="0"/>
-</item>
-<item historyLabel="editfaq.jsp" index="10">
-<position/>
-</item>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7463" y="0"/>
-</item>
-<item historyLabel="newsletters.jsp" index="8">
-<position info="not_deleted" x="2442" y="0"/>
-</item>
-<item historyLabel="edittypejeu.jsp" index="11">
-<position info="not_deleted" x="3140" y="0"/>
-</item>
-<item historyLabel="typejeu.jsp" index="6">
-<position/>
-</item>
-<item historyLabel="listefaq.jsp" index="7">
-<position/>
-</item>
-<item historyLabel="typejeu.jsp" index="6">
-<position/>
-</item>
-<item historyLabel="edittypejeu.jsp" index="11">
-<position info="not_deleted" x="2547" y="0"/>
-</item>
-<item historyLabel="newsletters.jsp" index="8">
-<position info="not_deleted" x="2442" y="0"/>
-</item>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7463" y="0"/>
-</item>
-<item historyLabel="typejeu.jsp" index="6">
+<item historyLabel="listefaq.jsp" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7463" y="0"/>
+<item historyLabel="editfaq.jsp" index="13">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="listefaq.jsp" index="7">
-<position info="not_deleted" x="1111" y="0"/>
+<item historyLabel="editjeu.jsp" index="1">
+<position info="not_deleted" x="1155" y="0"/>
 </item>
-<item historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7463" y="0"/>
+<item historyLabel="editfaq.jsp" index="13">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="editfaq.jsp" index="10">
-<position info="not_deleted" x="2562" y="0"/>
+<item historyLabel="listefaq.jsp" index="4">
+<position info="not_deleted" x="3227" y="0"/>
 </item>
-<item active="true" historyLabel="InscriptionAdministrationServlet.java" index="4">
-<position info="not_deleted" x="7463" y="0"/>
+<item historyLabel="editfaq.jsp" index="13">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="listefaq.jsp" index="4">
+<position info="not_deleted" x="960" y="1154"/>
+</item>
+<item active="true" historyLabel="editfaq.jsp" index="13">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -942,50 +928,50 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="editjeu.jsp" tooltip="IN56/WebContent/editjeu.jsp">
+<persistable path="/IN56/WebContent/editjeu.jsp"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="editfaq.jsp" tooltip="IN56/WebContent/editfaq.jsp">
 <persistable path="/IN56/WebContent/editfaq.jsp"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="listefaq.jsp" tooltip="IN56/WebContent/listefaq.jsp">
 <persistable path="/IN56/WebContent/listefaq.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="typejeu.jsp" tooltip="IN56/WebContent/typejeu.jsp">
-<persistable path="/IN56/WebContent/typejeu.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="edittypejeu.jsp" tooltip="IN56/WebContent/edittypejeu.jsp">
-<persistable path="/IN56/WebContent/edittypejeu.jsp"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="newsletters.jsp" tooltip="IN56/WebContent/newsletters.jsp">
 <persistable path="/IN56/WebContent/newsletters.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="motdepasse.jsp" tooltip="IN56/WebContent/motdepasse.jsp">
-<persistable path="/IN56/WebContent/motdepasse.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InscriptionAdministrationServlet.java" tooltip="IN56/src/control/InscriptionAdministrationServlet.java">
-<persistable path="/IN56/src/control/InscriptionAdministrationServlet.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="listetypejeu.jsp" tooltip="IN56/WebContent/listetypejeu.jsp">
+<persistable path="/IN56/WebContent/listetypejeu.jsp"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="listeutilisateur.jsp" tooltip="IN56/WebContent/listeutilisateur.jsp">
 <persistable path="/IN56/WebContent/listeutilisateur.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="inscription.jsp" tooltip="IN56/WebContent/inscription.jsp">
-<persistable path="/IN56/WebContent/inscription.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TypeJeuListServlet.java" tooltip="IN56/src/control/TypeJeuListServlet.java">
+<persistable path="/IN56/src/control/TypeJeuListServlet.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JeuxServlet.java" tooltip="IN56/src/control/JeuxServlet.java">
-<persistable path="/IN56/src/control/JeuxServlet.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="listejeux.jsp" tooltip="IN56/WebContent/listejeux.jsp">
+<persistable path="/IN56/WebContent/listejeux.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InscriptionServlet.java" tooltip="IN56/src/control/InscriptionServlet.java">
-<persistable path="/IN56/src/control/InscriptionServlet.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="listejeumois.jsp" tooltip="IN56/WebContent/listejeumois.jsp">
+<persistable path="/IN56/WebContent/listejeumois.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseUtilisateurDAO.java" tooltip="IN56/src/model/base/BaseUtilisateurDAO.java">
-<persistable path="/IN56/src/model/base/BaseUtilisateurDAO.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="accueiladministration.jsp" tooltip="IN56/WebContent/accueiladministration.jsp">
+<persistable path="/IN56/WebContent/accueiladministration.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TypeJeuRemoveServlet.java" tooltip="IN56/src/control/TypeJeuRemoveServlet.java">
-<persistable path="/IN56/src/control/TypeJeuRemoveServlet.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.css.core.csssource.source" name="style.css" tooltip="IN56/WebContent/style.css">
+<persistable path="/IN56/WebContent/style.css"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UtilisateurRemoveServlet.java" tooltip="IN56/src/control/UtilisateurRemoveServlet.java">
-<persistable path="/IN56/src/control/UtilisateurRemoveServlet.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="typejeu.jsp" tooltip="IN56/WebContent/typejeu.jsp">
+<persistable path="/IN56/WebContent/typejeu.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FAQListServlet.java" tooltip="IN56/src/control/FAQListServlet.java">
-<persistable path="/IN56/src/control/FAQListServlet.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="motdepasse.jsp" tooltip="IN56/WebContent/motdepasse.jsp">
+<persistable path="/IN56/WebContent/motdepasse.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="edittypejeu.jsp" tooltip="IN56/WebContent/edittypejeu.jsp">
+<persistable path="/IN56/WebContent/edittypejeu.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="jeux.jsp" tooltip="IN56/WebContent/jeux.jsp">
+<persistable path="/IN56/WebContent/jeux.jsp"/>
 </file>
 </mruList>
 </workbench>

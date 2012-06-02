@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="model.Utilisateur"%>
-<%@ page import="model.QuestionReponse"%>
-<%@ page import="model.dao.QuestionReponseDAO"%>
+<%@ page import="model.Jeu"%>
+<%@ page import="model.dao.JeuDAO"%>
+<%@ page import="model.TypeJeu"%>
+<%@ page import="model.dao.TypeJeuDAO"%>
 <%@ page import="net.sf.hibernate.HibernateException"%>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>AbonGame - Administration - Edition d'une FAQ</title>
+<title>AbonGame - Administration - Edition d'un jeu</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -33,11 +35,12 @@
 			<a href="DeconnexionServlet">Déconnexion</a>
 		</div>
 	</div>
+	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
 	<div id="menuv">
 		<div id="top_menuv"></div>
 		<div class="element_menuv">
 			<ul>
-			<li><a href="accueiladministration.jsp">Administration</a></li>
+				<li><a href="accueiladministration.jsp">Administration</a></li>
 				<li><a href="UtilisateurListServlet">Utilisateurs</a></li>
 				<li><a href="listejeumois.jsp">Jeux du mois</a></li>
 				<li><a href="JeuListServlet">Jeux</a></li>
@@ -54,14 +57,13 @@
 	<div id="corps">
 		<div id="contenu">
 			<div class="element_contenu">
-				</form>
-				<center><h2>Editer une FAQ</h2></center>
+				
 				<%
-				QuestionReponse questionReponse = null;
+				Jeu jeu = null;
 				
 				long ID = Long.parseLong(request.getParameter("id"));
 				try {
-					questionReponse = QuestionReponseDAO.getInstance().load(ID);
+					jeu = JeuDAO.getInstance().load(ID);
 					
 				} catch (HibernateException e) {
 					// TODO Auto-generated catch block
@@ -78,35 +80,83 @@
 				}
 				
 				%>
-				<form method="get" action="FAQEditServlet">
-					<center><table>
+				
+				
+				
+				<center>
+				<h2>Editer un jeu</h2>
+				<form method="post" action="JeuEditServlet">
+				<table>
 					<tr>
-						<th>Question</th>
+						<td>Titre :</td>
+						<td><input type="text" name="titre" value="<%= jeu.getTitreJeu() %>" />*</td>
 					</tr>
 					<tr>
-						<td><textarea name="question" cols="60" rows="3" ><% if(request.getAttribute("question") != null && ((String) request.getAttribute("question")) != ""){ 
-								out.print((String) request.getAttribute("question"));
-							}else{
-								out.println(questionReponse.getQuestion());
-							} %></textarea></td>
+						<td>Contexte :</td>
+						<td><input type="text" name="contexte" value="<%= jeu.getContexteJeu()%>" />*</td>
 					</tr>
 					<tr>
-						<th>Réponse</th>
+						<td>Règle :</td>
+						<td><input type="text" name="regle" value="<%= jeu.getTitreJeu() %>" />*</td>
 					</tr>
 					<tr>
-						<td><textarea name="reponse" cols="60" rows="3" ><% if(request.getAttribute("reponse") != null && ((String) request.getAttribute("reponse")) != ""){
-								out.print((String) request.getAttribute("reponse"));
-							}else{
-								out.println(questionReponse.getReponse());
-							}
-							%></textarea></td>
+						<td>Lien officiel :</td>
+						<td><input type="text" name="lien" value="<%= jeu.getLienOfficiel() %>" />*</td>
 					</tr>
 					<tr>
-						<td colspan="2"><center><input type="submit" name="Envoyer" value="Enregistrer" /></center></td>
+						<td>Information :</td>
+						<td><input type="text" name="info" value="<%= jeu.getInfoJeu() %>" />*</td>
 					</tr>
+					<tr>
+						<td>URL :</td>
+						<td><input type="text" name="url" value="<%= jeu.getUrlJeu() %>" />*</td>
+					</tr>
+					<tr>
+						<td>Point :</td>
+						<td><input type="text" name="point" value="<%= jeu.getPointJeu() %>" />*</td>
+					</tr>
+					<tr>
+						<td>Materiel :</td>
+						<td><input type="text" name="materiel" value="<%= jeu.getMaterielJeu() %>" />*</td>
+					</tr>
+					<tr>
+						<td>Adresse image jeu :</td>
+						<td><input type="text" name="image" value="<%= jeu.getAdresseImageJeu() %>" />*</td>
+					</tr>
+					<tr>
+						<td>Type de jeu :</td>
+						<td><select name="type">
+								<%
+									List<TypeJeu> listTypeJeu = null;
+									try {
+									listTypeJeu = null;
+									listTypeJeu = TypeJeuDAO.getInstance().findAll();
+									for (TypeJeu typeJeu : listTypeJeu) {
+										if(jeu.getIdTypeJeu().getIdTypeJeu()== typeJeu.getIdTypeJeu()){
+											out.print("<option type value=\"" + typeJeu.getIdTypeJeu() + "\" selected=\"selected\" >"
+													+ typeJeu.getLibelleTypeJeu() + "</option>");
+										}else{
+											out.print("<option type value=\"" + typeJeu.getIdTypeJeu() + "\" >"
+													+ typeJeu.getLibelleTypeJeu() + "</option>");
+										}
+									}
+								} catch (HibernateException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}	
+								%>
+						</select></td>
+					</tr>
+					<tr>
+						<td colspan="2"><center><input type="submit" name="addJeu" value="Envoyer" /></center></td>
+					</tr>
+					<tr>
+						<td colspan="2"><center>* Champs obligatoires</center></td>
+					</tr>
+				</table>
 					<input type="hidden" name="id" value="<%= Long.valueOf(ID) %>" />
-					</table></center>
-				</form>
+			</form></center>
+				
 			</div>
 		</div>
 	</div>

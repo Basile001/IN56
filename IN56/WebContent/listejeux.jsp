@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="model.Utilisateur"%>
+<%@ page import="model.Jeu"%>
 <%@ page import="model.TypeJeu"%>
 <%@ page import="model.dao._RootDAO"%>
 <%@ page import="net.sf.hibernate.HibernateException"%>
@@ -29,16 +30,11 @@
 					+ "</tr>" + "</table>" + "</div>"%>
 
 	</div>
-	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
 	<div id="menuh">
 		<div class="element_menuh">
-			<a href="accueiladministration.jsp">Accueil Administration</a> |<a
-				href="listeutilisateur.jsp">Liste des utilisateur</a> | <a
-				href="listejeux.jsp">Liste des jeux</a> | <a href="typejeu.jsp">Liste
-				type de jeu</a> | <a href="listejeumois.jsp">Liste des jeux du mois</a>
-			| <a href="listefaq.jsp">Liste des FAQ</a> | <a
-				href="newsletters.jsp">Newsletters</a> | <a href="accueil.jsp">Retour
-				au site</a> | <a href="DeconnexionServlet">Déconnexion</a>
+			<a href="accueiladministration.jsp">Administration</a> | <a href="UtilisateurListServlet">Utilisateurs</a> | <a href="JeuListServlet">Jeux</a> | <a href="TypeJeuListServlet">Type de jeu</a>
+			| <a href="listejeumois.jsp">Jeux du mois</a> | <a href="FAQListServlet">FAQs</a> | <a href="newsletters.jsp">Newsletters</a> | <a href="accueil.jsp">Retour au site</a> |
+			<a href="DeconnexionServlet">Déconnexion</a>
 		</div>
 	</div>
 	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
@@ -46,31 +42,71 @@
 		<div id="top_menuv"></div>
 		<div class="element_menuv">
 			<ul>
-				<li><a href="accueiladministration.jsp">accueiladministration</a></li>
-				<li><a href="listeutilisateur.jsp">Liste des utilisateur</a></li>
-				<li><a href="listejeumois.jsp">Liste des jeux du mois</a></li>
-				<li><a href="listejeux.jsp">Liste des Jeux</a></li>
-				<li><a href="typejeu.jsp">Liste type de jeu</a></li>
-				<li><a href="listefaq.jsp">Liste des FAQ</a></li>
+				<li><a href="accueiladministration.jsp">Administration</a></li>
+				<li><a href="UtilisateurListServlet">Utilisateurs</a></li>
+				<li><a href="listejeumois.jsp">Jeux du mois</a></li>
+				<li><a href="JeuListServlet">Jeux</a></li>
+				<li><a href="TypeJeuListServlet">Type de jeu</a></li>
+				<li><a href="FAQListServlet">FAQs</a></li>
 				<li><a href="newsletters.jsp">Newsletters</a></li>
 				<li><a href="accueil.jsp">Retour au site</a></li>
 				<li><a href="DeconnexionServlet">Déconnexion</a></li>
 			</ul>
 		</div>
+		
 		<div id="bottom_menuv"></div>
 	</div>
-
-
 	<div id="corps">
 		<div id="contenu">
 			<div class="element_contenu"></div>
+			<center><h2>Recherche d'un jeu</h2>
+				<form method="post" action="JeuListServlet">
+					<table>
+						<tr>
+							<th>Recherche par titre</th>
+							<td><input type="text" name="titre" /></td>
+							<td><input type="submit" name="Rechercher"
+								value="Rechercher" /></td>
+						</tr>
+					</table>
+				</form>
+				<h2>Liste des jeux</h2>
+				<%
+					ArrayList<Jeu> listJeu = null;
+					if (request.getAttribute("listJeu") != null)
+						listJeu = (ArrayList<Jeu>) request.getAttribute("listJeu");
+					if (listJeu != null && listJeu.size() > 0) {
+						out.println("<table>");
+				%>
+				<tr>
+					<th>Titre</th>
+					<th>|</th>
+					<th>Action</th>
+				</tr>
 
-			// Champs de recherche
-			
-			// Pagination avec suppression
-
-			// Affichage des jeux + Ajout en jeu du mois + Modifier + Supprimer
-			<p>Ajout d'un jeu</p>
+				<%
+					for (Jeu jeu : listJeu) {
+							out.println("<tr>");
+							out.println("<td>");
+							out.println(jeu.getTitreJeu());
+							out.println("</td>");
+							out.println("<td>");
+							out.println("|");
+							out.println("</td>");
+							out.println("<td>");
+							out.println("<a href=\"editjeu.jsp?id="
+									+ jeu.getIdJeu() + "\">Modifier</a>");
+							out.println(" | <a href=\"JeuRemoveServlet?id="
+									+ jeu.getIdJeu()+ "\">Supprimer</a>");
+							out.println("</td>");
+							out.println("</tr>");
+						}
+						out.println("</table>");
+					} else {
+						out.println("<p>Aucun jeu</p>");
+					}
+				%>
+			<h2>Ajout d'un jeu</h2>
 			<form method="post" action="AddJeuServlet">
 				<table>
 					<tr>
@@ -141,7 +177,7 @@
 						<td>* Champs obligatoires</td>
 					</tr>
 				</table>
-			</form>
+			</form></center>
 		</div>
 	</div>
 	<div id="bottom">

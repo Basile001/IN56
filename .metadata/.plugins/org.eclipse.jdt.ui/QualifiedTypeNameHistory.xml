@@ -8,7 +8,6 @@
 <fullyQualifiedTypeName name="model.Abonnement"/>
 <fullyQualifiedTypeName name="model.Faq"/>
 <fullyQualifiedTypeName name="model.Joue"/>
-<fullyQualifiedTypeName name="model.Jeu"/>
 <fullyQualifiedTypeName name="model.UtilisateurId"/>
 <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
 <fullyQualifiedTypeName name="control.HibernateUtil"/>
@@ -45,8 +44,10 @@
 <fullyQualifiedTypeName name="model.QuestionReponse"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="model.TypeJeu"/>
-<fullyQualifiedTypeName name="model.dao.TypeJeuDAO"/>
-<fullyQualifiedTypeName name="model.Utilisateur"/>
-<fullyQualifiedTypeName name="model.dao.UtilisateurDAO"/>
 <fullyQualifiedTypeName name="model.UtilisateurPK"/>
+<fullyQualifiedTypeName name="model.Utilisateur"/>
+<fullyQualifiedTypeName name="model.Jeu"/>
+<fullyQualifiedTypeName name="model.dao.JeuDAO"/>
+<fullyQualifiedTypeName name="model.dao.UtilisateurDAO"/>
+<fullyQualifiedTypeName name="model.dao.TypeJeuDAO"/>
 </qualifiedTypeNameHistroy>

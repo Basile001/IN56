@@ -21,11 +21,10 @@
 						+ "</tr>" + "</table>" + "</div>"%>
 		
 	</div>
-	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
 	<div id="menuh">
 		<div class="element_menuh">
-			<a href="accueiladministration.jsp">Accueil Administration</a> |<a href="listeutilisateur.jsp">Liste des utilisateur</a> | <a href="listejeux.jsp">Liste des jeux</a> | <a href="typejeu.jsp">Liste type de jeu</a>
-			| <a href="listejeumois.jsp">Liste des jeux du mois</a> | <a href="listefaq.jsp">Liste des FAQ</a> | <a href="newsletters.jsp">Newsletters</a> | <a href="accueil.jsp">Retour au site</a> |
+			<a href="accueiladministration.jsp">Administration</a> | <a href="UtilisateurListServlet">Utilisateurs</a> | <a href="JeuListServlet">Jeux</a> | <a href="TypeJeuListServlet">Type de jeu</a>
+			| <a href="listejeumois.jsp">Jeux du mois</a> | <a href="FAQListServlet">FAQs</a> | <a href="newsletters.jsp">Newsletters</a> | <a href="accueil.jsp">Retour au site</a> |
 			<a href="DeconnexionServlet">Déconnexion</a>
 		</div>
 	</div>
@@ -34,17 +33,18 @@
 		<div id="top_menuv"></div>
 		<div class="element_menuv">
 			<ul>
-				<li><a href="accueiladministration.jsp">Accueil Administration</a></li>
-				<li><a href="listeutilisateur.jsp">Liste des utilisateur</a></li>
-				<li><a href="listejeumois.jsp">Liste des jeux du mois</a></li>
-				<li><a href="listejeux.jsp">Liste des Jeux</a></li>
-				<li><a href="typejeu.jsp">Liste type de jeu</a></li>
-				<li><a href="listefaq.jsp">Liste des FAQ</a></li>
+				<li><a href="accueiladministration.jsp">Administration</a></li>
+				<li><a href="UtilisateurListServlet">Utilisateurs</a></li>
+				<li><a href="listejeumois.jsp">Jeux du mois</a></li>
+				<li><a href="JeuListServlet">Jeux</a></li>
+				<li><a href="TypeJeuListServlet">Type de jeu</a></li>
+				<li><a href="FAQListServlet">FAQs</a></li>
 				<li><a href="newsletters.jsp">Newsletters</a></li>
 				<li><a href="accueil.jsp">Retour au site</a></li>
 				<li><a href="DeconnexionServlet">Déconnexion</a></li>
 			</ul>
 		</div>
+		
 		<div id="bottom_menuv"></div>
 	</div>
 
@@ -52,8 +52,8 @@
 	<div id="corps">
 		<div id="contenu">
 			<div class="element_contenu">
-				<p>Bienvenue dans l'administration d'AbonGame</p>
-				<p>Vous trouverez toutes les fonctionnalités nécessaire à l'administration d'AbonGame</p>
+				<center><p>Bienvenue dans l'administration d'AbonGame</p>
+				<p>Vous trouverez toutes les fonctionnalités nécessaire à l'administration d'AbonGame</p></center>
 			</div>
 		</div>
 	</div>

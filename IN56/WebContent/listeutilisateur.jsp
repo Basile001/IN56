@@ -21,15 +21,11 @@
 					+ "<td>( <a href=\"accueil.jsp\">Accueil</a></td><td>|</td><td><a href=\"DeconnexionServlet\">Déconnexion</a> )</td>"
 					+ "</tr>" + "</table>" + "</div>"%>
 	</div>
-	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
 	<div id="menuh">
 		<div class="element_menuh">
-			<a href="accueiladministration.jsp">Accueil Administration</a> |<a
-				href="listeutilisateur.jsp">Liste des utilisateur</a> | <a
-				href="listejeux.jsp">Liste des jeux</a> | <a href="listejeumois.jsp">Liste
-				des jeux du mois</a> | <a href="listefaq.jsp">Liste des FAQ</a> | <a
-				href="newsletters.jsp">Newsletters</a> | <a href="accueil.jsp">Retour
-				au site</a> | <a href="DeconnexionServlet">Déconnexion</a>
+			<a href="accueiladministration.jsp">Administration</a> | <a href="UtilisateurListServlet">Utilisateurs</a> | <a href="JeuListServlet">Jeux</a> | <a href="TypeJeuListServlet">Type de jeu</a>
+			| <a href="listejeumois.jsp">Jeux du mois</a> | <a href="FAQListServlet">FAQs</a> | <a href="newsletters.jsp">Newsletters</a> | <a href="accueil.jsp">Retour au site</a> |
+			<a href="DeconnexionServlet">Déconnexion</a>
 		</div>
 	</div>
 	<!-- Ajouter un accès au profil quand l'utilisateur est connecté -->
@@ -37,42 +33,41 @@
 		<div id="top_menuv"></div>
 		<div class="element_menuv">
 			<ul>
-				<li><a href="accueiladministration.jsp">Accueil
-						Administration</a></li>
-				<li><a href="UtilisateurListServlet">Liste des utilisateur</a></li>
-				<li><a href="listejeumois.jsp">Liste des jeux du mois</a></li>
-				<li><a href="listejeux.jsp">Liste des Jeux</a></li>
-				<li><a href="typejeu.jsp">Liste type de jeu</a></li>
-				<li><a href="listefaq.jsp">Liste des FAQ</a></li>
+				<li><a href="accueiladministration.jsp">Administration</a></li>
+				<li><a href="UtilisateurListServlet">Utilisateurs</a></li>
+				<li><a href="listejeumois.jsp">Jeux du mois</a></li>
+				<li><a href="JeuListServlet">Jeux</a></li>
+				<li><a href="TypeJeuListServlet">Type de jeu</a></li>
+				<li><a href="FAQListServlet">FAQs</a></li>
 				<li><a href="newsletters.jsp">Newsletters</a></li>
 				<li><a href="accueil.jsp">Retour au site</a></li>
 				<li><a href="DeconnexionServlet">Déconnexion</a></li>
 			</ul>
 		</div>
+		
 		<div id="bottom_menuv"></div>
 	</div>
 	<div id="corps">
 		<div id="contenu">
 			<div class="element_contenu">
-
-
-				<p>Recherche d'un utilisateur</p>
+				<center><h2>Recherche d'un utilisateur</h2>
 				<form method="post" action="UtilisateurListServlet">
 					<table>
 						<tr>
+							<th>Recherche par login</th>
 							<td><input type="text" name="login" /></td>
 							<td><input type="submit" name="Rechercher"
 								value="Rechercher" /></td>
 						</tr>
 					</table>
 				</form>
-				<p>Liste des utilisateur</p>
+				<h2>Liste des utilisateur</h2>
 				<%
 					ArrayList<Utilisateur> listUtilisateur = null;
 					if (request.getAttribute("listUtilisateur") != null)
 						listUtilisateur = (ArrayList<Utilisateur>) request.getAttribute("listUtilisateur");
 					if (listUtilisateur != null && listUtilisateur.size() > 0) {
-						out.println("<table border=\"1\"");
+						out.println("<table border=\"1\" border-style=\"solid\" >");
 				%>
 				<tr>
 					<th>Login</th>
@@ -112,10 +107,10 @@
 						}
 						out.println("</table>");
 					} else {
-						out.println("<p>Aucune FAQ</p>");
+						out.println("<p>Aucun utilisateur</p>");
 					}
 				%>
-				<p>Ajout d'un utilisateur</p>
+				<h2>Ajout d'un utilisateur</h2>
 				<%
 					ArrayList<String> listErrors;
 					if (request.getAttribute("errors") != null) {
@@ -140,9 +135,11 @@
 							<td><input type="text" name="login" value="" /> *</td>
 						</tr>
 						<tr>
+							<td colspan="2">Taille du mot de passe minimum 6 caractères / Taille maximum 32 caractères *</td>
+						</tr>
+						<tr>
 							<td>Mot de passe :</td>
-							<td><input type="password" name="motdepasse" value="" />
-								Taille minimum 6 caractères / Taille maximum 32 caractères *</td>
+							<td><input type="password" name="motdepasse" value="" /></td>
 						</tr>
 						<tr>
 							<td>Civilité :</td>
@@ -190,15 +187,14 @@
 							</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td><input type="submit" name="inscription" value="Envoyer" /></td>
+							<td colspan="2" ><center><input type="submit" name="inscription" value="Envoyer" /></center></td>
 						</tr>
 						<tr>
-							<td></td>
-							<td>* Champs obligatoires</td>
+							<td colspan="2"><center>* Champs obligatoires</center></td>
 						</tr>
 					</table>
 				</form>
+				</center>
 			</div>
 		</div>
 	</div>

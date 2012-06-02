@@ -250,8 +250,8 @@
     <servlet-name>UtilisateurRemoveServlet</servlet-name>
     <url-pattern>/UtilisateurRemoveServlet</url-pattern>
   </servlet-mapping>
-   <servlet>
-   <description></description>
+  <servlet>
+    <description></description>
     <display-name>AddJeuMoisServlet</display-name>
     <servlet-name>AddJeuMoisServlet</servlet-name>
     <servlet-class>control.AddJeuMoisServlet</servlet-class>
@@ -259,5 +259,25 @@
   <servlet-mapping>
     <servlet-name>AddJeuMoisServlet</servlet-name>
     <url-pattern>/AddJeuMoisServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>JeuListServlet</display-name>
+    <servlet-name>JeuListServlet</servlet-name>
+    <servlet-class>control.JeuListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JeuListServlet</servlet-name>
+    <url-pattern>/JeuListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>JeuRemoveServlet</display-name>
+    <servlet-name>JeuRemoveServlet</servlet-name>
+    <servlet-class>control.JeuRemoveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JeuRemoveServlet</servlet-name>
+    <url-pattern>/JeuRemoveServlet</url-pattern>
   </servlet-mapping>
 </web-app>
