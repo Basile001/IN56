@@ -12,21 +12,20 @@ import javax.servlet.http.HttpServletResponse;
 import model.Jeu;
 import model.TypeJeu;
 import model.dao.JeuDAO;
+import model.dao.QuestionReponseDAO;
 import model.dao.TypeJeuDAO;
-import model.dao._RootDAO;
 import net.sf.hibernate.HibernateException;
-import net.sf.hibernate.Session;
 
 /**
- * Servlet implementation class AddJeuServlet
+ * Servlet implementation class JeuEditServlet
  */
-public class AddJeuServlet extends HttpServlet {
+public class JeuEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddJeuServlet() {
+    public JeuEditServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,7 +41,17 @@ public class AddJeuServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		Jeu jeu = new Jeu();
+
+		long ID = Long.parseLong(request.getParameter("id"));
+		try {
+			jeu = JeuDAO.getInstance().load(ID);
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		ArrayList<String> listErrors = new ArrayList<String>();
 		request.setAttribute("errors", null);
@@ -63,7 +72,7 @@ public class AddJeuServlet extends HttpServlet {
 		}else{
 			listErrors.add("le titre est obligatoire");
 		}
-		if(request.getParameter("contexte") != null && request.getParameter("contexte").replaceAll("[\r\n]+", "") != "" ){
+		if(request.getParameter("contexte") != null && request.getParameter("contexte").replaceAll("[\r\n]+", "")!= "" ){
 			contexte = (String) request.getParameter("contexte").replaceAll("[\r\n]+", "");
 		}else{
 			listErrors.add("le contexte est obligatoire");
@@ -111,10 +120,11 @@ public class AddJeuServlet extends HttpServlet {
 		
 		if(listErrors.size() > 0){
 			request.setAttribute("errors", listErrors);
-			RequestDispatcher dis = request.getRequestDispatcher("JeuListServlet");
+			RequestDispatcher dis = request.getRequestDispatcher("editjeu.jsp");
 			dis.forward(request, response);
 		}
 		else{
+			
 			jeu.setTitreJeu(titre);
 			jeu.setContexteJeu(contexte);
 			jeu.setRegleJeu(regle);
@@ -134,14 +144,13 @@ public class AddJeuServlet extends HttpServlet {
 			}	
 			
 			try {
-				JeuDAO.getInstance().save(jeu);
+				JeuDAO.getInstance().update(jeu);
 			} catch (HibernateException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			response.sendRedirect(response.encodeRedirectURL("JeuListServlet"));
 		}
-		
 	}
 
 }

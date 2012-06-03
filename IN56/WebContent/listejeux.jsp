@@ -3,7 +3,7 @@
 <%@ page import="model.Utilisateur"%>
 <%@ page import="model.Jeu"%>
 <%@ page import="model.TypeJeu"%>
-<%@ page import="model.dao._RootDAO"%>
+<%@ page import="model.dao.TypeJeuDAO"%>
 <%@ page import="net.sf.hibernate.HibernateException"%>
 <%@ page import="net.sf.hibernate.Query"%>
 <%@ page import="net.sf.hibernate.Session"%>
@@ -72,6 +72,15 @@
 				</form>
 				<h2>Liste des jeux</h2>
 				<%
+					ArrayList<String> listErrors;
+					if( request.getAttribute("errors") != null ){
+						listErrors = (ArrayList<String>) request.getAttribute("errors");
+						for(int i = 0; i < listErrors.size(); i++){
+							out.println(listErrors.get(i) + "</br>");
+						}
+					}
+					
+		
 					ArrayList<Jeu> listJeu = null;
 					if (request.getAttribute("listJeu") != null)
 						listJeu = (ArrayList<Jeu>) request.getAttribute("listJeu");
@@ -110,51 +119,68 @@
 			<form method="post" action="AddJeuServlet">
 				<table>
 					<tr>
-						<td>Titre :</td>
-						<td><input type="text" name="titre" value="" />*</td>
+						<th>Titre</th>
 					</tr>
 					<tr>
-						<td>Contexte :</td>
-						<td><input type="text" name="contexte" value="" />*</td>
+						<td><center><input type="text" name="titre" value="" /></center></td>
 					</tr>
 					<tr>
-						<td>Règle :</td>
-						<td><input type="text" name="regle" value="" />*</td>
+						<th>Contexte</th>
 					</tr>
 					<tr>
-						<td>Lien officiel :</td>
-						<td><input type="text" name="lien" value="" />*</td>
+						<td><textarea  name="contexte"  cols="60" rows="3"></textarea></td>
 					</tr>
 					<tr>
-						<td>Information :</td>
-						<td><input type="text" name="info" value="" />*</td>
+						<th>Règle</th>
 					</tr>
 					<tr>
-						<td>URL :</td>
-						<td><input type="text" name="url" value="" />*</td>
+						<td><textarea  name="regle"  cols="60" rows="3"></textarea></td>
 					</tr>
 					<tr>
-						<td>Point :</td>
-						<td><input type="text" name="point" value="" />*</td>
+						<th>Lien officiel</th>
 					</tr>
 					<tr>
-						<td>Materiel :</td>
-						<td><input type="text" name="materiel" value="" />*</td>
+						<td><center><input type="text" name="lien" value="" /></center></td>
 					</tr>
 					<tr>
-						<td>Adresse image jeu :</td>
-						<td><input type="text" name="image" value="" />*</td>
+						<th>Information</th>
 					</tr>
 					<tr>
-						<td>Type de jeu :</td>
-						<td><select name="type">
+						<td><center><textarea  name="info"  cols="60" rows="3"></textarea></center></td>
+					</tr>
+					<tr>
+						<th>Lien pour jouer</th>
+					</tr>
+					<tr>
+						<td><center><input type="text" name="url" value="" /></center></td>
+					</tr>
+					<tr>
+						<th>Points</th>
+					</tr>
+					<tr>
+						<td><center><textarea  name="point"  cols="60" rows="3"></textarea></center></td>
+					</tr>
+					<tr>
+						<th>Materiel</th>
+					</tr>
+					<tr>
+						<td><center><textarea  name="materiel"  cols="60" rows="3"></textarea></center></td>
+					</tr>
+					<tr>
+						<th>Adresse image jeu</th>
+					</tr>
+					<tr>
+						<td><center><input type="text" name="image" value="" /></center></td>
+					</tr>
+					<tr>
+						<th>Type de jeu</th>
+					</tr>
+					<tr>
+						<td><center><select name="type">
 								<%
 									List<TypeJeu> listTypeJeu = null;
 									try {
-									_RootDAO.initialize();
-									Session session1 = _RootDAO.createSession();
-									Query query = session1.createQuery("SELECT t FROM TypeJeu t");
-									listTypeJeu = query.list();
+									listTypeJeu = TypeJeuDAO.getInstance().findAll();
 									for (TypeJeu typeJeu : listTypeJeu) {
 										out.print("<option type value=\"" + typeJeu.getIdTypeJeu() + "\">"
 												+ typeJeu.getLibelleTypeJeu() + "</option>");
@@ -166,15 +192,13 @@
 								
 									
 								%>
-						</select></td>
+						</select></center></td>
 					</tr>
 					<tr>
-						<td></td>
-						<td><input type="submit" name="addJeu" value="Envoyer" /></td>
+						<td><center><input type="submit" name="addJeu" value="Envoyer" /></center></td>
 					</tr>
 					<tr>
-						<td></td>
-						<td>* Champs obligatoires</td>
+						<td><center>Tous les champs obligatoires</center></td>
 					</tr>
 				</table>
 			</form></center>

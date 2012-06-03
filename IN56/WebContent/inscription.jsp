@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>AbonGame - Accueil</title>
+<title>AbonGame - Inscription</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -101,9 +101,9 @@
 	<div id="corps">
 		<div id="contenu">
 			<div class="element_contenu">
-			<p><center><h3>Inscription</h3></center></p>
+			<p><center><h2>Inscription</h2></center></p>
 			<p><center>Veulliez remplir le formulaire d'inscription</center></p>
-			<%
+			<center><%
 			ArrayList<String> listErrors;
 			if(request.getAttribute("errors") != null){
 				listErrors = ((ArrayList<String>) request.getAttribute("errors"));
@@ -127,8 +127,11 @@
 							<td><input type="text" name="login" value="" /> *</td>
 						</tr>
 						<tr>
+							<td colspan="2" >Taille minimum 6 caractères / Taille maximum 32 caractères *</td>
+						</tr>
+						<tr>
 							<td>Mot de passe :</td>
-							<td><input type="password" name="motdepasse" value="" /> Taille minimum 6 caractères / Taille maximum 32 caractères *</td>
+							<td><input type="password" name="motdepasse" value="" /></td>
 						</tr>
 						<tr>
 							<td>Civilité :</td>
@@ -170,15 +173,14 @@
 							<td><input type="text" name="pays" value="" /> *</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td><input type="submit" name="inscription"
-								value="Envoyer" /></td>
+							<td colspan="2"><center><input type="submit" name="inscription"	value="Envoyer" /></center></td>
 						</tr>
 						<tr>
-							<td></td><td>* Champs obligatoires</td>
+							<td colspan="2"><center>* Champs obligatoires</center></td>
 						</tr>
 					</table>
 				</form>
+				</center>
 			</div>
 		</div>
 	</div>
@@ -190,7 +192,7 @@
 				// Récupération de l'utilisateur
 				Utilisateur utilisateur = (Utilisateur) request.getSession()
 						.getAttribute("Utilisateur");
-				if (utilisateur.getDroit() == 2) {
+				if (utilisateur.getDroit() == 1) {
 					out.println("<p><a href=\"administration.jsp\">Administration</a></p>");
 				}
 			}

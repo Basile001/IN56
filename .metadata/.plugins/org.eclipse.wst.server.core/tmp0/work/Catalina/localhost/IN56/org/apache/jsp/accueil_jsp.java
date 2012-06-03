@@ -153,18 +153,12 @@ public final class accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div id=\"bottom_menuv\"></div>\r\n");
-      out.write("\r\n");
       out.write("\t</div>\r\n");
-      out.write("\r\n");
       out.write("\t<div id=\"corps\">\r\n");
       out.write("\t\t<div id=\"contenu\">\r\n");
-      out.write("\r\n");
-      out.write("\t\t\t<p>Bienvenue chez AbonGame</p>\r\n");
-      out.write("\r\n");
+      out.write("\t\t\t<center><p>Bienvenue chez AbonGame</p>\r\n");
       out.write("\t\t\t<p>Ce site vous propose de découvrir et jouer à des jeux.\r\n");
-      out.write("\t\t\tIls vous suffit de vous inscrire pour profiter des offres.</p>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
+      out.write("\t\t\tIls vous suffit de vous inscrire pour profiter des offres.</p></center>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t</div>\r\n");
       out.write("\t<div id=\"bottom\">\r\n");
@@ -174,7 +168,7 @@ public final class accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
  	if(request.getSession().getAttribute("Utilisateur") != null){
 				// Récupération de l'utilisateur
 				Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("Utilisateur");
-				if(utilisateur.getDroit() == 2){
+				if(utilisateur.getDroit() == 1){
 					out.println("<p><a href=\"administration.jsp\">Administration</a></p>");
 				}
 		} 

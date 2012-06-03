@@ -280,4 +280,24 @@
     <servlet-name>JeuRemoveServlet</servlet-name>
     <url-pattern>/JeuRemoveServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>JeuEditServlet</display-name>
+    <servlet-name>JeuEditServlet</servlet-name>
+    <servlet-class>control.JeuEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JeuEditServlet</servlet-name>
+    <url-pattern>/JeuEditServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UtilisateurEditServlet</display-name>
+    <servlet-name>UtilisateurEditServlet</servlet-name>
+    <servlet-class>control.UtilisateurEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UtilisateurEditServlet</servlet-name>
+    <url-pattern>/UtilisateurEditServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

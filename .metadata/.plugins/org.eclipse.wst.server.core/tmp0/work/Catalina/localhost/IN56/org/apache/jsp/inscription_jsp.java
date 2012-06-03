@@ -59,7 +59,7 @@ public final class inscription_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n");
       out.write("<head>\r\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />\r\n");
-      out.write("<title>AbonGame - Accueil</title>\r\n");
+      out.write("<title>AbonGame - Inscription</title>\r\n");
       out.write("<link href=\"style.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("</head>\r\n");
       out.write("\r\n");
@@ -172,9 +172,9 @@ public final class inscription_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<div id=\"corps\">\r\n");
       out.write("\t\t<div id=\"contenu\">\r\n");
       out.write("\t\t\t<div class=\"element_contenu\">\r\n");
-      out.write("\t\t\t<p><center><h3>Inscription</h3></center></p>\r\n");
+      out.write("\t\t\t<p><center><h2>Inscription</h2></center></p>\r\n");
       out.write("\t\t\t<p><center>Veulliez remplir le formulaire d'inscription</center></p>\r\n");
-      out.write("\t\t\t");
+      out.write("\t\t\t<center>");
 
 			ArrayList<String> listErrors;
 			if(request.getAttribute("errors") != null){
@@ -200,8 +200,11 @@ public final class inscription_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t<td><input type=\"text\" name=\"login\" value=\"\" /> *</td>\r\n");
       out.write("\t\t\t\t\t\t</tr>\r\n");
       out.write("\t\t\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t\t\t<td colspan=\"2\" >Taille minimum 6 caractères / Taille maximum 32 caractères *</td>\r\n");
+      out.write("\t\t\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t\t\t<tr>\r\n");
       out.write("\t\t\t\t\t\t\t<td>Mot de passe :</td>\r\n");
-      out.write("\t\t\t\t\t\t\t<td><input type=\"password\" name=\"motdepasse\" value=\"\" /> Taille minimum 6 caractères / Taille maximum 32 caractères *</td>\r\n");
+      out.write("\t\t\t\t\t\t\t<td><input type=\"password\" name=\"motdepasse\" value=\"\" /></td>\r\n");
       out.write("\t\t\t\t\t\t</tr>\r\n");
       out.write("\t\t\t\t\t\t<tr>\r\n");
       out.write("\t\t\t\t\t\t\t<td>Civilité :</td>\r\n");
@@ -243,15 +246,14 @@ public final class inscription_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t<td><input type=\"text\" name=\"pays\" value=\"\" /> *</td>\r\n");
       out.write("\t\t\t\t\t\t</tr>\r\n");
       out.write("\t\t\t\t\t\t<tr>\r\n");
-      out.write("\t\t\t\t\t\t\t<td></td>\r\n");
-      out.write("\t\t\t\t\t\t\t<td><input type=\"submit\" name=\"inscription\"\r\n");
-      out.write("\t\t\t\t\t\t\t\tvalue=\"Envoyer\" /></td>\r\n");
+      out.write("\t\t\t\t\t\t\t<td colspan=\"2\"><center><input type=\"submit\" name=\"inscription\"\tvalue=\"Envoyer\" /></center></td>\r\n");
       out.write("\t\t\t\t\t\t</tr>\r\n");
       out.write("\t\t\t\t\t\t<tr>\r\n");
-      out.write("\t\t\t\t\t\t\t<td></td><td>* Champs obligatoires</td>\r\n");
+      out.write("\t\t\t\t\t\t\t<td colspan=\"2\"><center>* Champs obligatoires</center></td>\r\n");
       out.write("\t\t\t\t\t\t</tr>\r\n");
       out.write("\t\t\t\t\t</table>\r\n");
       out.write("\t\t\t\t</form>\r\n");
+      out.write("\t\t\t\t</center>\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t</div>\r\n");

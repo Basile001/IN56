@@ -83,18 +83,12 @@
 			</ul>
 		</div>
 		<div id="bottom_menuv"></div>
-
 	</div>
-
 	<div id="corps">
 		<div id="contenu">
-
-			<p>Bienvenue chez AbonGame</p>
-
+			<center><p>Bienvenue chez AbonGame</p>
 			<p>Ce site vous propose de découvrir et jouer à des jeux.
-			Ils vous suffit de vous inscrire pour profiter des offres.</p>
-
-
+			Ils vous suffit de vous inscrire pour profiter des offres.</p></center>
 		</div>
 	</div>
 	<div id="bottom">
@@ -103,7 +97,7 @@
 		<% 	if(request.getSession().getAttribute("Utilisateur") != null){
 				// Récupération de l'utilisateur
 				Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("Utilisateur");
-				if(utilisateur.getDroit() == 2){
+				if(utilisateur.getDroit() == 1){
 					out.println("<p><a href=\"administration.jsp\">Administration</a></p>");
 				}
 		} %>

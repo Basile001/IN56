@@ -96,30 +96,31 @@
 				<% ArrayList<QuestionReponse> FAQ;
 				if(request.getAttribute("FAQ") != null){
 					FAQ = (ArrayList<QuestionReponse>) request.getAttribute("FAQ");
+					out.println("<center><table border=\"1\"");
 					for(QuestionReponse questionReponse : FAQ){
-						out.println("<table>");
-						out.println("<tr>");
-							out.println("<td>");
-								out.println("Question");
-							out.println("</td>");
-						out.println("</tr>");
-						out.println("<tr>");
-						out.println("<td><textarea name=\"reponse\" cols=\"70\" rows=\"3\" readonly=\"\">");
-						out.println(questionReponse.getQuestion());
-						out.println("</textarea></td>");
-					out.println("</tr>");
-					out.println("<tr>");
-					out.println("<td>");
-						out.println("Réponse");
-					out.println("</td>");
-					out.println("</tr>");
-					out.println("<tr>");
-						out.println("<td><textarea name=\"question\" cols=\"70\" rows=\"3\" readonly=\"\">");
-							out.println(questionReponse.getReponse());
-						out.println("</textarea></td>");
-					out.println("</tr>");
-						out.println("</table>");
-					}
+						
+								out.println("<tr>");
+									out.println("<th colspan=\"2\">");
+										out.println("Question");
+									out.println("</th>");
+								out.println("</tr>");
+								out.println("<tr>");
+									out.println("<td colspan=\"2\"><textarea name=\"reponse\" cols=\"60\" rows=\"3\" readonly=\"\">");
+									out.println(questionReponse.getQuestion());
+									out.println("</textarea></td>");
+								out.println("</tr>");
+								out.println("<tr>");
+									out.println("<th colspan=\"2\">");
+										out.println("Réponse");
+									out.println("</th>");
+								out.println("</tr>");
+								out.println("<tr>");
+									out.println("<td colspan=\"2\"><textarea name=\"question\" cols=\"60\" rows=\"3\" readonly=\"\">");
+										out.println(questionReponse.getReponse());
+									out.println("</textarea></td>");
+								out.println("</tr>");
+						}
+					out.println("</table></center>");
 				}else{
 					out.println("<p>Aucune FAQ</p>");
 				}
@@ -132,7 +133,7 @@
 		<% 	if(request.getSession().getAttribute("Utilisateur") != null){
 				// Récupération de l'utilisateur
 				Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("Utilisateur");
-				if(utilisateur.getDroit() == 2){
+				if(utilisateur.getDroit() == 1){
 					out.println("<p><a href=\"administration.jsp\">Administration</a></p>");
 				}
 		} %>

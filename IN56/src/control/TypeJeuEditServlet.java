@@ -33,6 +33,14 @@ public class TypeJeuEditServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		TypeJeuDAO typeJeuDAO = new TypeJeuDAO();
 		TypeJeu typeJeu = null;
 		long ID = Long.parseLong(request.getParameter("id"));
@@ -77,14 +85,6 @@ public class TypeJeuEditServlet extends HttpServlet {
 			}
 			response.sendRedirect(response.encodeRedirectURL("TypeJeuListServlet"));
 		}
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 	}
 
 }

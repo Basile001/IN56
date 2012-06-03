@@ -66,7 +66,7 @@
 					jeu = JeuDAO.getInstance().load(ID);
 					
 				} catch (HibernateException e) {
-					// TODO Auto-generated catch block
+					
 					e.printStackTrace();
 				}
 				

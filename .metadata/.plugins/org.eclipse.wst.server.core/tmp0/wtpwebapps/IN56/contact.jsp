@@ -86,7 +86,7 @@
 
 	<div id="corps">
 		<div id="contenu">
-			<p>Vous pouvez contacter les créateurs de AbonGame à l'aide du formulaire suivant :</p>
+			<center><p>Vous pouvez contacter les créateurs de AbonGame à l'aide du formulaire suivant :</p>
 			
 			<%  
 				ArrayList<String> listErrors;
@@ -114,7 +114,7 @@
 						<td><center><input type="submit" value="Envoyer"/></center></td>
 					</tr>
 				</table>
-			</form>
+			</form></center>
 		</div>
 	</div>
 	<div id="bottom">
@@ -123,7 +123,7 @@
 		<% 	if(request.getSession().getAttribute("Utilisateur") != null){
 				// Récupération de l'utilisateur
 				Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("Utilisateur");
-				if(utilisateur.getDroit() == 2){
+				if(utilisateur.getDroit() == 1){
 					out.println("<p><a href=\"administration.jsp\">Administration</a></p>");
 				}
 		} %>

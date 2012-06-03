@@ -102,7 +102,7 @@
 		<% 	if(request.getSession().getAttribute("Utilisateur") != null){
 				// Récupération de l'utilisateur
 				Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("Utilisateur");
-				if(utilisateur.getDroit() == 2){
+				if(utilisateur.getDroit() == 1){
 					out.println("<p><a href=\"administration.jsp\">Administration</a></p>");
 				}
 		} %>

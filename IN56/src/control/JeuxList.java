@@ -36,8 +36,6 @@ public class JeuxList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			_RootDAO.initialize();
-			Session session = _RootDAO.createSession();
 			List<Jeu> listJeu = JeuDAO.getInstance().findAll();
 			request.setAttribute("listJeu", listJeu);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("listejeux.jsp");
